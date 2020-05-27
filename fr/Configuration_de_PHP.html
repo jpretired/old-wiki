@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Configuration de PHP — webtrees</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Configuration_de_PHP","wgTitle":"Configuration de PHP","wgCurRevisionId":3918,"wgRevisionId":3918,"wgArticleId":146,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Guide administrateur"],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","janv.","fév.","mars","avr.","mai","juin","juill.","août","sept.","oct.","nov.","déc."],"wgRelevantPageName":"Configuration_de_PHP","wgRelevantArticleId":146,"wgRequestId":"702e49be9c8ac9f386e3e90f","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","site":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1dpodri",function($,jQuery,require,module){/*@nomin*/mw.user.options.set({"variant":"fr"});
+});mw.loader.implement("user.tokens@1bv63xk",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});mw.loader.load(["mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="w/load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="w/load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.31.3"/>
+<link rel="shortcut icon" href="../favicon.ico.html"/>
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="webtrees (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="w/api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de webtrees" href="w/index.php%3Ftitle=Spécial:Modifications_récentes&amp;feed=atom"/>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/fr/w/skins/Vector/csshover.min.htc")}</style><![endif]-->
+<!--[if lt IE 9]><script src="/fr/w/load.php?debug=false&amp;lang=fr&amp;modules=html5shiv&amp;only=scripts&amp;skin=vector&amp;sync=1"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Configuration_de_PHP rootpage-Configuration_de_PHP skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Configuration de PHP</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De webtrees</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="Configuration_de_PHP.html#mw-head">navigation</a>, 					<a href="Configuration_de_PHP.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><p>Quelques exigences de <b>webtrees</b> (voir <a href="Configuration_requise.html" title="Configuration requise">Configuration requise</a>) amènent aux informations suivantes à propos de PHP&#160;:
+</p>
+<ul><li>PHP 5.2.3 ou version ultérieure. Notez que de nombreux hébergeurs web offrent à la fois PHP4 et PHP5 souvent avec PHP4 par défaut. Si c’est le cas, vous serez en mesure de basculer entre les deux en utilisant un panneau de commande ou un fichier de configuration. Consultez la documentation du support de votre hébergeur pour plus de détails.
+<ul><li>PHP doit être configuré avec la bibliothèque de PHP/PDO pour MySQL. Il s’agit d’une option de configuration du serveur. Il est activé par défaut sur la plupart des hôtes. Voir <a rel="nofollow" class="external free" href="https://php.net/pdo">http://php.net/pdo</a></li>
+<li>PHP doit être configuré pour autoriser les ressources suffisantes du serveur (mémoire et temps d’exécution) pour la taille de votre système. Les exigences de base sont&#160;:
+<ul><li>Les petits gedcoms (500 personnes)&#160;: 16-32 Mo, 10-20 secondes</li>
+<li>les gedcoms moyen (5000 personnes)&#160;: 32-64, 20-40 secondes</li>
+<li>les grands gedcom (50000 personnes)&#160;: 64-128, 40-80 secondes</li></ul></li></ul></li></ul>
+<p>Le processus visant à définir ces éléments de configuration et d’autres peuvent varier en fonction de votre hébergeur. La configuration est définie dans le fichier php.ini par le système, ou est modifiée par l’utilisateur ou par l’hébergeur.
+</p><p>Malheureusement, certains hôtes ne permettent pas cette option. Une alternative est offerte par certains hébergeurs en créant un fichier <b><a rel="nofollow" class="external text" href="https://fr.wikipedia.org/wiki/htaccess">.htaccess</a></b> contenant les paramètres de configuration. Il est ensuite stocké à la racine de l’installation de <b>webtrees</b> (l’emplacement exact peut varier selon le serveur).
+</p><p>(<b>REMARQUE IMPORTANTE - ceux-ci sont souvent spécifiques à certains hébergeurs et peuvent être similaires, mais non identiques. Toujours vérifier l'exactitude de chaque détail pour votre hébergeur...</b>)
+</p>
+<div id="toc" class="toc"><div class="toctitle" lang="fr" dir="ltr"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Configuration_de_PHP.html#Activation_de_php5"><span class="tocnumber">1</span> <span class="toctext">Activation de php5</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Configuration_de_PHP.html#date_timezone"><span class="tocnumber">2</span> <span class="toctext">date_timezone</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Activation_de_php5">Activation de php5</span></h2>
+<p><b>Concentric.com</b> indique&#160;: <i>"Nous soutenons actuellement la version 5.2.3, 4.4.7 et 3 de PHP La valeur par défaut est php4. La seule façon d’utiliser la version 5 sera une directive dans htaccess. La directive htaccess peut aussi convenir pour utiliser php3. Pour ajouter php5 <b>CGIMapExtension/usr/local/bin/php5.php</b></i>
+</p>
+<h2><span class="mw-headline" id="date_timezone">date_timezone</span></h2>
+<p><i>Il s'agit du fuseau horaire permettant d'afficher l'heure correcte.</i>
+</p><p><b>Lunarpages</b> indique&#160;: <i>"Créer ou modifier htaccess dans le répertoire racine du site avec une ligne <b>SetEnv TZ 'position'</b>. Cette "</i>position<i>" peut être trouvée sur  <a rel="nofollow" class="external free" href="http://www.php.net/manual/fr/timezones.php">http://www.php.net/manual/fr/timezones.php</a></i>. Pour la France métropolitaine, c'est "<i>Europe/Paris</i>"
+</p><p>Un exemple complet pourrait être&#160;: <i><b>SetEnv TZ Europe/Paris</b></i>. Ce fichier n'adaptera l'heure que pour le site à la racine duquel il se trouve.
+</p><p>En local, le problème ne devrait pas se poser parce qu'il y a de fortes chances que le fichier de configuration de php soit configuré pour afficher votre heure correctement. Si ce n'était pas le cas, éditez le fichier <b>php.ini</b> (sous EasyPhp, il se trouve dans le dossier conf_files de easyPhp) et recherchez la ligne débutant par "<i>date.timezone =</i>". Enfin, remplacez la fin de la ligne par "<i>Europe/Paris</i>" pour obtenir "<i>date.timezone = Europe/Paris</i>". Ce fichier (<b>php.ini</b>) existe aussi sur un site distant mais, si vous ne gérez pas votre serveur, il n'y a guère de chance que votre hébergeur vous laisse y accéder. ATTENTION: restez très prudent dans les modifications de ce fichier de configuration et n'agissez qu'en connaissance de conséquence (ne modifiez aucune autre ligne si vous n'êtes pas sûr de vous).
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20200521020142
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.016 seconds
+Real time usage: 0.020 seconds
+Preprocessor visited node count: 7/1000000
+Preprocessor generated node count: 12/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key wiki-fr_:pcache:idhash:146-0!canonical and timestamp 20200521020142 and revision id 3918
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="w/index.php%3Ftitle=Configuration_de_PHP&amp;oldid=3918.html">https://wiki.webtrees.net/fr/w/index.php?title=Configuration_de_PHP&amp;oldid=3918</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.webtrees.net/fr/Sp%C3%A9cial:Cat%C3%A9gories" title="Spécial:Catégories">Catégorie</a> : <ul><li><a href="./Catégorie:Guide_administrateur.html" title="Catégorie:Guide administrateur">Guide administrateur</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="w/index.php%3Ftitle=Spécial:Connexion&amp;returnto=Configuration+de+PHP.html" title="Nous vous encourageons à vous connecter ; ce n’est cependant pas obligatoire [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Configuration_de_PHP.html"  title="Voir le contenu de la page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.webtrees.net/fr/w/index.php?title=Discussion:Configuration_de_PHP&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="Configuration_de_PHP.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Configuration_de_PHP.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="w/index.php%3Ftitle=Configuration_de_PHP&amp;action=edit.html"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="w/index.php%3Ftitle=Configuration_de_PHP&amp;action=history.html"  title="Historique des versions de cette page [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="Configuration_de_PHP.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="https://wiki.webtrees.net/fr/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher dans webtrees" title="Rechercher dans webtrees [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Continuer" title="Accédez à une page du même nom si elle existe" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="../fr:Accueil.html"  title="Visiter la page d’accueil"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-webtrees.net"><a href="http://www.webtrees.net/" rel="nofollow">webtrees.net</a></li><li id="n-Accueil-.28fr.29"><a href="../fr:Accueil.html" rel="nofollow">Accueil (fr)</a></li><li id="n-Hauptseite-.28de.29"><a href="../de/Hauptseite.html" rel="nofollow">Hauptseite (de)</a></li><li id="n-Main-Page-.28en.29"><a href="../favicon.ico.html" rel="nofollow">Main Page (en)</a></li><li id="n-Hoofdpagina-.28nl.29"><a href="../nl/Hoofdpagina.html" rel="nofollow">Hoofdpagina (nl)</a></li><li id="n-recentchanges"><a href="https://wiki.webtrees.net/fr/Sp%C3%A9cial:Modifications_r%C3%A9centes" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./Spécial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Accès à l’aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.webtrees.net/fr/Sp%C3%A9cial:Pages_li%C3%A9es/Configuration_de_PHP" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="https://wiki.webtrees.net/fr/Sp%C3%A9cial:Suivi_des_liens/Configuration_de_PHP" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./Spécial:Pages_spéciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="w/index.php%3Ftitle=Configuration_de_PHP&amp;printable=yes.html" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="w/index.php%3Ftitle=Configuration_de_PHP&amp;oldid=3918.html" title="Adresse permanente de cette version de la page">Lien permanent</a></li><li id="t-info"><a href="w/index.php%3Ftitle=Configuration_de_PHP&amp;action=info.html" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Dans d’autres langues</h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-de"><a href="../de/PHP_Konfiguration.html" title="PHP Konfiguration — Deutsch" lang="de" hreflang="de" class="interlanguage-link-target">Deutsch</a></li><li class="interlanguage-link interwiki-en"><a href="../en/PHP_Configuration.html" title="PHP Configuration — English" lang="en" hreflang="en" class="interlanguage-link-target">English</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> La dernière modification de cette page a été faite le 15 février 2014 à 18:17.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.webtrees.net/fr/Webtrees:Politique_de_confidentialit%C3%A9" title="Webtrees:Politique de confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="https://wiki.webtrees.net/fr/Webtrees:%C3%80_propos_de" title="Webtrees:À propos de">À propos de webtrees</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.webtrees.net/fr/Webtrees:Avertissements_g%C3%A9n%C3%A9raux" title="Webtrees:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="https://wiki.webtrees.net/fr/w/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="https://wiki.webtrees.net/fr/w/resources/assets/poweredby_mediawiki_132x47.png 1.5x, https://wiki.webtrees.net/fr/w/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.016","walltime":"0.020","ppvisitednodes":{"value":7,"limit":1000000},"ppgeneratednodes":{"value":12,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20200521020142","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":89});});</script>
+	</body>
+</html>

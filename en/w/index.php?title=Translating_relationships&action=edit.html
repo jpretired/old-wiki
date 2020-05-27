@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>View source for Translating relationships - webtrees</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Translating_relationships","wgTitle":"Translating relationships","wgCurRevisionId":4509,"wgRevisionId":0,"wgArticleId":441,"wgIsArticle":false,"wgIsRedirect":false,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Translating_relationships","wgRelevantArticleId":441,"wgRequestId":"9934a8f549b5160cba23122e","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","site":"ready","user.options":"ready","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.tokens@1bv63xk",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});mw.loader.load(["mediawiki.action.edit.collapsibleFooter","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.31.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="shortcut icon" href="../../favicon.ico.html"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="webtrees (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="webtrees Atom feed" href="./index.php%3Ftitle=Special:RecentChanges&amp;feed=atom"/>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/en/w/skins/Vector/csshover.min.htc")}</style><![endif]-->
+<!--[if lt IE 9]><script src="/en/w/load.php?debug=false&amp;lang=en&amp;modules=html5shiv&amp;only=scripts&amp;skin=vector&amp;sync=1"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Translating_relationships rootpage-Translating_relationships skin-vector action-edit">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">View source for Translating relationships</h1>
+									<div id="bodyContent" class="mw-body-content">
+								<div id="contentSub">← <a href="../Translating_relationships.html" title="Translating relationships">Translating relationships</a></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="index.php%3Ftitle=Translating_relationships&amp;action=edit.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Translating_relationships&amp;action=edit.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text"><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in the group: <a href="https://wiki.webtrees.net/en/w/index.php?title=Webtrees:Users&amp;action=edit&amp;redlink=1" class="new" title="Webtrees:Users (page does not exist)">Users</a>.
+</p>
+</div>
+<hr />
+<p>You can view and copy the source of this page.
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" class="mw-editfont-monospace" lang="en" dir="ltr" name="wpTextbox1">[[Category:Translation_Guidelines|21.22]]
+Translating relationships is difficult.  We cannot simply translate the names, as the semantics are different.  One person's "3rd cousin twice removed" is another person's "cousin of the 7th degree".
+
+The existing code creates a translation for every relationship that exists in any language - and then asks all languages to translate all relationships.  This requires translations for terms that do not exist.  For example, the Spanish have a word "consuegro" (son's wife's father) which cannot be translated into other languages.
+
+The proposed solution to this is to create separate rules and translations for each language.  These require an understanding of regular expressions and mysql expressions, and of course, the target language.
+
+= How it works =
+
+Complex relationships are created from 4 basic relationship types (parent, child, sibling, spouse), and 3 sexes (male, female, unknown).
+
+{| border="1" cellspacing="0" cellpadding="5px"
+| father || son      || brother || husband
+|-
+| mother || daughter || sister  || wife
+|-
+| parent || child    || sibling || spouse
+|}
+
+These are abbreviated to the first 3 letters.
+
+{| border="1" cellspacing="0" cellpadding="5px"
+| fat || son || bro || hus
+|-
+| mot || dau || sis || wif
+|-
+| par || chi || sib || spo
+|}
+
+A relationship is defined using the ''shortest'' path between two individuals.
+
+For example:
+
+* bro = brother
+* fatson = half-brother
+* fatwifson = step-brother
+
+Some relationships can be defined exactly.  For example:
+
+* fatsis = 'aunt'
+* motsis = 'aunt'
+* parsis = 'aunt'
+* broson = 'nephew'
+* sisson = 'nephew'
+* sibson = 'nephew'
+
+But to save lots of repetition, we can use a type of pattern matching called regular expressions.  These relationships can therefore be defined more compactly like this:
+
+* (fat|mot|par)sis = 'aunt'
+* (bro|sis|sib)son = 'nephew'
+
+We also need a way to record repeating relationships.  For example:
+
+* fat = 'father'
+* (fat|mot|par)fat = 'grandfather'
+* (fat|mot|par)(fat|mot|par)fat = 'great-grandfather'
+* (fat|mot|par)(fat|mot|par)(fat|mot|par)fat = 'great-great-grandfather'
+* (fat|mot|par)(fat|mot|par)(fat|mot|par)(fat|mot|par)fat = 'great x3 grandfather'
+* (fat|mot|par)(fat|mot|par)(fat|mot|par)(fat|mot|par)(fat|mot|par)fat = 'great x4 grandfather'
+
+This could go on indefinitely!  So, we need a way to specify these repeating patterns, and we do it like this:
+
+* fat = 'father'
+* (fat|mot|par)fat = 'grandfather'
+* (fat|mot|par){2}fat = 'great-grandfather'
+* (fat|mot|par){3}fat = 'great-great-grandfather'
+* (fat|mot|par){4}fat = 'great x3 grandfather'
+* (fat|mot|par){5}fat = 'great x4 grandfather'
+
+This still isn't good enough - as we'd still need separate rules for every possible number of generations.  So, we use expressions instead
+
+* fat = 'father'
+* (fat|mot|par)fat = 'grandfather'
+* (fat|mot|par){2}fat = 'great-grandfather'
+* (fat|mot|par){3}fat = 'great-great-grandfather'
+* (fat|mot|par){4,}fat = CONCAT('great x', @up-2, ' grandfather')
+
+Here, the {4,} means "4 or more repetitions of the previous pattern".  The "@up" means the total number of "fat/mat/par" links in the relationship (not the number matched in the repeating pattern).
+
+The expression can use the following values
+
+* @up (the total number of "fat/mot/par" links in the relationship)
+* @down (the total number of "son/dau/chi" links in the relationship)
+* @sex (the sex of the first person in the path)
+* @marr (for couples - are they married)
+* @div (for couples - are they divorced)
+* @dob1 (the date of birth of the first person)
+* @dob2 (the date of birth of the last person)
+
+For complex relationships, such as cousins, the rules can be long and complicated.  The developers can help with the expressions, but we will need a native speaker to carefully explain the relationships!
+
+I invite the translators for each language to add their own rules below.  Contact me if you need help with the pattern matching or the expressions.
+
+It is possible to include different rules.  For example, canon-law versus civil-law.
+
+=== English ===
+
+{| border="1" cellspacing="0" cellpadding="5px"
+| '''relationship pattern''' || '''relationship name'''
+|-
+| &lt;nowiki>(bro|sis|sib)(hus|wif|spo)bro&lt;/nowiki> || 'brother-in-law'
+|-
+| &lt;nowiki>(bro|sis|sib)(hus|wif|spo)sib&lt;/nowiki> || 'sibling-in-law'
+|-
+| &lt;nowiki>(bro|sis|sib)(hus|wif|spo)sis&lt;/nowiki> || 'sister-in-law'
+|-
+| &lt;nowiki>(bro|sis|sib)hus&lt;/nowiki> || 'brother-in-law'
+|-
+| &lt;nowiki>(bro|sis|sib)spo&lt;/nowiki> || 'sibling-in-law'
+|-
+| &lt;nowiki>(bro|sis|sib)wif&lt;/nowiki> || 'sister-in-law'
+|-
+| &lt;nowiki>(fat|mot|par)(bro|sis|sib)hus&lt;/nowiki> || 'uncle'
+|-
+| &lt;nowiki>(fat|mot|par)(bro|sis|sib)spo&lt;/nowiki> || 'uncle/aunt'
+|-
+| &lt;nowiki>(fat|mot|par)(bro|sis|sib)wif&lt;/nowiki> || 'aunt'
+|-
+| &lt;nowiki>(fat|mot|par)(hus|wif|spo)chi&lt;/nowiki> || 'step-sibling'
+|-
+| &lt;nowiki>(fat|mot|par)(hus|wif|spo)dau&lt;/nowiki> || 'step-sister'
+|-
+| &lt;nowiki>(fat|mot|par)(hus|wif|spo)son&lt;/nowiki> || 'step-brother'
+|-
+| &lt;nowiki>(fat|mot|par){1,}(bro|sis|sib)(son|dau|chi){1,}&lt;/nowiki>
+|CONCAT( CASE @up &lt;br />
+&amp;nbsp;WHEN  1 THEN 'first cousin' &lt;br />
+&amp;nbsp;WHEN  2 THEN 'second cousin' &lt;br />
+&amp;nbsp;WHEN  3 THEN 'third cousin' &lt;br />
+&amp;nbsp;WHEN  4 THEN 'fourth cousin' &lt;br />
+&amp;nbsp;WHEN  5 THEN 'fifth cousin' &lt;br />
+&amp;nbsp;WHEN  6 THEN 'sixth cousin' &lt;br />
+&amp;nbsp;WHEN  7 THEN 'seventh cousin' &lt;br />
+&amp;nbsp;WHEN  8 THEN 'eighth cousin' &lt;br />
+&amp;nbsp;WHEN  9 THEN 'ninth cousin' &lt;br />
+&amp;nbsp;WHEN 10 THEN 'tenth cousin' &lt;br />
+&amp;nbsp;WHEN 11 THEN 'eleventh cousin' &lt;br />
+&amp;nbsp;WHEN 12 THEN 'twelfth cousin' &lt;br />
+&amp;nbsp;WHEN 13 THEN 'thirteenth cousin' &lt;br />
+&amp;nbsp;WHEN 14 THEN 'fourteenth cousin' &lt;br />
+&amp;nbsp;WHEN 15 THEN 'fifteenth cousin' &lt;br />
+&amp;nbsp;WHEN 16 THEN 'sixteenth cousin' &lt;br />
+&amp;nbsp;WHEN 17 THEN 'seventeenth cousin' &lt;br />
+&amp;nbsp;WHEN 18 THEN 'eighteenth cousin' &lt;br />
+&amp;nbsp;WHEN 19 THEN 'nineteenth cousin' &lt;br />
+&amp;nbsp;WHEN 20 THEN 'twentieth cousin' &lt;br />
+ELSE &lt;br />
+CONCAT(@up, 'x cousin') &lt;br />
+END, &lt;br />
+CASE ABS(@up-@down) &lt;br />
+&amp;nbsp;WHEN  1 THEN ' once removed' &lt;br />
+&amp;nbsp;WHEN  2 THEN ' twice removed' &lt;br />
+&amp;nbsp;WHEN  3 THEN ' thrice removed' &lt;br />
+&amp;nbsp;WHEN  4 THEN ' four times removed' &lt;br />
+&amp;nbsp;WHEN  5 THEN ' five times removed' &lt;br />
+&amp;nbsp;WHEN  6 THEN ' six times removed' &lt;br />
+&amp;nbsp;WHEN  7 THEN ' seven times removed' &lt;br />
+&amp;nbsp;WHEN  8 THEN ' eight times removed' &lt;br />
+&amp;nbsp;WHEN  9 THEN ' nine times removed' &lt;br />
+&amp;nbsp;WHEN 10 THEN ' ten times removed' &lt;br />
+&amp;nbsp;WHEN 11 THEN ' eleven times removed' &lt;br />
+&amp;nbsp;WHEN 12 THEN ' twelve times removed' &lt;br />
+&amp;nbsp;WHEN 13 THEN ' thirteen times removed' &lt;br />
+&amp;nbsp;WHEN 14 THEN ' fourteen times removed' &lt;br />
+&amp;nbsp;WHEN 15 THEN ' fifteen times removed' &lt;br />
+&amp;nbsp;WHEN 16 THEN ' sixteen times removed' &lt;br />
+&amp;nbsp;WHEN 17 THEN ' seventeen times removed' &lt;br />
+&amp;nbsp;WHEN 18 THEN ' eighteen times removed' &lt;br />
+&amp;nbsp;WHEN 19 THEN ' nineteen times removed' &lt;br />
+&amp;nbsp;WHEN 20 THEN ' twenty times removed' &lt;br />
+ELSE &lt;br />
+CONCAT(ABS(@up-@down), ' times removed') &lt;br />
+END, &lt;br />
+CASE &lt;br />
+&amp;nbsp;WHEN @up>@down THEN ' ascending' &lt;br />
+&amp;nbsp;WHEN @up&lt;@down THEN ' descending' &lt;br />
+ELSE ' ' &lt;br />
+END) &lt;br />
+|-
+| &lt;nowiki>(fat|mot|par){2}(bro|sis|sib)hus&lt;/nowiki> || 'great-uncle'
+|-
+| &lt;nowiki>(fat|mot|par){2}(bro|sis|sib)spo&lt;/nowiki> || 'great-uncle/aunt'
+|-
+| &lt;nowiki>(fat|mot|par){2}(bro|sis|sib)wif&lt;/nowiki> || 'great-aunt'
+|-
+| &lt;nowiki>(fat|mot|par){2}bro&lt;/nowiki> || 'great-uncle'
+|-
+| &lt;nowiki>(fat|mot|par){2}fat&lt;/nowiki> || 'great-grandfather'
+|-
+| &lt;nowiki>(fat|mot|par){2}mot&lt;/nowiki> || 'great-grandmother'
+|-
+| &lt;nowiki>(fat|mot|par){2}par&lt;/nowiki> || 'great-grandparent'
+|-
+| &lt;nowiki>(fat|mot|par){2}sib&lt;/nowiki> || 'great-uncle/aunt'
+|-
+| &lt;nowiki>(fat|mot|par){2}sis&lt;/nowiki> || 'great-aunt'
+|-
+| &lt;nowiki>(fat|mot|par){3}(bro|sis|sib)hus&lt;/nowiki> || 'great-great-uncle'
+|-
+| &lt;nowiki>(fat|mot|par){3}(bro|sis|sib)spo&lt;/nowiki> || 'great-great-uncle/aunt'
+|-
+| &lt;nowiki>(fat|mot|par){3}(bro|sis|sib)wif&lt;/nowiki> || 'great-great-aunt'
+|-
+| &lt;nowiki>(fat|mot|par){3}bro&lt;/nowiki> || 'great-great-uncle'
+|-
+| &lt;nowiki>(fat|mot|par){3}fat&lt;/nowiki> || 'great-great-grandfather'
+|-
+| &lt;nowiki>(fat|mot|par){3}mot&lt;/nowiki> || 'great-great-grandmother'
+|-
+| &lt;nowiki>(fat|mot|par){3}par&lt;/nowiki> || 'great-great-grandparent'
+|-
+| &lt;nowiki>(fat|mot|par){3}sib&lt;/nowiki> || 'great-great-uncle/aunt'
+|-
+| &lt;nowiki>(fat|mot|par){3}sis&lt;/nowiki> || 'great-great-aunt'
+|-
+| &lt;nowiki>(fat|mot|par){4,}(bro|sis|sib)hus&lt;/nowiki> || CONCAT('great x', @up-1, ' uncle')
+|-
+| &lt;nowiki>(fat|mot|par){4,}(bro|sis|sib)spo&lt;/nowiki> || CONCAT('great x', @up-1, ' uncle/aunt')
+|-
+| &lt;nowiki>(fat|mot|par){4,}(bro|sis|sib)wif&lt;/nowiki> || CONCAT('great x', @up-1, ' aunt')
+|-
+| &lt;nowiki>(fat|mot|par){4,}bro&lt;/nowiki> || CONCAT('great x', @up-1, ' uncle')
+|-
+| &lt;nowiki>(fat|mot|par){4,}fat&lt;/nowiki> || CONCAT('great x', @up-2, ' grandfather')
+|-
+| &lt;nowiki>(fat|mot|par){4,}mot&lt;/nowiki> || CONCAT('great x', @up-2, ' grandmother')
+|-
+| &lt;nowiki>(fat|mot|par){4,}par&lt;/nowiki> || CONCAT('great x', @up-2, ' grandparent')
+|-
+| &lt;nowiki>(fat|mot|par){4,}sib&lt;/nowiki> || CONCAT('great x', @up-1, ' uncle/aunt')
+|-
+| &lt;nowiki>(fat|mot|par){4,}sis&lt;/nowiki> || CONCAT('great x', @up-1, ' aunt')
+|-
+| &lt;nowiki>(fat|mot|par)bro&lt;/nowiki> || 'uncle'
+|-
+| &lt;nowiki>(fat|mot|par)chi&lt;/nowiki> || 'half-sibling'
+|-
+| &lt;nowiki>(fat|mot|par)dau&lt;/nowiki> || 'half-sister'
+|-
+| &lt;nowiki>(fat|mot|par)hus&lt;/nowiki> || 'step-father'
+|-
+| &lt;nowiki>(fat|mot|par)sib&lt;/nowiki> || 'uncle/aunt'
+|-
+| &lt;nowiki>(fat|mot|par)sis&lt;/nowiki> || 'aunt'
+|-
+| &lt;nowiki>(fat|mot|par)son&lt;/nowiki> || 'half-brother'
+|-
+| &lt;nowiki>(fat|mot|par)spo&lt;/nowiki> || 'step-parent'
+|-
+| &lt;nowiki>(fat|mot|par)wif&lt;/nowiki> || 'step-mother'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){2}chi&lt;/nowiki> || 'great-great-nephew/niece'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){2}dau&lt;/nowiki> || 'great-great-niece'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){2}son&lt;/nowiki> || 'great-great-nephew'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){3,}chi&lt;/nowiki> || CONCAT('great x', @down-1, ' nephew/niece')
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){3,}dau&lt;/nowiki> || CONCAT('great x', @down-1, ' niece')
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){3,}son&lt;/nowiki> || CONCAT('great x', @down-1, ' nephew')
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi)chi&lt;/nowiki> || 'great-nephew/niece'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi)dau&lt;/nowiki> || 'great-niece'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi)son&lt;/nowiki> || 'great-nephew'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)chi&lt;/nowiki> || 'nephew/niece'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)dau&lt;/nowiki> || 'niece'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)son&lt;/nowiki> || 'nephew'
+|-
+| &lt;nowiki>(hus|wif|spo)bro&lt;/nowiki> || 'brother-in-law'
+|-
+| &lt;nowiki>(hus|wif|spo)chi&lt;/nowiki> || 'step-child'
+|-
+| &lt;nowiki>(hus|wif|spo)dau&lt;/nowiki> || 'step-daughter'
+|-
+| &lt;nowiki>(hus|wif|spo)fat&lt;/nowiki> || 'father-in-law'
+|-
+| &lt;nowiki>(hus|wif|spo)mot&lt;/nowiki> || 'mother-in-law'
+|-
+| &lt;nowiki>(hus|wif|spo)sib&lt;/nowiki> || 'brother/sister-in-law'
+|-
+| &lt;nowiki>(hus|wif|spo)sis&lt;/nowiki> || 'sister-in-law'
+|-
+| &lt;nowiki>(hus|wif|spo)son&lt;/nowiki> || 'step-son'
+|-
+| &lt;nowiki>(hus|wif|spo)spo&lt;/nowiki> || 'father/mother-in-law'
+|-
+| &lt;nowiki>(son|dau|chi){2}chi&lt;/nowiki> || 'great-grandchild'
+|-
+| &lt;nowiki>(son|dau|chi){2}dau&lt;/nowiki> || 'great-granddaughter'
+|-
+| &lt;nowiki>(son|dau|chi){2}son&lt;/nowiki> || 'great-grandson'
+|-
+| &lt;nowiki>(son|dau|chi){3}chi&lt;/nowiki> || 'great-great-grandchild'
+|-
+| &lt;nowiki>(son|dau|chi){3}dau&lt;/nowiki> || 'great-great-granddaughter'
+|-
+| &lt;nowiki>(son|dau|chi){3}son&lt;/nowiki> || 'great-great-grandson'
+|-
+| &lt;nowiki>(son|dau|chi){4,}chi&lt;/nowiki> || CONCAT('great x', @down-2, ' grandchild')
+|-
+| &lt;nowiki>(son|dau|chi){4,}dau&lt;/nowiki> || CONCAT('great x', @down-2, ' granddaughter')
+|-
+| &lt;nowiki>(son|dau|chi){4,}son&lt;/nowiki> || CONCAT('great x', @down-2, ' grandson')
+|-
+| &lt;nowiki>(son|dau|chi)chi&lt;/nowiki> || 'grandchild'
+|-
+| &lt;nowiki>(son|dau|chi)dau&lt;/nowiki> || 'granddaughter'
+|-
+| &lt;nowiki>(son|dau|chi)hus&lt;/nowiki> || 'son-in-law'
+|-
+| &lt;nowiki>(son|dau|chi)son&lt;/nowiki> || 'grandson'
+|-
+| &lt;nowiki>(son|dau|chi)spo&lt;/nowiki> || 'son/daughter-in-law'
+|-
+| &lt;nowiki>(son|dau|chi)wif&lt;/nowiki> || 'daughter-in-law'
+|-
+| bro ||
+CASE &lt;br />
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'twin brother'&lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'younger brother'&lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'elder brother'&lt;br />
+ELSE 'brother'&lt;br />
+END
+|-
+| chi || 'child'
+|-
+| dau || 'daughter'
+|-
+| fat || 'father'
+|-
+| fatfat || 'paternal grandfather'
+|-
+| fatmot || 'paternal grandmother'
+|-
+| fatpar || 'paternal grandparent'
+|-
+| hus || IF(NOT @marr OR @sex&lt;>'F', IF(@div, 'ex-partner', 'partner'), IF(@div, 'ex-husband', 'husband'))
+|-
+| mot || 'mother'
+|-
+| motfat || 'maternal grandfather'
+|-
+| motmot || 'maternal grandmother'
+|-
+| motpar || 'maternal grandparent'
+|-
+| par || 'parent'
+|-
+| parfat || 'grandfather'
+|-
+| parmot || 'grandmother'
+|-
+| parpar || 'grandparent'
+|-
+| sib
+| CASE
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'twin' &lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'younger sibling' &lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'elder sibling' &lt;br />
+ELSE 'sibling' &lt;br />
+END
+|-
+| sis
+| CASE &lt;br />
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'twin sister' &lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'younger sister' &lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'elder sister' &lt;br />
+ELSE 'sister' &lt;br />
+END
+|-
+| son || 'son'
+|-
+| spo || IF(@div, 'ex-partner', 'partner')
+|-
+| wif || IF(NOT @marr OR @sex&lt;>'M', IF(@div, 'ex-partner', 'partner'), IF(@div, 'ex-wife', 'wife'))
+|}
+
+
+=== French ===
+
+{| border="1" cellspacing="0" cellpadding="5px"
+| '''relationship pattern''' || '''relationship name'''
+|-
+| &lt;nowiki>bro&lt;/nowiki> || 'frère'
+|-
+| &lt;nowiki>sis&lt;/nowiki> || 'soeur'
+|-
+| &lt;nowiki>sib&lt;/nowiki> || 'frère/soeur'
+|-
+| &lt;nowiki>fat&lt;/nowiki> || 'père'
+|-
+| &lt;nowiki>mot&lt;/nowiki> || 'mère'
+|-
+| &lt;nowiki>par&lt;/nowiki> || 'parent'
+|-
+| &lt;nowiki>hus&lt;/nowiki> || 'mari/conjoint'
+|-
+| &lt;nowiki>wif&lt;/nowiki> || 'femme/conjointe'
+|-
+| &lt;nowiki>spo&lt;/nowiki> || 'époux/épouse'
+|-
+| &lt;nowiki>son&lt;/nowiki> || 'fils'
+|-
+| &lt;nowiki>dau&lt;/nowiki> || 'fille'
+|-
+| &lt;nowiki>chi&lt;/nowiki> || 'enfant'
+|-
+| &lt;nowiki>fatwifson&lt;/nowiki> || 'demi-frère'
+|-
+| &lt;nowiki>(bro|sis|sib)(hus|wif|spo)bro&lt;/nowiki> || 'beau-frère'
+|-
+| &lt;nowiki>(bro|sis|sib)(hus|wif|spo)sib&lt;/nowiki> || 'beau-frère/belle-soeur'
+|-
+| &lt;nowiki>(bro|sis|sib)(hus|wif|spo)sis&lt;/nowiki> || 'belle-soeur'
+|-
+| &lt;nowiki>(bro|sis|sib)hus&lt;/nowiki> || 'beau-frère'
+|-
+| &lt;nowiki>(bro|sis|sib)spo&lt;/nowiki> || 'beau-frère/belle-soeur'
+|-
+| &lt;nowiki>(bro|sis|sib)wif&lt;/nowiki> || 'belle-soeur'
+|-
+| &lt;nowiki>(fat|mot|par)(bro|sis|sib)hus&lt;/nowiki> || 'oncle'
+|-
+| &lt;nowiki>(fat|mot|par)(bro|sis|sib)spo&lt;/nowiki> || 'oncle/tante'
+|-
+| &lt;nowiki>(fat|mot|par)(bro|sis|sib)wif&lt;/nowiki> || 'tante'
+|-
+| &lt;nowiki>(fat|mot|par)(hus|wif|spo)chi&lt;/nowiki> || 'demi-frère/demi-soeur'
+|-
+| &lt;nowiki>(fat|mot|par)(hus|wif|spo)dau&lt;/nowiki> || 'demi-soeur'
+|-
+| &lt;nowiki>(fat|mot|par)(hus|wif|spo)son&lt;/nowiki> || 'demi-frère'
+|-
+| &lt;nowiki>(fat|mot|par){1,}(bro|sis|sib)(son|dau|chi){1,}&lt;/nowiki>
+|CONCAT( CASE @up &lt;br />
+&amp;nbsp;WHEN  1 THEN 'cousin germain/cousine germaine' &lt;br />
+&amp;nbsp;WHEN  2 THEN 'petit cousin/petite cousine' &lt;br />
+&amp;nbsp;WHEN  3 THEN 'cousin/cousine au 3&lt;sup>e&lt;/sup> degré' &lt;br />
+&amp;nbsp;WHEN  4 THEN 'cousin/cousine au 4&lt;sup>e&lt;/sup> degré' &lt;br />
+&amp;nbsp;WHEN  5 THEN 'cousin/cousine au 5&lt;sup>e&lt;/sup> degré' &lt;br />
+&amp;nbsp;WHEN  6 THEN 'cousin/cousine au 6&lt;sup>e&lt;/sup> degré' &lt;br />
+&amp;nbsp;WHEN  7 THEN 'cousin/cousine au 7&lt;sup>e&lt;/sup> degré' &lt;br />
+&amp;nbsp;WHEN  8 THEN 'cousin/cousine au 8&lt;sup>e&lt;/sup> degré' &lt;br />
+&amp;nbsp;WHEN  9 THEN 'cousin/cousine au 9&lt;sup>e&lt;/sup> degré' &lt;br />
+&amp;nbsp;WHEN 10 THEN 'cousin/cousine au 10&lt;sup>e&lt;/sup> degré' &lt;br />
+&amp;nbsp;WHEN 11 THEN 'cousin/cousine au 11&lt;sup>e&lt;/sup> degré' &lt;br />
+&amp;nbsp;WHEN 12 THEN 'cousin/cousine au 12&lt;sup>e&lt;/sup> degré' &lt;br />
+&amp;nbsp;WHEN 13 THEN 'cousin/cousine au 13&lt;sup>e&lt;/sup> degré' &lt;br />
+&amp;nbsp;WHEN 14 THEN 'cousin/cousine au 14&lt;sup>e&lt;/sup> degré' &lt;br />
+&amp;nbsp;WHEN 15 THEN 'cousin/cousine au 15&lt;sup>e&lt;/sup> degré' &lt;br />
+&amp;nbsp;WHEN 16 THEN 'cousin/cousine au 16&lt;sup>e&lt;/sup> degré' &lt;br />
+&amp;nbsp;WHEN 17 THEN 'cousin/cousine au 17&lt;sup>e&lt;/sup> degré' &lt;br />
+&amp;nbsp;WHEN 18 THEN 'cousin/cousine au 18&lt;sup>e&lt;/sup> degré' &lt;br />
+&amp;nbsp;WHEN 19 THEN 'cousin/cousine au 19&lt;sup>e&lt;/sup> degré' &lt;br />
+&amp;nbsp;WHEN 20 THEN 'cousin/cousine au 20&lt;sup>e&lt;/sup> degré' &lt;br />
+ELSE &lt;br />
+CONCAT(@up, 'x cousin') &lt;br />
+END, &lt;br />
+CASE ABS(@up-@down) &lt;br />
+&amp;nbsp;WHEN  1 THEN ' plus une génération-moins une génération' &lt;br />
+&amp;nbsp;WHEN  2 THEN ' plus deux générations-moins deux générations' &lt;br />
+&amp;nbsp;WHEN  3 THEN ' plus trois générations-moins trois générations' &lt;br />
+&amp;nbsp;WHEN  4 THEN ' plus quatre générations-moins quatre générations' &lt;br />
+&amp;nbsp;WHEN  5 THEN ' plus cinq générations-moins cinq générations' &lt;br />
+&amp;nbsp;WHEN  6 THEN ' plus six générations-moins six générations' &lt;br />
+&amp;nbsp;WHEN  7 THEN ' plus sept générations-moins sept générations' &lt;br />
+&amp;nbsp;WHEN  8 THEN ' plus huit générations-moins huit générations' &lt;br />
+&amp;nbsp;WHEN  9 THEN ' plus neuf générations-moins neuf générations' &lt;br />
+&amp;nbsp;WHEN 10 THEN ' plus dix générations-moins dix générations' &lt;br />
+&amp;nbsp;WHEN 11 THEN ' plus onze générations-moins onze générations' &lt;br />
+&amp;nbsp;WHEN 12 THEN ' plus douze générations-moins douze générations' &lt;br />
+&amp;nbsp;WHEN 13 THEN ' plus treize générations-moins treize générations' &lt;br />
+&amp;nbsp;WHEN 14 THEN ' plus quatorze générations-moins quatorze générations' &lt;br />
+&amp;nbsp;WHEN 15 THEN ' plus quinze générations-moins quinze générations' &lt;br />
+&amp;nbsp;WHEN 16 THEN ' plus seize générations-moins seize générations' &lt;br />
+&amp;nbsp;WHEN 17 THEN ' plus dix-sept générations-moins dix-sept générations' &lt;br />
+&amp;nbsp;WHEN 18 THEN ' plus dix-huit générations-moins dix-huit générations' &lt;br />
+&amp;nbsp;WHEN 19 THEN ' plus dix-neuf générations-moins dix-neuf générations' &lt;br />
+&amp;nbsp;WHEN 20 THEN ' plus vingt générations-moins vingt générations' &lt;br />
+ELSE &lt;br />
+CONCAT(ABS(@up-@down), ' times removed') &lt;br />
+END, &lt;br />
+CASE &lt;br />
+&amp;nbsp;WHEN @up>@down THEN ' ascending' &lt;br />
+&amp;nbsp;WHEN @up&lt;@down THEN ' descending' &lt;br />
+ELSE ' ' &lt;br />
+END) &lt;br />
+|-
+| &lt;nowiki>(fat|mot|par){2}(bro|sis|sib)hus&lt;/nowiki> || 'grand-oncle'
+|-
+| &lt;nowiki>(fat|mot|par){2}(bro|sis|sib)spo&lt;/nowiki> || 'grand-oncle/tante'
+|-
+| &lt;nowiki>(fat|mot|par){2}(bro|sis|sib)wif&lt;/nowiki> || 'grand-tante'
+|-
+| &lt;nowiki>(fat|mot|par){2}bro&lt;/nowiki> || 'grand-oncle'
+|-
+| &lt;nowiki>(fat|mot|par){2}fat&lt;/nowiki> || 'bisaïeul'
+|-
+| &lt;nowiki>(fat|mot|par){2}mot&lt;/nowiki> || 'bisaïeule'
+|-
+| &lt;nowiki>(fat|mot|par){2}par&lt;/nowiki> || 'bisaïeux'
+|-
+| &lt;nowiki>(fat|mot|par){2}sib&lt;/nowiki> || 'grand-oncle/tante'
+|-
+| &lt;nowiki>(fat|mot|par){2}sis&lt;/nowiki> || 'grand-tante'
+|-
+| &lt;nowiki>(fat|mot|par){3}(bro|sis|sib)hus&lt;/nowiki> || 'arrière-grand-oncle'
+|-
+| &lt;nowiki>(fat|mot|par){3}(bro|sis|sib)spo&lt;/nowiki> || 'arrière-grand-oncle/tante'
+|-
+| &lt;nowiki>(fat|mot|par){3}(bro|sis|sib)wif&lt;/nowiki> || 'arrière-grand-tante'
+|-
+| &lt;nowiki>(fat|mot|par){3}bro&lt;/nowiki> || 'arrière-grand-oncle'
+|-
+| &lt;nowiki>(fat|mot|par){3}fat&lt;/nowiki> || 'trisaïeul'
+|-
+| &lt;nowiki>(fat|mot|par){3}mot&lt;/nowiki> || 'trisaïeule'
+|-
+| &lt;nowiki>(fat|mot|par){3}par&lt;/nowiki> || 'trisaïeux'
+|-
+| &lt;nowiki>(fat|mot|par){3}sib&lt;/nowiki> || 'arrière-grand-oncle/tante'
+|-
+| &lt;nowiki>(fat|mot|par){3}sis&lt;/nowiki> || 'arrière-grand-tante'
+|-
+| &lt;nowiki>(fat|mot|par){4,}(bro|sis|sib)hus&lt;/nowiki> || CONCAT('à la x' génération, @up-1, ' oncle')
+|-
+| &lt;nowiki>(fat|mot|par){4,}(bro|sis|sib)spo&lt;/nowiki> || CONCAT('à la x' génération, @up-1, ' oncle/tante')
+|-
+| &lt;nowiki>(fat|mot|par){4,}(bro|sis|sib)wif&lt;/nowiki> || CONCAT('à la x' génération, @up-1, ' aunt')
+|-
+| &lt;nowiki>(fat|mot|par){4,}bro&lt;/nowiki> || CONCAT('à la x' génération, @up-1, ' oncle')
+|-
+| &lt;nowiki>(fat|mot|par){4,}fat&lt;/nowiki> || CONCAT('à la x' génération, @up-2, ' aïeul')
+|-
+| &lt;nowiki>(fat|mot|par){4,}mot&lt;/nowiki> || CONCAT('à la x' génération, @up-2, ' aïeule')
+|-
+| &lt;nowiki>(fat|mot|par){4,}par&lt;/nowiki> || CONCAT('à la x' génération, @up-2, ' aïeux')
+|-
+| &lt;nowiki>(fat|mot|par){4,}sib&lt;/nowiki> || CONCAT('à la x' génération, @up-1, ' oncle/tante')
+|-
+| &lt;nowiki>(fat|mot|par){4,}sis&lt;/nowiki> || CONCAT('à la x' génération, @up-1, ' tante')
+|-
+| &lt;nowiki>(fat|mot|par)bro&lt;/nowiki> || 'oncle'
+|-
+| &lt;nowiki>(fat|mot|par)chi&lt;/nowiki> || 'demi-frère/soeur'
+|-
+| &lt;nowiki>(fat|mot|par)dau&lt;/nowiki> || 'demi-soeur'
+|-
+| &lt;nowiki>(fat|mot|par)hus&lt;/nowiki> || 'beau-père'
+|-
+| &lt;nowiki>(fat|mot|par)sib&lt;/nowiki> || 'oncle/tante'
+|-
+| &lt;nowiki>(fat|mot|par)sis&lt;/nowiki> || 'tante'
+|-
+| &lt;nowiki>(fat|mot|par)son&lt;/nowiki> || 'demi-frère'
+|-
+| &lt;nowiki>(fat|mot|par)spo&lt;/nowiki> || 'beaux-parents'
+|-
+| &lt;nowiki>(fat|mot|par)wif&lt;/nowiki> || 'belle-mère'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){2,}chi&lt;/nowiki> || CONCAT('à la x' génération, @down-1, ' neveu/nièce')
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){2,}dau&lt;/nowiki> || CONCAT('à la x' génération, @down-1, ' nièce')
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){2,}son&lt;/nowiki> || CONCAT('à la x' génération, @down-1, ' neveu')
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi)chi&lt;/nowiki> || 'petit-neveu/nièce'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi)dau&lt;/nowiki> || 'petite-nièce'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi)son&lt;/nowiki> || 'petit-neveu'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)chi&lt;/nowiki> || 'neveu/nièce'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)dau&lt;/nowiki> || 'nièce'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)son&lt;/nowiki> || 'neveu'
+|-
+| &lt;nowiki>(hus|wif|spo)bro&lt;/nowiki> || 'beau-frère'
+|-
+| &lt;nowiki>(hus|wif|spo)chi&lt;/nowiki> || 'beaux-enfants'
+|-
+| &lt;nowiki>(hus|wif|spo)dau&lt;/nowiki> || 'belle-fille'
+|-
+| &lt;nowiki>(hus|wif|spo)fat&lt;/nowiki> || 'beau-père'
+|-
+| &lt;nowiki>(hus|wif|spo)mot&lt;/nowiki> || 'belle-mère'
+|-
+| &lt;nowiki>(hus|wif|spo)sib&lt;/nowiki> || 'beau-frère/belle-soeur'
+|-
+| &lt;nowiki>(hus|wif|spo)sis&lt;/nowiki> || 'belle-soeur'
+|-
+| &lt;nowiki>(hus|wif|spo)son&lt;/nowiki> || 'beau-fils'
+|-
+| &lt;nowiki>(hus|wif|spo)spo&lt;/nowiki> || 'beau-père/belle-mère'
+|-
+| &lt;nowiki>(son|dau|chi){2,}chi&lt;/nowiki> || CONCAT('à la x' génération, @down-2, ' petit-fils/petite-fille')
+|-
+| &lt;nowiki>(son|dau|chi){2,}dau&lt;/nowiki> || CONCAT('à la x' génération, @down-2, ' petite-fille')
+|-
+| &lt;nowiki>(son|dau|chi){2,}son&lt;/nowiki> || CONCAT('à la x' génération, @down-2, ' petit-fils')
+|-
+| &lt;nowiki>(son|dau|chi)chi&lt;/nowiki> || 'petit-fils/petite-fille'
+|-
+| &lt;nowiki>(son|dau|chi)dau&lt;/nowiki> || 'petite-fille'
+|-
+| &lt;nowiki>(son|dau|chi)son&lt;/nowiki> || 'petit-fils'
+|-
+| &lt;nowiki>(son|dau|chi)spo&lt;/nowiki> || 'gendre/belle-fille'
+|-
+| &lt;nowiki>(son|dau|chi)hus&lt;/nowiki> || 'gendre'
+|-
+| &lt;nowiki>(son|dau|chi)wif&lt;/nowiki> || 'belle-fille'
+|-
+| bro ||
+CASE &lt;br />
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'frères jumeaux'&lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'benjamin'&lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'frère aîné'&lt;br />
+ELSE 'frère'&lt;br />
+END
+|-
+| fatfat || 'grand-père paternel'
+|-
+| fatmot || 'grand-mère paternelle'
+|-
+| fatpar || 'grand-parent paternel'
+|-
+| hus || IF(NOT @marr OR @sex&lt;>'F', IF(@div, 'ex-conjoint', 'conjoint'), IF(@div, 'ex-mari', 'mari'))
+|-
+| motfat || 'grand-père maternel'
+|-
+| motmot || 'grand-mère maternelle'
+|-
+| motpar || 'grand-parent maternel'
+|-
+| parfat || 'grand-père'
+|-
+| parmot || 'grand-mère'
+|-
+| parpar || 'grand-parent'
+|-
+| sib
+| CASE
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'jumeau/jumelle' &lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'benjamin/benjamine' &lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'aîné/aînée' &lt;br />
+ELSE 'frère/soeur' &lt;br />
+END
+|-
+| sis
+| CASE &lt;br />
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'soeur jumelle' &lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'benjamine' &lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'aînée' &lt;br />
+ELSE 'soeur' &lt;br />
+END
+|-
+| spo || IF(@div, 'ex-époux/ex-épouse', 'époux/épouse')
+|-
+| wif || IF(NOT @marr OR @sex&lt;>'M', IF(@div, 'ex-conjointe', 'conjointe'), IF(@div, 'ex-femme', 'femme'))
+|}
+
+=== German ===
+
+{| border="1" cellspacing="0" cellpadding="5px"
+| '''relationship pattern''' || '''relationship name EN'''|| '''relationship name DE'''
+|-
+| &lt;nowiki>(bro|sis|sib)(hus|wif|spo)bro&lt;/nowiki> || 'brother-in-law' || 'Schwager'
+|-
+| &lt;nowiki>(bro|sis|sib)(hus|wif|spo)sib&lt;/nowiki> || 'sibling-in-law' || 'Schwager/Schwägerin'
+|-
+| &lt;nowiki>(bro|sis|sib)(hus|wif|spo)sis&lt;/nowiki> || 'sister-in-law' || 'Schwägerin'
+|-
+| &lt;nowiki>(bro|sis|sib)hus&lt;/nowiki> || 'brother-in-law' || 'Schwager'
+|-
+| &lt;nowiki>(bro|sis|sib)spo&lt;/nowiki> || 'sibling-in-law' || 'Schwager/Schwägerin'
+|-
+| &lt;nowiki>(bro|sis|sib)wif&lt;/nowiki> || 'sister-in-law' || 'Schwägerin'
+|-
+| &lt;nowiki>(fat|mot|par)(bro|sis|sib)hus&lt;/nowiki> || 'uncle' || 'Onkel'
+|-
+| &lt;nowiki>(fat|mot|par)(bro|sis|sib)spo&lt;/nowiki> || 'uncle/aunt' || 'Onkel/Tante'
+|-
+| &lt;nowiki>(fat|mot|par)(bro|sis|sib)wif&lt;/nowiki> || 'aunt' || 'Tante'
+|-
+| &lt;nowiki>(fat|mot|par)(hus|wif|spo)chi&lt;/nowiki> || 'step-sibling' || 'Stiefgeschwister'
+|-
+| &lt;nowiki>(fat|mot|par)(hus|wif|spo)dau&lt;/nowiki> || 'step-sister' || 'Stiefschwester'
+|-
+| &lt;nowiki>(fat|mot|par)(hus|wif|spo)son&lt;/nowiki> || 'step-brother' || 'Stiefbruder'
+|-
+| &lt;nowiki>(fat|mot|par){1,}(bro|sis|sib)(son|dau|chi){1,}&lt;/nowiki> 
+|CONCAT( CASE @up &lt;br />
+&amp;nbsp;WHEN  1 THEN 'first cousin' &lt;br />
+&amp;nbsp;WHEN  2 THEN 'second cousin' &lt;br />
+&amp;nbsp;WHEN  3 THEN 'third cousin' &lt;br />
+&amp;nbsp;WHEN  4 THEN 'fourth cousin' &lt;br />
+&amp;nbsp;WHEN  5 THEN 'fifth cousin' &lt;br />
+&amp;nbsp;WHEN  6 THEN 'sixth cousin' &lt;br />
+&amp;nbsp;WHEN  7 THEN 'seventh cousin' &lt;br />
+&amp;nbsp;WHEN  8 THEN 'eighth cousin' &lt;br />
+&amp;nbsp;WHEN  9 THEN 'ninth cousin' &lt;br />
+&amp;nbsp;WHEN 10 THEN 'tenth cousin' &lt;br />
+&amp;nbsp;WHEN 11 THEN 'eleventh cousin' &lt;br />
+&amp;nbsp;WHEN 12 THEN 'twelfth cousin' &lt;br />
+&amp;nbsp;WHEN 13 THEN 'thirteenth cousin' &lt;br />
+&amp;nbsp;WHEN 14 THEN 'fourteenth cousin' &lt;br />
+&amp;nbsp;WHEN 15 THEN 'fifteenth cousin' &lt;br />
+&amp;nbsp;WHEN 16 THEN 'sixteenth cousin' &lt;br />
+&amp;nbsp;WHEN 17 THEN 'seventeenth cousin' &lt;br />
+&amp;nbsp;WHEN 18 THEN 'eighteenth cousin' &lt;br />
+&amp;nbsp;WHEN 19 THEN 'nineteenth cousin' &lt;br />
+&amp;nbsp;WHEN 20 THEN 'twentieth cousin' &lt;br />
+ELSE &lt;br />
+CONCAT(@up, 'x cousin') &lt;br />
+END, &lt;br />
+CASE ABS(@up-@down) &lt;br />
+&amp;nbsp;WHEN  1 THEN ' once removed' &lt;br />
+&amp;nbsp;WHEN  2 THEN ' twice removed' &lt;br />
+&amp;nbsp;WHEN  3 THEN ' thrice removed' &lt;br />
+&amp;nbsp;WHEN  4 THEN ' four times removed' &lt;br />
+&amp;nbsp;WHEN  5 THEN ' five times removed' &lt;br />
+&amp;nbsp;WHEN  6 THEN ' six times removed' &lt;br />
+&amp;nbsp;WHEN  7 THEN ' seven times removed' &lt;br />
+&amp;nbsp;WHEN  8 THEN ' eight times removed' &lt;br />
+&amp;nbsp;WHEN  9 THEN ' nine times removed' &lt;br />
+&amp;nbsp;WHEN 10 THEN ' ten times removed' &lt;br />
+&amp;nbsp;WHEN 11 THEN ' eleven times removed' &lt;br />
+&amp;nbsp;WHEN 12 THEN ' twelve times removed' &lt;br />
+&amp;nbsp;WHEN 13 THEN ' thirteen times removed' &lt;br />
+&amp;nbsp;WHEN 14 THEN ' fourteen times removed' &lt;br />
+&amp;nbsp;WHEN 15 THEN ' fifteen times removed' &lt;br />
+&amp;nbsp;WHEN 16 THEN ' sixteen times removed' &lt;br />
+&amp;nbsp;WHEN 17 THEN ' seventeen times removed' &lt;br />
+&amp;nbsp;WHEN 18 THEN ' eighteen times removed' &lt;br />
+&amp;nbsp;WHEN 19 THEN ' nineteen times removed' &lt;br />
+&amp;nbsp;WHEN 20 THEN ' twenty times removed' &lt;br />
+ELSE &lt;br />
+CONCAT(ABS(@up-@down), ' times removed') &lt;br />
+END, &lt;br />
+CASE &lt;br />
+&amp;nbsp;WHEN @up>@down THEN ' ascending' &lt;br />
+&amp;nbsp;WHEN @up&lt;@down THEN ' descending' &lt;br />
+ELSE ' ' &lt;br />
+END) &lt;br /> 
+| ' ???? '
+|-
+| &lt;nowiki>(fat|mot|par){2}(bro|sis|sib)hus&lt;/nowiki> || 'great-uncle' || 'Großonkel'
+|-
+| &lt;nowiki>(fat|mot|par){2}(bro|sis|sib)spo&lt;/nowiki> || 'great-uncle/aunt' || 'Großonkel/-tante' 
+|-
+| &lt;nowiki>(fat|mot|par){2}(bro|sis|sib)wif&lt;/nowiki> || 'great-aunt' || 'Großtante' 
+|-
+| &lt;nowiki>(fat|mot|par){2}bro&lt;/nowiki> || 'great-uncle' || 'Großonkel'
+|-
+| &lt;nowiki>(fat|mot|par){2}fat&lt;/nowiki> || 'great-grandfather' || 'Ur-Großvater'
+|-
+| &lt;nowiki>(fat|mot|par){2}mot&lt;/nowiki> || 'great-grandmother' || 'Ur-Großmutter'
+|-
+| &lt;nowiki>(fat|mot|par){2}par&lt;/nowiki> || 'great-grandparent' || 'Ur-Großelternteil'
+|-
+| &lt;nowiki>(fat|mot|par){2}sib&lt;/nowiki> || 'great-uncle/aunt' || 'Großonkel/-tante' 
+|-
+| &lt;nowiki>(fat|mot|par){2}sis&lt;/nowiki> || 'great-aunt' || 'Großtante'
+|-
+| &lt;nowiki>(fat|mot|par){3}(bro|sis|sib)hus&lt;/nowiki> || 'great-great-uncle' || 'Ur-Großonkel'
+|-
+| &lt;nowiki>(fat|mot|par){3}(bro|sis|sib)spo&lt;/nowiki> || 'great-great-uncle/aunt' || 'Ur-Großonkel/-tante'
+|-
+| &lt;nowiki>(fat|mot|par){3}(bro|sis|sib)wif&lt;/nowiki> || 'great-great-aunt' || 'Ur-Großtante'
+|-
+| &lt;nowiki>(fat|mot|par){3}bro&lt;/nowiki> || 'great-great-uncle' || 'Ur-Großonkel'
+|-
+| &lt;nowiki>(fat|mot|par){3}fat&lt;/nowiki> || 'great-great-grandfather' || 'Ur-Ur-Großvater'
+|-
+| &lt;nowiki>(fat|mot|par){3}mot&lt;/nowiki> || 'great-great-grandmother' || 'Ur-Ur-Großmutter'
+|-
+| &lt;nowiki>(fat|mot|par){3}par&lt;/nowiki> || 'great-great-grandparent' || 'Ur-Ur-Großelternteil'
+|-
+| &lt;nowiki>(fat|mot|par){3}sib&lt;/nowiki> || 'great-great-uncle/aunt' || 'Ur-Großonkel/-tante'
+|-
+| &lt;nowiki>(fat|mot|par){3}sis&lt;/nowiki> || 'great-great-aunt' || 'Ur-Großtante'
+|-
+| &lt;nowiki>(fat|mot|par){4,}(bro|sis|sib)hus&lt;/nowiki> 
+| CONCAT('great x', @up-1, ' uncle')
+| CONCAT('Großonkel ', @up-1, '. Grades')
+|-
+| &lt;nowiki>(fat|mot|par){4,}(bro|sis|sib)spo&lt;/nowiki> 
+| CONCAT('great x', @up-1, ' uncle/aunt')
+| CONCAT('Großonkel/-tante ', @up-1, '. Grades')
+|-
+| &lt;nowiki>(fat|mot|par){4,}(bro|sis|sib)wif&lt;/nowiki> 
+| CONCAT('great x', @up-1, ' aunt')
+| CONCAT('Großtante ', @up-1, '. Grades')
+|-
+| &lt;nowiki>(fat|mot|par){4,}bro&lt;/nowiki> 
+| CONCAT('great x', @up-1, ' uncle')
+| CONCAT('Großonkel ', @up-1, '. Grades')
+|-
+| &lt;nowiki>(fat|mot|par){4,}fat&lt;/nowiki> 
+| CONCAT('great x', @up-2, ' grandfather')
+| CONCAT('Großvater ', @up-2, '. Grades')
+|-
+| &lt;nowiki>(fat|mot|par){4,}mot&lt;/nowiki> 
+| CONCAT('great x', @up-2, ' grandmother')
+| CONCAT('Großmutter ', @up-2, '. Grades')
+|-
+| &lt;nowiki>(fat|mot|par){4,}par&lt;/nowiki> 
+| CONCAT('great x', @up-2, ' grandparent')
+| CONCAT('Großelternteil ', @up-2, '. Grades')
+|-
+| &lt;nowiki>(fat|mot|par){4,}sib&lt;/nowiki> 
+| CONCAT('great x', @up-1, ' uncle/aunt')
+| CONCAT('Großonkel/-tante ', @up-1, '. Grades')
+|-
+| &lt;nowiki>(fat|mot|par){4,}sis&lt;/nowiki> 
+| CONCAT('great x', @up-1, ' aunt')
+| CONCAT('Großtante ', @up-1, '. Grades')
+|-
+| &lt;nowiki>(fat|mot|par)bro&lt;/nowiki> || 'uncle' || 'Onkel'
+|-
+| &lt;nowiki>(fat|mot|par)chi&lt;/nowiki> || 'half-sibling' || 'Halbgeschwister'
+|-
+| &lt;nowiki>(fat|mot|par)dau&lt;/nowiki> || 'half-sister' || 'Halbschwester'
+|-
+| &lt;nowiki>(fat|mot|par)hus&lt;/nowiki> || 'step-father' || 'Stiefvater'
+|-
+| &lt;nowiki>(fat|mot|par)sib&lt;/nowiki> || 'uncle/aunt' || 'Onkel/Tante'
+|-
+| &lt;nowiki>(fat|mot|par)sis&lt;/nowiki> || 'aunt' || 'Tante'
+|-
+| &lt;nowiki>(fat|mot|par)son&lt;/nowiki> || 'half-brother' || 'Halbbruder'
+|-
+| &lt;nowiki>(fat|mot|par)spo&lt;/nowiki> || 'step-parent' || 'Stiefelternteil'
+|-
+| &lt;nowiki>(fat|mot|par)wif&lt;/nowiki> || 'step-mother' || 'Stiefmutter'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){2}chi&lt;/nowiki> || 'great-great-nephew/niece' || 'Ur-Groß-Neffe/Nichte'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){2}dau&lt;/nowiki> || 'great-great-niece' || 'Ur-Groß-Nichte'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){2}son&lt;/nowiki> || 'great-great-nephew' || 'Ur-Groß-Neffe'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){3,}chi&lt;/nowiki> 
+| CONCAT('great x', @down-1, ' nephew/niece')
+| CONCAT('Neffe/Nichte ', @down-1,'. Grades')
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){3,}dau&lt;/nowiki> 
+| CONCAT('great x', @down-1, ' niece') 
+| CONCAT('Nichte ', @down-1,'. Grades')
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){3,}son&lt;/nowiki> 
+| CONCAT('great x', @down-1, ' nephew')
+| CONCAT('Neffe ', @down-1,'. Grades')
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi)chi&lt;/nowiki> || 'great-nephew/niece' || 'Groß-Neffe/Nichte'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi)dau&lt;/nowiki> || 'great-niece' || 'Groß-Nichte'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi)son&lt;/nowiki> || 'great-nephew' || 'Groß-Neffe'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)chi&lt;/nowiki> || 'nephew/niece' || 'Neffe/Nichte'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)dau&lt;/nowiki> || 'niece' || 'Nichte'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)son&lt;/nowiki> || 'nephew' || 'Neffe'
+|-
+| &lt;nowiki>(hus|wif|spo)bro&lt;/nowiki> || 'brother-in-law' || 'Schwager'
+|-
+| &lt;nowiki>(hus|wif|spo)chi&lt;/nowiki> || 'step-child' || 'Stiefkind'
+|-
+| &lt;nowiki>(hus|wif|spo)dau&lt;/nowiki> || 'step-daughter' || 'Stieftochter'
+|-
+| &lt;nowiki>(hus|wif|spo)fat&lt;/nowiki> || 'father-in-law' || 'Schwiegervater'
+|-
+| &lt;nowiki>(hus|wif|spo)mot&lt;/nowiki> || 'mother-in-law' || 'Schwiegermutter'
+|-
+| &lt;nowiki>(hus|wif|spo)sib&lt;/nowiki> || 'brother/sister-in-law' || 'Schwager/Schwägerin'
+|-
+| &lt;nowiki>(hus|wif|spo)sis&lt;/nowiki> || 'sister-in-law' || 'Schwägerin'
+|-
+| &lt;nowiki>(hus|wif|spo)son&lt;/nowiki> || 'step-son' || 'Stiefsohn'
+|-
+| &lt;nowiki>(hus|wif|spo)spo&lt;/nowiki> || 'father/mother-in-law' || 'Schwiegerelternteil'
+|-
+| &lt;nowiki>(son|dau|chi){2}chi&lt;/nowiki> || 'great-grandchild' || 'Ur-Enkel'
+|-
+| &lt;nowiki>(son|dau|chi){2}dau&lt;/nowiki> || 'great-granddaughter' || 'Ur-Enkelin'
+|-
+| &lt;nowiki>(son|dau|chi){2}son&lt;/nowiki> || 'great-grandson' || 'Ur-Enkel'
+|-
+| &lt;nowiki>(son|dau|chi){3}chi&lt;/nowiki> || 'great-great-grandchild' || 'Ur-Ur-Enkel '
+|-
+| &lt;nowiki>(son|dau|chi){3}dau&lt;/nowiki> || 'great-great-granddaughter' || 'Ur-Ur-Enkelin'
+|-
+| &lt;nowiki>(son|dau|chi){3}son&lt;/nowiki> || 'great-great-grandson' || 'Ur-Ur-Enkel'
+|-
+| &lt;nowiki>(son|dau|chi){4,}chi&lt;/nowiki> 
+| CONCAT('great x', @down-2, ' grandchild')
+| CONCAT('Enkelkind ', @down-2, '. Grades')
+|-
+| &lt;nowiki>(son|dau|chi){4,}dau&lt;/nowiki> 
+| CONCAT('great x', @down-2, ' granddaughter')
+| CONCAT('Enkelin ', @down-2, '. Grades')
+|-
+| &lt;nowiki>(son|dau|chi){4,}son&lt;/nowiki> 
+| CONCAT('great x', @down-2, ' grandson')
+| CONCAT('Enkelsohn ', @down-2, '. Grades')
+|-
+| &lt;nowiki>(son|dau|chi)chi&lt;/nowiki> || 'grandchild' || 'Enkel/Enkelkind'
+|-
+| &lt;nowiki>(son|dau|chi)dau&lt;/nowiki> || 'granddaughter' || 'Enkelin/Enkeltochter'
+|-
+| &lt;nowiki>(son|dau|chi)hus&lt;/nowiki> || 'son-in-law' || 'Schwiegersohn'
+|-
+| &lt;nowiki>(son|dau|chi)son&lt;/nowiki> || 'grandson' || 'Enkel/Enkelsohn'
+|-
+| &lt;nowiki>(son|dau|chi)spo&lt;/nowiki> || 'son/daughter-in-law' || 'Schwiegersohn/-tochter'
+|-
+| &lt;nowiki>(son|dau|chi)wif&lt;/nowiki> || 'daughter-in-law' || 'Schwiegertochter'
+|-
+| bro 
+|CASE &lt;br />
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'twin brother'&lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'younger brother'&lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'elder brother'&lt;br />
+ELSE 'brother'&lt;br />
+END 
+|CASE &lt;br />
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'Zwillingsbruder'&lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'jüngerer Bruder'&lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'älterer Bruder'&lt;br />
+ELSE 'Bruder'&lt;br />
+END 
+|-
+| chi || 'child' || 'Kind'
+|-
+| dau || 'daughter' || 'Tochter'
+|-
+| fat || 'father' || 'Vater'
+|-
+| fatfat || 'paternal grandfather' || 'Großvater, väterlicherseits'
+|-
+| fatmot || 'paternal grandmother' || 'Großmutter, väterlicherseits'
+|-
+| fatpar || 'paternal grandparent' || 'Großelternteil, väterlicherseits'
+|-
+| hus || IF(NOT @marr OR @sex&lt;>'F', IF(@div, 'ex-partner', 'partner'), IF(@div, 'ex-husband', 'husband')) ||  IF(NOT @marr OR @sex&lt;>'F', IF(@div, 'Ex-Partner', 'Partner'), IF(@div, 'Ex-Ehemann', 'Ehemann'))
+|-
+| mot || 'mother' || 'Mutter'
+|-
+| motfat || 'maternal grandfather' || 'Großvater, mütterlicherseits'
+|-
+| motmot || 'maternal grandmother' || 'Großmutter, mütterlicherseits'
+|-
+| motpar || 'maternal grandparent' || 'Großelternteil, mütterlicherseits'
+|-
+| par || 'parent' || 'Elternteil'
+|-
+| parfat || 'grandfather' || 'Großvater'
+|-
+| parmot || 'grandmother' || 'Großmutter'
+|-
+| parpar || 'grandparent' || 'Großelternteil'
+|-
+| sib
+| CASE
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'twin' &lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'younger sibling' &lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'elder sibling' &lt;br />
+ELSE 'sibling' &lt;br />
+END 
+| CASE
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'Zwilling' &lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'jüngeres Geschwister' &lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'älteres Geschwister' &lt;br />
+ELSE 'Geschwister' &lt;br />
+END 
+|-
+| sis
+| CASE &lt;br />
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'twin sister' &lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'younger sister' &lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'elder sister' &lt;br />
+ELSE 'sister' &lt;br />
+END 
+| CASE &lt;br />
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'Zwillingsschwester' &lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'jüngere Schwester' &lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'ältere Schwester' &lt;br />
+ELSE 'Schwester' &lt;br />
+END 
+|-
+| son || 'son' || 'Sohn'
+|-
+| spo || IF(@div, 'ex-partner', 'partner') || IF(@div, 'Ex-Partner', 'Partner') 
+|-
+| wif || IF(NOT @marr OR @sex&lt;>'M', IF(@div, 'ex-partner', 'partner'), IF(@div, 'ex-wife', 'wife')) || IF(NOT @marr OR @sex&lt;>'M', IF(@div, 'Ex-Partnerin', 'Partnerin'), IF(@div, 'Ex-Ehefrau', 'Ehefrau')) 
+|}
+See: [http://de.wikipedia.org/wiki/Datei:European_kinship_system_de.svg European_kinship_system_de]
+
+=== Italian ===
+
+{| border="1" cellspacing="0" cellpadding="5px"
+| '''relationship pattern''' || '''relationship name'''
+|-
+| &lt;nowiki>(bro|sis|sib)(hus|wif|spo)(bro|sib)&lt;/nowiki> || 'cognato'
+|-
+| &lt;nowiki>(bro|sis|sib)(hus|wif|spo)sis&lt;/nowiki> || 'cognata'
+|-
+| &lt;nowiki>(bro|sis|sib)(spo|hus)&lt;/nowiki> || 'cognato'
+|-
+| &lt;nowiki>(bro|sis|sib)wif&lt;/nowiki> || 'cognata'
+|-
+| &lt;nowiki>(fat|mot|par)(bro|sis|sib)hus&lt;/nowiki> || 'zio'
+|-
+| &lt;nowiki>(fat|mot|par)(bro|sis|sib)spo&lt;/nowiki> || 'zio/zia'
+|-
+| &lt;nowiki>(fat|mot|par)(bro|sis|sib)wif&lt;/nowiki> || 'zia'
+|-
+| &lt;nowiki>(fat|mot|par)(hus|wif|spo)dau&lt;/nowiki> || 'figliastro'
+|-
+| &lt;nowiki>(fat|mot|par)(hus|wif|spo)(chi|son)&lt;/nowiki> || 'figliastro'
+|-
+| &lt;nowiki>(fat|mot|par){1,}(bro|sis|sib)(son|chi){1,}&lt;/nowiki> || CONCAT( 'cugino (', @up, 'º grado)' )
+|-
+| &lt;nowiki>(fat|mot|par){1,}(bro|sis|sib)(dau){1,}&lt;/nowiki> || CONCAT( 'cugina (', @up, 'º grado)' )
+|-
+| &lt;nowiki>(fat|mot|par){2}(bro|sis|sib)(hus|spo)&lt;/nowiki> || 'prozio'
+|-
+| &lt;nowiki>(fat|mot|par){2}(bro|sis|sib)wif&lt;/nowiki> || 'prozia'
+|-
+| &lt;nowiki>(fat|mot|par){2}(bro|sib)&lt;/nowiki> || 'prozio'
+|-
+| &lt;nowiki>(fat|mot|par){2}(fat|par)&lt;/nowiki> || 'bisnonno'
+|-
+| &lt;nowiki>(fat|mot|par){2}mot&lt;/nowiki> || 'bisnonno'
+|-
+| &lt;nowiki>(fat|mot|par){2}sis&lt;/nowiki> || 'prozia'
+|-
+| &lt;nowiki>(fat|mot|par)bro&lt;/nowiki> || 'zio'
+|-
+| &lt;nowiki>(fat|mot|par)dau&lt;/nowiki> || 'figliastra'
+|-
+| &lt;nowiki>(fat|mot|par)hus&lt;/nowiki> || 'patrigno'
+|-
+| &lt;nowiki>(fat|mot|par)sib&lt;/nowiki> || 'zio/zia'
+|-
+| &lt;nowiki>(fat|mot|par)sis&lt;/nowiki> || 'zia'
+|-
+| &lt;nowiki>(fat|mot|par)(chi|son)&lt;/nowiki> || 'figliastro'
+|-
+| &lt;nowiki>(fat|mot|par)spo&lt;/nowiki> || 'patrigno/matrigna'
+|-
+| &lt;nowiki>(fat|mot|par)wif&lt;/nowiki> || 'matrigna'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi)(son|dau|chi)&lt;/nowiki> || 'pronipote'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi)&lt;/nowiki> || 'nipote di zio'
+|-
+| &lt;nowiki>(hus|wif|spo)bro&lt;/nowiki> || 'cognato'
+|-
+| &lt;nowiki>(hus|wif|spo)(chi|son)&lt;/nowiki> || 'figliastro'
+|-
+| &lt;nowiki>(hus|wif|spo)dau&lt;/nowiki> || 'figliastra'
+|-
+| &lt;nowiki>(hus|wif|spo)(par|fat)&lt;/nowiki> || 'suocero'
+|-
+| &lt;nowiki>(hus|wif|spo)mot&lt;/nowiki> || 'suocera'
+|-
+| &lt;nowiki>(hus|wif|spo)(par|fat|mot)(par|fat)&lt;/nowiki> || 'prosuocero'
+|-
+| &lt;nowiki>(hus|wif|spo)(par|fat|mot)mot&lt;/nowiki> || 'prosuocera'
+|-
+| &lt;nowiki>(hus|wif|spo)sis&lt;/nowiki> || 'cognata'
+|-
+| &lt;nowiki>(son|dau|chi){2}(son|dau|chi)&lt;/nowiki> || 'pronipote'
+|-
+| &lt;nowiki>(son|dau|chi)(son|dau|chi)&lt;/nowiki> || 'nipote di nonno'
+|-
+| &lt;nowiki>(son|dau|chi)hus&lt;/nowiki> || 'genero'
+|-
+| &lt;nowiki>(son|dau|chi)spo&lt;/nowiki> || 'genero/nuora'
+|-
+| &lt;nowiki>(son|dau|chi)wif&lt;/nowiki> || 'nuora'
+|-
+| (bro|sib) ||
+CASE &lt;br />
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'fratello gemello'&lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'fratello minore'&lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'fratello maggiore'&lt;br />
+ELSE 'fratello'&lt;br />
+END
+|-
+|-
+| (bro|sib) ||
+CASE &lt;br />
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'sorella gemella'&lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'sorella minore'&lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'sorella maggiore'&lt;br />
+ELSE 'sorella'&lt;br />
+END
+|-
+| (chi|son) || 'figlio'
+|-
+| dau || 'figlia'
+|-
+| fat || 'padre'
+|-
+| fat(par|fat) || 'nonno paterno'
+|-
+| fatmot || 'nonna paterna'
+|-
+| hus || IF(NOT @marr OR @sex&lt;>'F', IF(@div, 'ex-partner', 'partner'), IF(@div, 'ex-husband', 'marito'))
+|-
+| mot || 'madre'
+|-
+| mot(fat|par) || 'nonno materno'
+|-
+| motmot || 'nonna materna'
+|-
+| par || 'genitore'
+|-
+| par(fat|par) || 'nonno'
+|-
+| parmot || 'nonna'
+|-
+| spo || IF(@div, 'ex-coniuge', 'coniuge')
+|-
+| wif || IF(NOT @marr OR @sex&lt;>'M', IF(@div, 'ex-partner', 'partner'), IF(@div, 'ex moglie', 'moglie'))
+|}
+
+=== Polish ===
+
+=== Slovak ===
+{| border="1" cellspacing="0" cellpadding="5px"
+!rowspan="3"|Relationship Pattern
+!colspan="6"|Relationship Name             
+|-
+!rowspan="2"|Nominative
+!rowspan="2"|Genitive
+!colspan="2"|Possesive Adjectiv
+!colspan="2"|Possesive Adjectiv Genitive
+|-
+!masculin||feminin	||masculin||feminin
+|-
+|fat||'otec'||'otca'||'otcov'||'otcova'||'otcovho'||'otcovej'
+|-
+|mot||'matka'||'matky'||'matkin'||'matkina'||'matkinho'||'matkinej'
+|-
+|par||'rodič'||'rodiča'||'rodičov'||'rodičova'||'rodičovho'||'rodičovej'
+|-
+|son||'syn'||'syna'||'synov'||'synova'||'synovho'||'synovej'
+|-
+|dau||'dcéra'||'dcéry'||'dcérin'||'dcérina'||'dcérinho'||'dcérinej'
+|-
+|child||'dieťa'||'dieťaťa'||'dieťaťa'||'dieťaťa'||'dieťaťa'||'dieťaťa'
+|-
+|bro
+|CASE &lt;br />WHEN @dob1 = @dob2 THEN 'dvojča' &lt;br /> WHEN @dob1&lt;@dob2 THEN 'mladší brat' &lt;br /> WHEN @dob1>@dob2 THEN 'starší brat' &lt;br /> ELSE 'brat' &lt;br />END
+|CASE &lt;br />WHEN @dob1 = @dob2 THEN 'dvojčaťa' &lt;br /> WHEN @dob1&lt;@dob2 THEN 'mladšieho brata' &lt;br /> WHEN @dob1>@dob2 THEN 'staršieho brata' &lt;br /> ELSE 'brata' &lt;br />END
+|'bratov'||'bratova'||'bratovho'||'bratovej'
+|-
+|sis
+|CASE &lt;br />WHEN @dob1 = @dob2 THEN 'dvojča' &lt;br />WHEN @dob1&lt;@dob2 THEN 'mladšia sestra' &lt;br />WHEN @dob1>@dob2 THEN 'staršia sestra' &lt;br />ELSE 'sestra' &lt;br />END
+|CASE &lt;br />WHEN @dob1 = @dob2 THEN 'dvojčaťa' &lt;br />WHEN @dob1&lt;@dob2 THEN 'mladšej sestry' &lt;br />WHEN @dob1>@dob2 THEN 'staršej sestry' &lt;br />ELSE 'sestry' &lt;br />END
+|'sestrin'||'sestrina'||'sestrinho'||'sestrinej'
+|-
+|sib
+|CASE &lt;br />WHEN @dob1 = @dob2 THEN 'dvojča' &lt;br />WHEN @dob1&lt;@dob2 THEN 'mladší súrodenec' &lt;br />WHEN @dob1>@dob2 THEN 'starší súrodenec' &lt;br />ELSE 'súrodenec' &lt;br />END
+|CASE &lt;br />WHEN @dob1 = @dob2 THEN 'dvojčaťa' &lt;br />WHEN @dob1&lt;@dob2 THEN 'mladšieho súrodenca' &lt;br />WHEN @dob1>@dob2 THEN 'staršieho súrodenca' &lt;br />ELSE 'súrodeneca' &lt;br />END
+|'súrodencov'||'súrodencova'||'súrodencovho'||'súrodencovej'
+|-
+|hus
+|IF(NOT @marr OR @sex&lt;>'F', &lt;br />IF(@div, 'ex-partner', 'partner'), &lt;br />IF(@div, 'ex-manžel', 'manžel'))
+|IF(NOT @marr OR @sex&lt;>'F', &lt;br />IF(@div, 'ex-partnera', 'partnera'), &lt;br />IF(@div, 'ex-manžela', 'manžela'))
+|IF(NOT @marr OR @sex&lt;>'F', &lt;br />IF(@div, 'ex-partnerov', 'partnerov'), &lt;br />IF(@div, 'ex-manželov', 'manželov'))
+|IF(NOT @marr OR @sex&lt;>'F', &lt;br />IF(@div, 'ex-partnerova', 'partnerova'), &lt;br />IF(@div, 'ex-manželova', 'manželova'))
+|IF(NOT @marr OR @sex&lt;>'F', &lt;br />IF(@div, 'ex-partnerovho', 'partnerovho'), &lt;br />IF(@div, 'ex-manželovho', 'manželovho'))
+|IF(NOT @marr OR @sex&lt;>'F', &lt;br />IF(@div, 'ex-partnerovej', 'partnerovej'), &lt;br />IF(@div, 'ex-manželovej', 'manželovej'))
+|-
+|wif
+|IF(NOT @marr OR @sex&lt;>'M', &lt;br />IF(@div, 'ex-partnerka', 'partnerka'), &lt;br />IF(@div, 'ex-manželka', 'manželka'))
+|IF(NOT @marr OR @sex&lt;>'M', &lt;br />IF(@div, 'ex-partnerky', 'partnerky'), &lt;br />IF(@div, 'ex-manželky', 'manželky'))
+|IF(NOT @marr OR @sex&lt;>'M', &lt;br />IF(@div, 'ex-partnerkin', 'partnerkin'), &lt;br />IF(@div, 'ex-manželkin', 'manželkin'))
+|IF(NOT @marr OR @sex&lt;>'M', &lt;br />IF(@div, 'ex-partnerkina', 'partnerkina'), &lt;br />IF(@div, 'ex-manželkina', 'manželkina'))
+|IF(NOT @marr OR @sex&lt;>'M', &lt;br />IF(@div, 'ex-partnerkinho', 'partnerkinho'), &lt;br />IF(@div, 'ex-manželkinho', 'manželkinho'))
+|IF(NOT @marr OR @sex&lt;>'M', &lt;br />IF(@div, 'ex-partnerkinej', 'partnerkinej'), &lt;br />IF(@div, 'ex-manželkinej', 'manželkinej'))
+|-
+|spo
+|IF(NOT @marr, &lt;br />IF(@div, 'ex-partner/ka', 'partner/ka'), &lt;br />IF(@div, 'ex-manžel/ka', 'manžel(ka)'))
+|IF(NOT @marr OR @sex&lt;>'M', &lt;br />IF(@div, 'ex-partnera/ex-partnerky', 'partnera/partnerky'), &lt;br />IF(@div, 'ex-manžela/ex-manželky', 'manžela/manželky'))
+|IF(NOT @marr OR @sex&lt;>'M', &lt;br />IF(@div, 'ex-partnerov/ex-partnerkin', 'partenerov/partnerkin'), &lt;br />IF(@div, 'ex-manželov/ex-manželkin', 'manželov/manželkin'))
+|IF(NOT @marr OR @sex&lt;>'M', &lt;br />IF(@div, 'ex-partnerova/ex-partnerkina', 'partnerova/partnerkina'), &lt;br />IF(@div, 'ex-manželova/ex-manželkina', 'manželova/manželkina'))
+|IF(NOT @marr OR @sex&lt;>'M', &lt;br />IF(@div, 'ex-partnerovho/ex-partnerkinho', 'partnerovho/partnerkinho'), &lt;br />IF(@div, 'ex-manželovho/ex-manželkinho', 'manželovho/manželkinho'))
+|IF(NOT @marr OR @sex&lt;>'M', &lt;br />IF(@div, 'ex-partnerovej/ex-partnerkinej', 'partnerovej/partnerkinej'), &lt;br />IF(@div, 'ex-manželovej/ex-manželkinej', 'manželovej/manželkinej'))
+|-
+|&lt;nowiki> (fat|par)wif &lt;/nowiki>||'nevlastná matka'||'nevlastnej matky'||'nevlastnej matky'||'nevlastnej matky'||'nevlastnej matky'||'nevlastnej matky'
+|-
+|&lt;nowiki>(mot|par)hus &lt;/nowiki>||'nevlastný otec'||'nevlastného otca'||'nevlastného otca'||'nevlastného otca'||'nevlastného otca'||'nevlastného otca'
+|-
+|&lt;nowiki>(fat|mot|par)spo &lt;/nowiki>||'nevlastný rodič'||'nevlastného rodiča'||'nevlastného rodiča'||'nevlastného rodiča'||'nevlastného rodiča'||'nevlastného rodiča'
+|-
+|&lt;nowiki>(wif|hus|spo)son &lt;/nowiki>||'nevlastný syn'||'nevlastného syna'||'nevlastného syna'||'nevlastného syna'||'nevlastného syna'||'nevlastného syna'
+|-
+|&lt;nowiki>(wif|hus|spo)dau &lt;/nowiki>||'nevlastná dcéra'||'nevlastnej dcéry'||'nevlastnej dcéry'||'nevlastnej dcéry'||'nevlastnej dcéry'||'nevlastnej dcéry'
+|-
+|&lt;nowiki>(wif|hus|spo)chi &lt;/nowiki>||'nevlastné dieťa'||'nevlastného dieťaťa'||'nevlastného dieťaťa'||'nevlastného dieťaťa'||'nevlastného dieťaťa'||'nevlastného dieťaťa'
+|-
+|&lt;nowiki>(fat|mot|par)son &lt;/nowiki>||'nevlastný brat'||'nevlastného brata'||'nevlastného brata'||'nevlastného brata'||'nevlastného brata'||'nevlastného brata'
+|-
+|&lt;nowiki>(fat|mot|par)dau &lt;/nowiki>||'nevlastná sestra'||'nevlastnej sestry'||'nevlastnej sestry'||'nevlastnej sestry'||'nevlastnej sestry'||'nevlastnej sestry'
+|-
+|&lt;nowiki>(fat|mot|par)sib &lt;/nowiki>||'nevlastný súrodenec'||'nevlastného súrodenca'||'nevlastného súrodenca'||'nevlastného súrodenca'||'nevlastného súrodenca'||'nevlastného súrodenca'
+|-
+|&lt;nowiki>(fat|mot|par)(wif|hus|spo)son &lt;/nowiki>||'nevlastný brat'||'nevlastného brata'||'nevlastného brata'||'nevlastného brata'||'nevlastného brata'||'nevlastného brata'
+|-
+|&lt;nowiki>(fat|mot|par)(wif|hus|spo)dau &lt;/nowiki>||'nevlastná sestra'||'nevlastnej sestry'||'nevlastnej sestry'||'nevlastnej sestry'||'nevlastnej sestry'||'nevlastnej sestry'
+|-
+|&lt;nowiki>(fat|mot|par)(wif|hus|spo)sib &lt;/nowiki>||'nevlastný súrodenec'||'nevlastného súrodenca'||'nevlastného súrodenca'||'nevlastného súrodenca'||'nevlastného súrodenca'||'nevlastného súrodenca'
+|-
+|-
+|&lt;nowiki>(fat|mot|par)fat &lt;/nowiki>||'starý otec'||'starého otca'||'starého otca'||'starého otca'||'starého otca'||'starého otca'
+|-
+|&lt;nowiki>(fat|mot|par){2}fat &lt;/nowiki>||'prastarý otec'||'prastarého otca'||'prastarého otca'||'prastarého otca'||'prastarého otca'||'prastarého otca'
+|-
+|&lt;nowiki>(fat|mot|par){3}fat &lt;/nowiki>||'praprastarý otec'||'praprastarého otca'||'praprastarého otca'||'praprastarého otca'||'praprastarého otca'||'praprastarého otca'
+|-
+|&lt;nowiki>(fat|mot|par){4,}fat &lt;/nowiki>||CONCAT(@up-2,' x pra-starý otec')||CONCAT(@up-2,' x pra-starého otca')||CONCAT(@up-2,' x pra-starého otca')||CONCAT(@up-2,' x pra-starého otca')||CONCAT(@up-2,' x pra-starého otca')||CONCAT(@up-2,' x pra-starého otca')
+|-
+|&lt;nowiki>(fat|mot|par)mat &lt;/nowiki>||'stará matka'||'starej matky'||'starej matky'||'starej matky'||'starej matky'||'starej matky'
+|-
+|&lt;nowiki>(fat|mot|par){2}mat &lt;/nowiki>||'prastará matka'||'prastarej matky'||'prastarej matky'||'prastarej matky'||'prastarej matky'||'prastarej matky'
+|-
+|&lt;nowiki>(fat|mot|par){3}mat &lt;/nowiki>||'praprastará matka'||'praprastarej matky'||'praprastarej matky'||'praprastarej matky'||'praprastarej matky'||'praprastarej matky'
+|-
+|&lt;nowiki>(fat|mot|par){4,}mat &lt;/nowiki>||CONCAT(@up-2,' x pra-stará matka')|| CONCAT(@up-2,' x pra-starej matky')||CONCAT(@up-2,' x pra-starej matky')||CONCAT(@up-2,' x pra-starej matky')||CONCAT(@up-2,' x pra-starej matky')||CONCAT(@up-2,' x pra-starej matky')
+|-
+|&lt;nowiki>(fat|mot|par)par &lt;/nowiki>||'starý rodič'||'starého rodiča'||'starého rodiča'||'starého rodiča'||'starého rodiča'||'starého rodiča'
+|-
+|&lt;nowiki>(fat|mot|par){2}par &lt;/nowiki>||'prastarý rodič'||'prastarého rodiča'||'prastarého rodiča'||'prastarého rodiča'||'prastarého rodiča'||'prastarého rodiča'
+|-
+|&lt;nowiki>(fat|mot|par){3}par &lt;/nowiki>||'praprastarý rodič'||'praprastarého rodiča'||'praprastarého rodiča'||'praprastarého rodiča'||'praprastarého rodiča'||'praprastarého rodiča'
+|-
+|&lt;nowiki>(fat|mot|par){4,}par &lt;/nowiki>||CONCAT(@up-2,' x pra-starý rodič')|| CONCAT(@up-2,' x pra-starého rodiča')||CONCAT(@up-2,' x pra-starého rodiča')||CONCAT(@up-2,' x pra-starého rodiča')||CONCAT(@up-2,' x pra-starého rodiča')||CONCAT(@up-2,' x pra-starého rodiča')
+|-
+|&lt;nowiki>(son|dau|chi)son &lt;/nowiki>||'vnuk'||'vnuka'||'vnukov'||'vnukova'||'vnukovho'||'vnukovej'
+|-
+|&lt;nowiki>(son|dau|chi)dau &lt;/nowiki>||'vnučka'||'vnučky'||'vnučkin'||'vnučkina'||'vnučkinho'||'vnučkinej'
+|-
+|&lt;nowiki>(son|dau|chi)chi &lt;/nowiki>||'vnúča'||'vnúčaťa'||'vnúčaťa'||'vnúčaťa'||'vnúčaťa'||'vnúčaťa'
+|-
+|&lt;nowiki>(son|dau|chi){2}son &lt;/nowiki>||'pravnuk'||'pravnuka'||'pravnukov'||'pravnukova'||'pravnukovho'||'pravnukovej'
+|-
+|&lt;nowiki>(son|dau|chi){2}dau &lt;/nowiki>||'pravnučka'||'pravnučkin'||'pravnučkin'||'pravnučkina'||'pravnučkinho'||'pravnučkinej'
+|-
+|&lt;nowiki>(son|dau|chi){2}chi &lt;/nowiki>||'prapravnúča'||'pravnúčaťa'||'pravnúčaťa'||'pravnúčaťa'||'pravnúčaťa'||'pravnúčaťa'
+|-
+|&lt;nowiki>(son|dau|chi){3}son &lt;/nowiki>||'prapravnuk'||'prapravnuka'||'prapravnukov'||'prapravnukova'||'prapravnukovho'||'prapravnukovej'
+|-
+|&lt;nowiki>(son|dau|chi){3}dau &lt;/nowiki>||'prapravnučka'||'prapravnučkin'||'prapravnučkin'||'prapravnučkina'||'prapravnučkinho'||'prapravnučkinej'
+|-
+|&lt;nowiki>(son|dau|chi){3}chi &lt;/nowiki>||'prapravnúča'||'prapravnúčaťa'||'prapravnúčaťa'||'prapravnúčaťa'||'prapravnúčaťa'||'prapravnúčaťa'
+|-
+|&lt;nowiki>(son|dau|chi){4,}son &lt;/nowiki>||CONCAT(@up-2,' x pra-vnuk')||CONCAT(@up-2,' x pra-vnuka')|| CONCAT(@up-2,' x pra-vnukov')||CONCAT(@up-2,' x pra-vnukova')||CONCAT(@up-2,' x pra-vnukovho')||CONCAT(@up-2,' x pra-vnukova')
+|-
+|&lt;nowiki>(son|dau|chi){4,}dau &lt;/nowiki>||CONCAT(@up-2,' x pra-vnučka')||CONCAT(@up-2,' x pra-vnučky')||CONCAT(@up-2,' x pra-vnučkin')||CONCAT(@up-2,' x pra-vnučkina')||CONCAT(@up-2,' x pra-vnučkinho')||CONCAT(@up-2,' x pra-vnučkina')
+|-
+|&lt;nowiki>(son|dau|chi){4,}chi &lt;/nowiki>||CONCAT(@up-2,' x pra-vnúča')||CONCAT(@up-2,' x pra-vnúčaťa')||CONCAT(@up-2,' x pra-vnúčaťa')||CONCAT(@up-2,' x pra-vnúčaťa')||CONCAT(@up-2,' x pra-vnúčaťa')||CONCAT(@up-2,' x pra-vnúčaťa')
+|-
+|-
+|&lt;nowiki>(son|chi)wif &lt;/nowiki>||'nevesta'||'nevesty'||'nevestin'||'nevestina'||'nevestinho'||'nevestin'
+|-
+|&lt;nowiki>(dau|chi)hus &lt;/nowiki>||'zať'||'zaťa'||'zaťov'||'zaťova'||'zaťovho'||'zaťovej'
+|-
+|&lt;nowiki>(wif|hus|spo)fat &lt;/nowiki>||'svokor'||'svokra'||'svokrov'||'svokrova'||'svokrovho'||'svokrovej'
+|-
+|&lt;nowiki>(wif|hus|spo)mat &lt;/nowiki>||'svokra'||'svokry'||'svokrin'||'svokrina'||'svokrinho'||'svokrinej'
+|-
+|&lt;nowiki>(son|dau|chi)(wif|hus|spo)mat &lt;/nowiki>||'svatka'||'svatky'||'svatkin'||'svatkina'||'svatkinho'||'svatkinej'
+|-
+|&lt;nowiki>(son|dau|chi)(wif|hus|spo)fat &lt;/nowiki>||'svat'||'svata'||'svatov'||'svatova'||'svatovho'||'svatovej'
+|-
+|&lt;nowiki>(bro|sis|sib)wif &lt;/nowiki>||'švagriná'||'švagrinej'||'švagrinin'||'švagrinina'||'švagrininho'||'švagrininej'
+|-
+|&lt;nowiki>(bro|sis|sib)hus &lt;/nowiki>||'švagor'||'švagra'||'švagrov'||'švagrova'||'švagrovho'||'švagrovej'
+|-
+|&lt;nowiki>(bro|sis|sib)spo &lt;/nowiki>||'švagor/švagriná'||'švagra/švagrinej'||'švagrov/švagrinin'||'švagrova/švagrinina'||'švagrovho/švagrininho'||'švagrovej/švagrininej'
+|-
+|&lt;nowiki>(wif|hus|spo)bro &lt;/nowiki>||'švagor'||'švagra'||'švagrov'||'švagrova'||'švagrovho'||'švagrovej'
+|-
+|&lt;nowiki>(wif|hus|spo)sis &lt;/nowiki>||'švagriná'||'švagrinej'||'švagrinin'||'švagrinina'||'švagrininho'||'švagrininej'
+|-
+|&lt;nowiki>(bro|sis|sib)sib &lt;/nowiki>||'švagor/švagriná'||'švagra/švagrinej'||'švagrov/švagrinin'||'švagrova/švagrinina'||'švagrovho/švagrininho'||'švagrovej/švagrininej'
+|-
+|-
+|&lt;nowiki>(fat|mot|par)sis &lt;/nowiki>||'teta'||'tety'||'tetin'||'tetina'||'tetinho'||'tetinej
+|-
+|&lt;nowiki>(fat|mot|par)bro &lt;/nowiki>||'strýko'||'strýka'||'strýkov'||'strýkova'||'strýkovho'||'strýkovej'
+|-
+|&lt;nowiki>(fat|mot|par)sib &lt;/nowiki>||'strýko/teta'||'strýka/tety'||'strýkov/tetin'||'strýkova/tetina'||'strýkovho/tetinho'||'strýkovej/tetinej'
+|-
+|&lt;nowiki>(fat|mot|par)(bro|sis|sib)wif &lt;/nowiki>||'teta'||'tety'||'tetin'||'tetina'||'tetinho'||'tetinej
+|-
+|&lt;nowiki>(fat|mot|par)(bro|sis|sib)hus &lt;/nowiki>||'strýko'||'strýka'||'strýkov'||'strýkova'||'strýkovho'||'strýkovej'
+|-
+|&lt;nowiki>(fat|mot|par)(bro|sis|sib)spo &lt;/nowiki>||'strýko/teta'||'strýka/tety'||'strýkov/tetin'||'strýkova/tetina'||'strýkovho/tetinho'||'strýkovej/tetinej'
+|-
+|&lt;nowiki>(hus|wif|spo)?(bro|sis|sib)son &lt;/nowiki>||'synovec'||'synovca'||'synovcov'||'synovcova'||'synovcovho'||'synovcovej'
+|-
+|&lt;nowiki>(hus|wif|spo)?(bro|sis|sib)dau &lt;/nowiki>||'neter'||'netere'||'neterin'||'neterinav||'neterinho'||'neterinej'
+|-
+|&lt;nowiki>(hus|wif|spo)?(bro|sis|sib)chi &lt;/nowiki>||'synovec/neter'||'synovca/netere'||'synovcov/neterin'||'synovcova/neterina'||'synovcovho/neterinho'||'synovcovej/neterinej'
+|-
+|&lt;nowiki>(fat|mot|par){1,}(bro|sis|sib)(son){1,} &lt;/nowiki>
+|IF(@up=@down,&lt;br />
+&amp;nbsp;CASE  @up&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  1 THEN 'prvostupňový bratranec'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  2 THEN 'druhostupňový bratranec'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  3 THEN 'treťostupňový bratranec'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  4 THEN 'štvrtostupňový bratranec'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;ELSE CONCAT('bratranec z ',@up,'. kolena')&lt;br />
+&amp;nbsp;END,) &lt;br />
+|IF(@up=@down,&lt;br />
+&amp;nbsp;CASE  @up&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  1 THEN 'prvostupňového bratranca'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  2 THEN 'druhostupňového bratranca'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  3 THEN 'treťostupňového bratranca'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  4 THEN 'štvrtostupňového bratranca'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;ELSE CONCAT('bratranca z ',@up,'. kolena')&lt;br />
+&amp;nbsp;END,) &lt;br />
+|IF(@up=@down,&lt;br />
+&amp;nbsp;CASE  @up&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  1 THEN 'bratrancov'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  2 THEN 'druhostupňového bratranca'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  3 THEN 'treťostupňového bratranca'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  4 THEN 'štvrtostupňového bratranca'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;ELSE CONCAT('bratranca z ',@up,'. kolena')&lt;br />
+&amp;nbsp;END,) &lt;br />
+|IF(@up=@down,&lt;br />
+&amp;nbsp;CASE  @up&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  1 THEN 'bratrancova'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  2 THEN 'druhostupňového bratranca'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  3 THEN 'treťostupňového bratranca'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  4 THEN 'štvrtostupňového bratranca'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;ELSE CONCAT('bratranca z ',@up,'. kolena')&lt;br />
+&amp;nbsp;END,) &lt;br />
+|IF(@up=@down,&lt;br />
+&amp;nbsp;CASE  @up&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  1 THEN 'bratrancovho'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  2 THEN 'druhostupňového bratranca'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  3 THEN 'treťostupňového bratranca'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  4 THEN 'štvrtostupňového bratranca'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;ELSE CONCAT('bratranca z ',@up,'. kolena')&lt;br />
+&amp;nbsp;END,) &lt;br />
+|IF(@up=@down,&lt;br />
+&amp;nbsp;CASE  @up&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  1 THEN 'bratrancovej'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  2 THEN 'druhostupňového bratranca'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  3 THEN 'treťostupňového bratranca'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  4 THEN 'štvrtostupňového bratranca'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;ELSE CONCAT('bratranca z ',@up,'. kolena')&lt;br />
+&amp;nbsp;END,) &lt;br />
+|-
+|&lt;nowiki>(fat|mot|par){1,}(bro|sis|sib)(dau){1,} &lt;/nowiki>
+|IF(@up=@down,&lt;br />
+&amp;nbsp;CASE  @up&lt;br /> 
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  1 THEN 'prvostupňová sesternica'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  2 THEN 'druhostupňová sesternica'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  3 THEN 'treťostupňová sesternica'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  4 THEN 'štvrtostupňová sesternica'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;ELSE CONCAT('sesternica z ',@up,'. kolena')&lt;br />
+&amp;nbsp;END,)
+|IF(@up=@down,&lt;br />
+&amp;nbsp;CASE  @up&lt;br /> 
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  1 THEN 'prvostupňovej sesternice'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  2 THEN 'druhostupňovej sesternice'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  3 THEN 'treťostupňovej sesternice'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  4 THEN 'štvrtostupňovej sesternice'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;ELSE CONCAT('sesternice z ',@up,'. kolena')&lt;br />
+&amp;nbsp;END,)
+|IF(@up=@down,&lt;br />
+&amp;nbsp;CASE  @up&lt;br /> 
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  1 THEN 'sesternicin'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  2 THEN 'druhostupňovej sesternice'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  3 THEN 'treťostupňovej sesternice'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  4 THEN 'štvrtostupňovej sesternice'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;ELSE CONCAT('sesternice z ',@up,'. kolena')&lt;br />
+&amp;nbsp;END,)
+|IF(@up=@down,&lt;br />
+&amp;nbsp;CASE  @up&lt;br /> 
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  1 THEN 'sesternicina'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  2 THEN 'druhostupňovej sesternice'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  3 THEN 'treťostupňovej sesternice'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  4 THEN 'štvrtostupňovej sesternice'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;ELSE CONCAT('sesternice z ',@up,'. kolena')&lt;br />
+&amp;nbsp;END,)
+|IF(@up=@down,&lt;br />
+&amp;nbsp;CASE  @up&lt;br /> 
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  1 THEN 'sesternicinovho'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  2 THEN 'druhostupňovej sesternice'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  3 THEN 'treťostupňovej sesternice'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  4 THEN 'štvrtostupňovej sesternice'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;ELSE CONCAT('sesternice z ',@up,'. kolena')&lt;br />
+&amp;nbsp;END,)
+|IF(@up=@down,&lt;br />
+&amp;nbsp;CASE  @up&lt;br /> 
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  1 THEN 'sesternicinej'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  2 THEN 'druhostupňovej sesternice'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  3 THEN 'treťostupňovej sesternice'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;WHEN  4 THEN 'štvrtostupňovej sesternice'&lt;br />
+&amp;nbsp;&amp;nbsp;&amp;nbsp;ELSE CONCAT('sesternice z ',@up,'. kolena')&lt;br />
+&amp;nbsp;END,)
+|-
+|&lt;nowiki>(fat|mot|par){1,}(bro|sis|sib)(chi){1,} &lt;/nowiki>
+|IF(@up=@down,&lt;br /> &amp;nbsp;&amp;nbsp;CONCAT('bratranec/sesternica z ',@up,'. kolena')&lt;br /> &amp;nbsp;END, )
+|IF(@up=@down,&lt;br /> &amp;nbsp;&amp;nbsp;CONCAT('bratranca/sesternice z ',@up,'. kolena')&lt;br /> &amp;nbsp;END, )
+|IF(@up=@down,&lt;br /> &amp;nbsp;&amp;nbsp;CONCAT('bratranca/sesternice z ',@up,'. kolena')&lt;br /> &amp;nbsp;END, )
+|IF(@up=@down,&lt;br /> &amp;nbsp;&amp;nbsp;CONCAT('bratranca/sesternice z ',@up,'. kolena')&lt;br /> &amp;nbsp;END, )
+|IF(@up=@down,&lt;br /> &amp;nbsp;&amp;nbsp;CONCAT('bratranca/sesternice z ',@up,'. kolena')&lt;br /> &amp;nbsp;END, )
+|IF(@up=@down,&lt;br /> &amp;nbsp;&amp;nbsp;CONCAT('bratranca/sesternice z ',@up,'. kolena')&lt;br /> &amp;nbsp;END, )
+|-
+|}
+
+==== Complex relationships ====
+
+Let have relationship:
+R&lt;sub>1&lt;/sub>'s R&lt;sub>2&lt;/sub>'s ... R&lt;sub>n&lt;/sub>, where the relationship R&lt;sub>i&lt;/sub> is between two persons P&lt;sub>i&lt;/sub> and P&lt;sub>i+1&lt;/sub>
+
+The rules for concatination in Slovak would be as follows:
+* n=2 CONCATENATE(paN(R&lt;sub>1&lt;/sub>),' ',N(R&lt;sub>2&lt;/sub>))
+* n>=3 CONCATENATE(paG(R&lt;sub>1&lt;/sub>),{' ',G(R&lt;sub>i&lt;/sub>)}&lt;sub>i=2 to n-1&lt;/sub>,' ',N(R&lt;sub>n&lt;/sub>))
+
+where &lt;br />
+N(R&lt;sub>i&lt;/sub>) = nominative of R&lt;sub>i&lt;/sub> &lt;br />
+G(R&lt;sub>i&lt;/sub>) = genitive of R&lt;sub>i&lt;/sub> &lt;br />
+paN(R&lt;sub>i&lt;/sub>) = nominative of possesive adjectiv of R&lt;sub>i&lt;/sub> (masculin or feminin depending on the gender of person P&lt;sub>i+1&lt;/sub>) &lt;br />
+paG(R&lt;sub>i&lt;/sub>) = genitive of possesive adjectiv of R&lt;sub>i&lt;/sub> (masculin or feminin depending on the gender of person P&lt;sub>i+1&lt;/sub>) &lt;br />
+
+Examples: &lt;br />
+father's cousine = otcov bratranec &lt;br />
+father's cousin's wife = otcovho bratranca manželka &lt;br />
+father's cousin's wife's father = otcovho bratranca manželky otec &lt;br />
+father's cousin's wife's father's aunt = otcovho bratranca manželky otca teta &lt;br />
+
+=== Finnish ===
+
+{| border="1" cellspacing="0" cellpadding="5px"
+| '''relationship pattern''' || '''relationship name'''  || '''genetive'''
+|-
+| &lt;nowiki>(fat|mot|par){1,}(bro|sis|sib)(son|dau|chi){1,}&lt;/nowiki>
+|CONCAT( CASE @up &lt;br />
+&amp;nbsp;WHEN  1 THEN 'serkku' &lt;br />
+&amp;nbsp;WHEN  2 THEN 'pikkuserkku' &lt;br />
+&amp;nbsp;WHEN  3 THEN '3. serkku' &lt;br />
+ELSE &lt;br />
+CONCAT(@up, '. serkku') &lt;br />
+END, &lt;br />
+CASE ABS(@up-@down) &lt;br />
+&amp;nbsp;WHEN  1 THEN ' 1 polvi' &lt;br />
+&amp;nbsp;WHEN  2 THEN ' 2 polvia' &lt;br />
+ELSE &lt;br />
+CONCAT(ABS(@up-@down), ' polvia') &lt;br />
+END, &lt;br />
+CASE &lt;br />
+&amp;nbsp;WHEN @up>@down THEN ' ylempänä' &lt;br />
+&amp;nbsp;WHEN @up&lt;@down THEN ' alempana' &lt;br />
+ELSE ' ' &lt;br />
+END) &lt;br />
+|-
+| &lt;nowiki>(hus|wif|spo)fat&lt;/nowiki> || 'appi' || 'apen'
+|-
+| &lt;nowiki>(hus|wif|spo)mot&lt;/nowiki> || 'anoppi' || 'anopin'
+|-
+| &lt;nowiki>(son|dau|chi)hus&lt;/nowiki> || 'vävy' || 'vävyn'
+|-
+| &lt;nowiki>(son|dau|chi)wif&lt;/nowiki> || 'miniä' || 'miniän'
+|-
+| bro || 
+CASE &lt;br />
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'kaksoisveli'&lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'nuorempi veli'&lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'vanhempi veli'&lt;br />
+ELSE 'veli'&lt;br />
+END   
+||
+CASE &lt;br />
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'kaksoisveljen'&lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'nuoremman veljen'&lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'vanhemman veljen'&lt;br />
+ELSE 'veljen'&lt;br />
+END
+|-
+| &lt;nowiki>bro(wif|spo)&lt;/nowiki> || 'käly' || 'kälyn'
+|-
+| &lt;nowiki>sis(hus|spo)&lt;/nowiki> || 'lanko' || 'langon'
+|-
+| &lt;nowiki>(fat|par)bro&lt;/nowiki> || 'setä' || 'sedän'
+|-
+| &lt;nowiki>(fat|mot|par){1,}(fat|par)bro&lt;/nowiki> || CONCAT(IF(@up>1, CONCAT('iso(',@up,')setä' ),'isosetä')) || 'isosedän'
+|-
+| &lt;nowiki>motbro&lt;/nowiki> || 'eno' || 'enon'
+|-
+| &lt;nowiki>(fat|mot|par){1,}motbro&lt;/nowiki> || CONCAT(IF(@up>1, CONCAT('iso(',@up,')eno' ),'isoeno')) || 'isoenon'
+|-
+| &lt;nowiki>(fat|mot|par){1,}sis&lt;/nowiki> || CONCAT(IF(@up>1, CONCAT('iso(',@up,')täti' ),'täti')) || 'tädin'
+|-
+| &lt;nowiki>(fat|mot|par)hus&lt;/nowiki> || 'isäpuoli' || 'isäpuolen'
+|-
+| &lt;nowiki>(fat|mot|par)wif&lt;/nowiki> || 'äitipuoli' || 'äitipuolen'
+|-
+| &lt;nowiki>(fat|mot|par)(hus|wif|spo){0,1}chi&lt;/nowiki> || 'sisarpuoli' || 'sisarpuolen'
+|-
+| &lt;nowiki>(fat|mot|par)(hus|wif|spo){0,1}dau&lt;/nowiki> || 'siskopuoli' || 'siskopuolen'
+|-
+| &lt;nowiki>(fat|mot|par)(hus|wif|spo){0,1}son&lt;/nowiki> || 'velipuoli' || 'velipuolen'
+|-
+| &lt;nowiki>(fat|mot|par){1,}fat&lt;/nowiki> ||  CONCAT(IF(@up>1, CONCAT('iso(',@up,')isä' ),'isoisä') || 'isoisän'
+|-
+| &lt;nowiki>(fat|mot|par){1,}mot&lt;/nowiki> ||  CONCAT(IF(@up>1, CONCAT('iso(',@up,')äiti' ),'isoäiti') || 'isoäidin'
+|-
+| chi || 'lapsi' || 'lapsen'
+|-
+| dau || 'tytär' || 'tyttären'
+|-
+| fat || 'isä' || 'isän'
+|-
+| fatpar || 'isovanhempi' || 'isovanhemman'
+|-
+| hus || IF(NOT @marr OR @sex&lt;>'F', IF(@div, 'entinen avomies', 'avomies'), IF(@div, 'entinen aviomies', 'aviomies')) || IF(NOT @marr OR @sex&lt;>'F', IF(@div, 'entisen avomiehen', 'avomiehen'), IF(@div, 'entisen aviomiehen', 'aviomiehen'))
+|-
+| mot || 'äiti' || 'äidin'
+|-
+| motpar || 'isovanhempi' || 'isovanhemman'
+|-
+| par || 'vahempi' || 'vanhemman'
+|-
+| parpar || 'isovanhempi' || 'isovanhemman'
+|-
+| sib
+| CASE
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'kaksoissisar' &lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'nuorempi sisar' &lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'vanhempi sisar' &lt;br />
+ELSE 'sisar' &lt;br />
+END 
+||
+CASE
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'kaksoissisaren' &lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'nuoremman sisaren' &lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'vanhemman sisaren' &lt;br />
+ELSE 'sisaren' &lt;br />
+END
+|-
+| sis
+| CASE &lt;br />
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'kaksoissisko' &lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'nuorempi sisko' &lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'vanhempi sisko' &lt;br />
+ELSE 'sisko' &lt;br />
+END 
+||
+CASE &lt;br />
+&amp;nbsp;WHEN @dob1=@dob2 THEN 'kaksoissiskon' &lt;br />
+&amp;nbsp;WHEN @dob1&lt;@dob2 THEN 'nuoremman siskon' &lt;br />
+&amp;nbsp;WHEN @dob1>@dob2 THEN 'vanhemman siskon' &lt;br />
+ELSE 'siskon' &lt;br />
+END 
+|-
+| son || 'poika' || 'pojan'
+|-
+| spo || IF(@div, 'entinen puoliso', 'puoliso') || IF(@div, 'entisen puolison', 'puolison')
+|-
+| wif || IF(NOT @marr OR @sex&lt;>'M', IF(@div, 'entinen avovaimo', 'avovaimo'), IF(@div, 'entinen aviovaimo', 'aviovaimo')) || IF(NOT @marr OR @sex&lt;>'M', IF(@div, 'entisen avovaimon', 'avovaimon'), IF(@div, 'entisen aviovaimon', 'aviovaimon'))
+|}
+
+=== Spanish ===
+
+{| border="1" cellspacing="0" cellpadding="5px"
+| '''relationship pattern''' || '''relationship name'''
+|-
+| &lt;nowiki>(bro|sis|sib)(hus|wif|spo)(bro|sib)&lt;/nowiki> || 'cuñado'
+|-
+| &lt;nowiki>(bro|sis|sib)(hus|wif|spo)sis&lt;/nowiki> || 'cuñada'
+|-
+| &lt;nowiki>(bro|sis|sib)(hus|spo)&lt;/nowiki> || 'cuñado'
+|-
+| &lt;nowiki>(bro|sis|sib)wif&lt;/nowiki> || 'cuñada'
+|-
+| &lt;nowiki>(fat|mot|par)(bro|sis|sib)(hus|spo)&lt;/nowiki> || 'tío'
+|-
+| &lt;nowiki>(fat|mot|par)(bro|sis|sib)wif&lt;/nowiki> || 'tía'
+|-
+| &lt;nowiki>(fat|mot|par)(hus|wif|spo)(chi|son)&lt;/nowiki> || 'hermanastro'
+|-
+| &lt;nowiki>(fat|mot|par)(hus|wif|spo)dau&lt;/nowiki> || 'hermanastra'
+|-
+| &lt;nowiki>(fat|mot|par){1,}(bro|sis|sib)(son|dau|chi){1,}&lt;/nowiki>
+||CONCAT( CASE @up &lt;br />
+ WHEN  1 THEN 'first cousin' &lt;br />
+ WHEN  2 THEN 'second cousin' &lt;br />
+ WHEN  3 THEN 'third cousin' &lt;br />
+ WHEN  4 THEN 'fourth cousin' &lt;br />
+ WHEN  5 THEN 'fifth cousin' &lt;br />
+ WHEN  6 THEN 'sixth cousin' &lt;br />
+ WHEN  7 THEN 'seventh cousin' &lt;br />
+ WHEN  8 THEN 'eighth cousin' &lt;br />
+ WHEN  9 THEN 'ninth cousin' &lt;br />
+ WHEN 10 THEN 'tenth cousin' &lt;br />
+ WHEN 11 THEN 'eleventh cousin' &lt;br />
+ WHEN 12 THEN 'twelfth cousin' &lt;br />
+ WHEN 13 THEN 'thirteenth cousin' &lt;br />
+ WHEN 14 THEN 'fourteenth cousin' &lt;br />
+ WHEN 15 THEN 'fifteenth cousin' &lt;br />
+ WHEN 16 THEN 'sixteenth cousin' &lt;br />
+ WHEN 17 THEN 'seventeenth cousin' &lt;br />
+ WHEN 18 THEN 'eighteenth cousin' &lt;br />
+ WHEN 19 THEN 'nineteenth cousin' &lt;br />
+ WHEN 20 THEN 'twentieth cousin' &lt;br />
+ELSE &lt;br />
+CONCAT(@up, 'x cousin') &lt;br />
+END, &lt;br />
+CASE ABS(@up-@down) &lt;br />
+ WHEN  1 THEN ' once removed' &lt;br />
+ WHEN  2 THEN ' twice removed' &lt;br />
+ WHEN  3 THEN ' thrice removed' &lt;br />
+ WHEN  4 THEN ' four times removed' &lt;br />
+ WHEN  5 THEN ' five times removed' &lt;br />
+ WHEN  6 THEN ' six times removed' &lt;br />
+ WHEN  7 THEN ' seven times removed' &lt;br />
+ WHEN  8 THEN ' eight times removed' &lt;br />
+ WHEN  9 THEN ' nine times removed' &lt;br />
+ WHEN 10 THEN ' ten times removed' &lt;br />
+ WHEN 11 THEN ' eleven times removed' &lt;br />
+ WHEN 12 THEN ' twelve times removed' &lt;br />
+ WHEN 13 THEN ' thirteen times removed' &lt;br />
+ WHEN 14 THEN ' fourteen times removed' &lt;br />
+ WHEN 15 THEN ' fifteen times removed' &lt;br />
+ WHEN 16 THEN ' sixteen times removed' &lt;br />
+ WHEN 17 THEN ' seventeen times removed' &lt;br />
+ WHEN 18 THEN ' eighteen times removed' &lt;br />
+ WHEN 19 THEN ' nineteen times removed' &lt;br />
+ WHEN 20 THEN ' twenty times removed' &lt;br />
+ELSE &lt;br />
+CONCAT(ABS(@up-@down), ' times removed') &lt;br />
+END, &lt;br />
+CASE &lt;br />
+ WHEN @up>@down THEN ' ascending' &lt;br />
+ WHEN @up&lt;@down THEN ' descending' &lt;br />
+ELSE ' ' &lt;br />
+END) &lt;br />
+|-
+| &lt;nowiki>(fat|mot|par){2}(bro|sis|sib)(hus|spo)&lt;/nowiki> || 'tío abuelo'
+|-
+| &lt;nowiki>(fat|mot|par){2}(bro|sis|sib)wif&lt;/nowiki> || 'tía abuela'
+|-
+| &lt;nowiki>(fat|mot|par){2}(bro|sib)&lt;/nowiki> || 'tío abuelo'
+|-
+| &lt;nowiki>(fat|mot|par){2}sis&lt;/nowiki> || 'tía abuela'
+|-
+| &lt;nowiki>(fat|mot|par){2}(fat|par)&lt;/nowiki> || 'bisabuelo'
+|-
+| &lt;nowiki>(fat|mot|par){2}mot&lt;/nowiki> || 'bisabuela'
+|-
+| &lt;nowiki>(fat|mot|par){3}(bro|sis|sib)(hus|spo)&lt;/nowiki> || 'tío bisabuelo'
+|-
+| &lt;nowiki>(fat|mot|par){3}(bro|sis|sib)wif&lt;/nowiki> || 'tía bisabuela'
+|-
+| &lt;nowiki>(fat|mot|par){3}(bro|sib)&lt;/nowiki> || 'tío bisabuelo'
+|-
+| &lt;nowiki>(fat|mot|par){3}sis&lt;/nowiki> || 'tía bisabuela'
+|-
+| &lt;nowiki>(fat|mot|par){3}(fat|par)&lt;/nowiki> || 'tatarabuelo'
+|-
+| &lt;nowiki>(fat|mot|par){3}mot&lt;/nowiki> || 'tatarabuela'
+|-
+| &lt;nowiki>(fat|mot|par){4}(bro|sis|sib)(hus|spo)&lt;/nowiki> || 'tío tatarabuelo'
+|-
+| &lt;nowiki>(fat|mot|par){4}(bro|sib)&lt;/nowiki> || 'tío tatarabuelo'
+|-
+| &lt;nowiki>(fat|mot|par){4}(bro|sis|sib)wif&lt;/nowiki> || 'tía tatarabuela'
+|-
+| &lt;nowiki>(fat|mot|par){4}sis&lt;/nowiki> || 'tía tatarabuela'
+|-
+| &lt;nowiki>(fat|mot|par){4}(fat|par)&lt;/nowiki> || 'trastatarabuelo'
+|-
+| &lt;nowiki>(fat|mot|par){4}mot&lt;/nowiki> || 'trastatarabuela'
+|-
+| &lt;nowiki>(fat|mot|par){5}(bro|sis|sib)(hus|spo)&lt;/nowiki> || 'tío trastatarabuelo'
+|-
+| &lt;nowiki>(fat|mot|par){5}(bro|sib)&lt;/nowiki> || 'tío trastatarabuelo'
+|-
+| &lt;nowiki>(fat|mot|par){5}(bro|sis|sib)wif&lt;/nowiki> || 'tía trastatarabuela'
+|-
+| &lt;nowiki>(fat|mot|par){5}sis&lt;/nowiki> || 'tía trastatarabuela'
+|-
+| &lt;nowiki>(fat|mot|par){5}(fat|par)&lt;/nowiki> || 'pentabuelo'
+|-
+| &lt;nowiki>(fat|mot|par){5}mot&lt;/nowiki> || 'pentabuela'
+|-
+| &lt;nowiki>(fat|mot|par){5}(bro|sis|sib)(hus|spo)&lt;/nowiki> || 'tío pentabuelo'
+|-
+| &lt;nowiki>(fat|mot|par){5}(bro|sib)&lt;/nowiki> || 'tío pentabuelo'
+|-
+| &lt;nowiki>(fat|mot|par){5}(bro|sis|sib)wif&lt;/nowiki> || 'tía pentabuela'
+|-
+| &lt;nowiki>(fat|mot|par){5}sis&lt;/nowiki> || 'tía pentabuela'
+|-
+| &lt;nowiki>(fat|mot|par){5}(fat|par)&lt;/nowiki> || 'hexabuelo'
+|-
+| &lt;nowiki>(fat|mot|par){5}mot&lt;/nowiki> || 'hexabuela'
+|-
+| &lt;nowiki>(fat|mot|par){6,}(bro|sis|sib)(hus|spo)&lt;/nowiki> || CONCAT('tío abuelo ', @up,'º')   -- U+00BA
+|-
+| &lt;nowiki>(fat|mot|par){6,}(bro|sis|sib)wif&lt;/nowiki> || CONCAT('tía abuela ', @up,'ª')   -- U+00AA
+|-
+| &lt;nowiki>(fat|mot|par){6,}(bro|sib)&lt;/nowiki> || CONCAT('tío abuelo ', @up,'º')   -- U+00BA
+|-
+| &lt;nowiki>(fat|mot|par){6,}sis&lt;/nowiki> || CONCAT('tía abuela ', @up,'ª')   -- U+00AA
+|-
+| &lt;nowiki>(fat|mot|par){6,}(fat|par)&lt;/nowiki> || CONCAT('abuelo ', @up,'º')   -- U+00BA
+|-
+| &lt;nowiki>(fat|mot|par){6,}mot&lt;/nowiki> || CONCAT('abuela ', @up,'ª')   -- U+00AA
+|-
+| &lt;nowiki>(fat|mot|par)(bro|sib)&lt;/nowiki> || 'tío'
+|-
+| &lt;nowiki>(fat|mot|par)sis&lt;/nowiki> || 'tía'
+|-
+| &lt;nowiki>(fat|mot|par)(chi|son)&lt;/nowiki> || 'medio hermano'
+|-
+| &lt;nowiki>(fat|mot|par)dau&lt;/nowiki> || 'media hermana'
+|-
+| &lt;nowiki>(fat|mot|par)(hus|spo)&lt;/nowiki> || 'padrastro'
+|-
+| &lt;nowiki>(fat|mot|par)wif&lt;/nowiki> || 'madrastra'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(chi|son)&lt;/nowiki> || 'sobrino'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)dau&lt;/nowiki> || 'sobrina'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){1}(chi|son)&lt;/nowiki> || 'sobrino nieto'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){1}dau&lt;/nowiki> || 'sobrina nieta'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){2}(chi|son)&lt;/nowiki> || 'sobrino bisnieto'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){2}dau&lt;/nowiki> || 'sobrina bisnieta'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){3}(chi|son)&lt;/nowiki> || 'sobrino-tataranieto'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){3}dau&lt;/nowiki> || 'sobrina-tataranieta'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){4}(chi|son)&lt;/nowiki> || 'sobrino-chozno'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){4}dau&lt;/nowiki> || 'sobrina-chozna'
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){5,}(chi|son)&lt;/nowiki> || CONCAT&lt;br />
+('sobrino-nieto ', &lt;br />
+CASE @down-1, &lt;br />
+WHEN 5 THEN 'quinto'&lt;br />
+WHEN 6 THEN 'sexto'&lt;br />
+WHEN 7 THEN 'séptimo'&lt;br />
+ELSE CONCAT(@down-1,'º')   -- U+00BA&lt;br />
+END)
+|-
+| &lt;nowiki>(hus|wif|spo)?(bro|sis|sib)(son|dau|chi){5,}dau&lt;/nowiki> || CONCAT&lt;br />
+('sobrina-nieta ', &lt;br />
+CASE @down-1, &lt;br />
+WHEN 5 THEN 'quinta'&lt;br />
+WHEN 6 THEN 'sexta'&lt;br />
+WHEN 7 THEN 'séptima'&lt;br />
+ELSE CONCAT(@down-1,'ª')   -- U+00AA&lt;br />
+END)
+|-
+| &lt;nowiki>(hus|wif|spo)(chi|son)&lt;/nowiki> || 'hijastro'
+|-
+| &lt;nowiki>(hus|wif|spo)dau&lt;/nowiki> || 'hijastra'
+|-
+| &lt;nowiki>(hus|wif|spo)(fat|par)&lt;/nowiki> || 'suegro'
+|-
+| &lt;nowiki>(hus|wif|spo)mot&lt;/nowiki> || 'suegra'
+|-
+| &lt;nowiki>(son|dau|chi)(hus|spo)&lt;/nowiki> || 'yerno'
+|-
+| &lt;nowiki>(son|dau|chi)wif&lt;/nowiki> || 'nuera'
+|-
+| &lt;nowiki>(hus|wif|spo)(bro|sib)&lt;/nowiki> || 'cuñado'
+|-
+| &lt;nowiki>(hus|wif|spo)sis&lt;/nowiki> || 'cuñada'
+|-
+| &lt;nowiki>(son|dau|chi)(hus|wif|spo)(fat|par)&lt;/nowiki> || 'consuegro'
+|-
+| &lt;nowiki>(son|dau|chi)(hus|wif|spo)mot&lt;/nowiki> || 'consuegra'
+|-
+| &lt;nowiki>(hus|wif|spo)(bro|sis|sib)(hus|spo)&lt;/nowiki> || 'concuño'
+|-
+| &lt;nowiki>(hus|wif|spo)(bro|sis|sib)wif&lt;/nowiki> || 'concuña'
+|-
+| &lt;nowiki>(son|dau|chi)(son|chi)&lt;/nowiki> || 'nieto'
+|-
+| &lt;nowiki>(son|dau|chi)dau&lt;/nowiki> || 'nieta'
+|-
+| &lt;nowiki>(son|dau|chi){2}(chi|son)&lt;/nowiki> || 'bisnieto'
+|-
+| &lt;nowiki>(son|dau|chi){2}dau&lt;/nowiki> || 'bisnieta'
+|-
+| &lt;nowiki>(son|dau|chi){3}(chi|son)&lt;/nowiki> || 'tataranieto'
+|-
+| &lt;nowiki>(son|dau|chi){3}dau&lt;/nowiki> || 'tataranieta'
+|-
+| &lt;nowiki>(son|dau|chi){4}(chi|son)&lt;/nowiki> || 'chozno'
+|-
+| &lt;nowiki>(son|dau|chi){4}dau&lt;/nowiki> || 'chozna'
+|-
+| &lt;nowiki>(son|dau|chi){5}(chi|son)&lt;/nowiki> || 'bichozno'
+|-
+| &lt;nowiki>(son|dau|chi){5}dau&lt;/nowiki> || 'bichozna'
+|-
+| &lt;nowiki>(son|dau|chi){6,}son&lt;/nowiki> || CONCAT&lt;br />
+('nieto ', &lt;br />
+CASE @down-1, &lt;br />
+WHEN 6 THEN 'sexto'&lt;br />
+WHEN 7 THEN 'séptimo'&lt;br />
+ELSE CONCAT(@down-1,'º')   -- U+00BA&lt;br />
+END)
+|-
+| &lt;nowiki>(son|dau|chi){6,}dau&lt;/nowiki> || CONCAT&lt;br />
+('nieta ', &lt;br />
+CASE @down-1, &lt;br />
+WHEN 6 THEN 'sexto'&lt;br />
+WHEN 7 THEN 'séptimo'&lt;br />
+ELSE CONCAT(@down-1,'ª')   -- U+00AA&lt;br />
+END)
+|-
+| (bro|sib) ||
+CASE &lt;br />
+ WHEN @dob1=@dob2 THEN 'gémelo'&lt;br />
+ WHEN @dob1&lt;@dob2 THEN 'hermano menor'&lt;br />
+ WHEN @dob1>@dob2 THEN 'hermano mayor'&lt;br />
+ELSE 'hermano'&lt;br />
+END
+|-
+| sis
+| CASE &lt;br />
+ WHEN @dob1=@dob2 THEN 'gémela' &lt;br />
+ WHEN @dob1&lt;@dob2 THEN 'hermana menor' &lt;br />
+ WHEN @dob1>@dob2 THEN 'hermana mayor' &lt;br />
+ELSE 'hermana' &lt;br />
+END
+|-
+| (chi|son) || 'hijo'
+|-
+| dau || 'hija'
+|-
+| (fat|par) || 'padre'
+|-
+| mot || 'madre'
+|-
+| fat(fat|par) || 'abuelo paterno'
+|-
+| fatmot || 'abuela paterna'
+|-
+| mot(fat|par) || 'abuelo materno'
+|-
+| motmot || 'abuela materna'
+|-
+| par(fat|par) || 'abuelo'
+|-
+| parmot || 'abuela'
+|-
+| hus || IF(NOT @marr OR @sex&lt;>'F', IF(@div, 'ex-parejo', 'parejo'), IF(@div, 'ex-esposo', 'esposo'))
+|-
+| spo || IF(@div, 'ex-parejo', 'parejo')
+|-
+| wif || IF(NOT @marr OR @sex&lt;>'M', IF(@div, 'ex-pareja', 'pareja'), IF(@div, 'ex-esposa', 'esposa'))
+|}
+
+[[de:Verwandtschaftsbeziehungen_übersetzen]]
+
+{{Review|Version=1.7.2}}
+</textarea><div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p>Templates used on this page:
+</p></div><ul>
+<li><a href="../Template:Latest_Version.html" title="Template:Latest Version">Template:Latest Version</a> (<a href="./index.php%3Ftitle=Template:Latest_Version&amp;action=edit.html" title="Template:Latest Version">view source</a>) </li><li><a href="../Template:Review.html" title="Template:Review">Template:Review</a> (<a href="./index.php%3Ftitle=Template:Review&amp;action=edit.html" title="Template:Review">view source</a>) </li></ul></div><p id="mw-returnto">Return to <a href="../Translating_relationships.html" title="Translating relationships">Translating relationships</a>.</p>
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="../Translating_relationships.html">https://wiki.webtrees.net/en/Translating_relationships</a>"					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.webtrees.net/en/w/index.php?title=Special:UserLogin&amp;returnto=Translating+relationships&amp;returntoquery=action%3Dedit" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="../Translating_relationships.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.webtrees.net/en/w/index.php?title=Talk:Translating_relationships&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="index.php%3Ftitle=Translating_relationships&amp;action=edit.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view"><span><a href="../Translating_relationships.html" >Read</a></span></li>
+															<li id="ca-viewsource" class="selected"><span><a href="index.php%3Ftitle=Translating_relationships&amp;action=edit.html"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="index.php%3Ftitle=Translating_relationships&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="index.php%3Ftitle=Translating_relationships&amp;action=edit.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.webtrees.net/en/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search webtrees" title="Search webtrees [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="../../favicon.ico.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-webtrees.net"><a href="http://www.webtrees.net/" rel="nofollow">webtrees.net</a></li><li id="n-Main-Page-.28en.29"><a href="../../favicon.ico.html" rel="nofollow">Main Page (en)</a></li><li id="n-Hauptseite-.28de.29"><a href="../../de/Hauptseite.html" rel="nofollow">Hauptseite (de)</a></li><li id="n-Accueil-.28fr.29"><a href="../../fr:Accueil.html" rel="nofollow">Accueil (fr)</a></li><li id="n-Hoofdpagina-.28nl.29"><a href="../../nl/Hoofdpagina.html" rel="nofollow">Hoofdpagina (nl)</a></li><li id="n-recentchanges"><a href="https://wiki.webtrees.net/en/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="../Special:Random.html" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.webtrees.net/en/Special:WhatLinksHere/Translating_relationships" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.webtrees.net/en/Special:RecentChangesLinked/Translating_relationships" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-info"><a href="index.php%3Ftitle=Translating_relationships&amp;action=info.html" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.webtrees.net/en/Webtrees:Privacy_policy" title="Webtrees:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.webtrees.net/en/Webtrees:About" title="Webtrees:About">About webtrees</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.webtrees.net/en/Webtrees:General_disclaimer" title="Webtrees:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="https://wiki.webtrees.net/en/w/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="https://wiki.webtrees.net/en/w/resources/assets/poweredby_mediawiki_132x47.png 1.5x, https://wiki.webtrees.net/en/w/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":80});});</script>
+	</body>
+</html>

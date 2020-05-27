@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Custom Relationships - webtrees</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Custom_Relationships","wgTitle":"Custom Relationships","wgCurRevisionId":4593,"wgRevisionId":4593,"wgArticleId":401,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Customising webtrees","Needs Review"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Custom_Relationships","wgRelevantArticleId":401,"wgRequestId":"903d75204ffbc7a314f326b9","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","site":"ready","user.options":"ready","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.tokens@1bv63xk",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});mw.loader.load(["mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.31.3"/>
+<meta name="robots" content="noindex,follow"/>
+<link rel="shortcut icon" href="../../favicon.ico.html"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="webtrees (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="webtrees Atom feed" href="./index.php%3Ftitle=Special:RecentChanges&amp;feed=atom"/>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/en/w/skins/Vector/csshover.min.htc")}</style><![endif]-->
+<!--[if lt IE 9]><script src="/en/w/load.php?debug=false&amp;lang=en&amp;modules=html5shiv&amp;only=scripts&amp;skin=vector&amp;sync=1"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Custom_Relationships rootpage-Custom_Relationships skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Custom Relationships</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From webtrees</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="index.php%3Ftitle=Custom_Relationships&amp;printable=yes.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Custom_Relationships&amp;printable=yes.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><p>The <b>RELA</b>tionship descriptor used in the <b>ASSO</b>ciate tag is meant to be free-form text based on the <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/GEDCOM">GEDCOM 5.5.1</a> file format.  But <b>webtrees</b> only supports a drop-down, selectable list of Relationships that are hard-coded into the source code.  Therefore, one must actually change the underlying PHP code to add a Relationship not pre-defined in the list.  Luckily, this is pretty easy to do even if you are not a coder as long as you have access to your installation and its source files.  You may also need to edit the <b>language</b> files to support the newly added <b>Relationships</b> in other languages.
+</p><p>See the <a href="../General_guidelines.html" title="General guidelines">General guidelines</a> for some cautions on customizing <b>webtrees</b> by modifying the source code.  Specifically, your changes may get overriden by future updates or not be supported in the same way in future releases as the code evolves.  In fact, <b>webtrees</b> added support for gender-context-sensitive '<b>Relationship</b> titles after the fork from the original <b>PHPGedView</b> code base.  This rendered previous changes obsolete and required one to re-code them in.  See also <a href="../Custom_Tags.html" title="Custom Tags">Custom Tags</a> for more warnings and a general overview.  The way you add a custom tag is very similar to how you add a Relationship.  But unlike custom tags, additional Relationships are encouraged and allowed for in the standard.  It is just this tool implementation that limits them.
+</p><p>If you think your customizations belong in the core code, discuss this on the forum.
+</p>
+<div id="toc" class="toc"><div class="toctitle" lang="en" dir="ltr"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Custom_Relationships&amp;printable=yes.html#Modifying_the_Drop-down_list"><span class="tocnumber">1</span> <span class="toctext">Modifying the Drop-down list</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=Custom_Relationships&amp;printable=yes.html#Editing_Rela.php_.24TYPES_array"><span class="tocnumber">1.1</span> <span class="toctext">Editing Rela.php $TYPES array</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Custom_Relationships&amp;printable=yes.html#Editing_Rela.php_getValue.28.29_function"><span class="tocnumber">1.2</span> <span class="toctext">Editing Rela.php getValue() function</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Custom_Relationships&amp;printable=yes.html#Customizing_the_local_language_files"><span class="tocnumber">2</span> <span class="toctext">Customizing the local language files</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Custom_Relationships&amp;printable=yes.html#Checking_your_changes"><span class="tocnumber">3</span> <span class="toctext">Checking your changes</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Custom_Relationships&amp;printable=yes.html#Use_of_the_ASSOciate_tag"><span class="tocnumber">4</span> <span class="toctext">Use of the ASSOciate tag</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Custom_Relationships&amp;printable=yes.html#Existing_and_Suggested_Relationship_values"><span class="tocnumber">5</span> <span class="toctext">Existing and Suggested Relationship values</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Modifying_the_Drop-down_list">Modifying the Drop-down list</span></h2>
+<p>With that said, the changes needed to modify the list of <b>Relationship</b> titles in the drop-down is isolated to a single file in the installations source tree: <b>app/GedcomCode/GedcomCode/Rela.php</b>.  Although a PHP source file, it has a clean structure that non-programmers should be able to easily modify without introducing errors.  There are two main parts to this code of concern here.  The <b>$TYPE</b> array definition of internal code names and the function <b>getValue</b> that converts the stored code name to text for display or output.  Both areas must be edited to enable a new <b>Relationship</b>.
+</p><p>Before starting, make sure you have access to edit and replace the source file.  Make a backup copy of the file in case you need to restore the original and to always have a clean copy to start from.  Convention is to copy the file and rename it with an <b>.old</b> or <b>.orig</b> extension.  So <b>Rela.php.old</b> in this instance.
+</p>
+<h3><span id="Editing_Rela.php_$TYPES_array"></span><span class="mw-headline" id="Editing_Rela.php_.24TYPES_array">Editing Rela.php $TYPES array</span></h3>
+<pre>private static $TYPES=array(
+  ....
+);
+</pre>
+<p>The array is defined as a list of single-quote delineated names that are comma separated. As these are code names, there are no intervening spaces between the single quotes.  Use an underscore instead of any space.  Convention has it that the code name mimic the base, standard English name.  While the entries do not have to be in any particular order, and the order in the array and the function do not have to match, good coding style dictates you keep them in ascending alphabetic order so perusing the file makes it easier to find.  This is purely an internal name used by the PHP source code to find the language version to display.  Code names in this array are case sensitive (maintain the same case in all uses).
+</p><p>There is no real limit as to how many comma-separated code names can be on a line.  Convention would suggest you insert your additions into the list in order and put it on its own line with a comment following that indicates you added the code.  So if we were to insert the code 'sponsor' in the existing line: 'slave', 'ward', 'witness', then the before and after may look like:
+</p>
+<pre>BEFORE:
+  'slave', 'ward', 'witness',
+AFTER:
+  'slave', 
+  'sponsor', // Added by REH on 10/30/2011
+  'ward', 'witness',
+</pre>
+<p>The double forward slash (//) indicates an uninterpreted text comment (like a GEDCOM note) until the end of the line.
+</p>
+<h3><span id="Editing_Rela.php_getValue()_function"></span><span class="mw-headline" id="Editing_Rela.php_getValue.28.29_function">Editing Rela.php getValue() function</span></h3>
+<p><b>webtrees</b> is written in US English, and uses US English internally.  So by default, text that is to become visible to users is coded with the English version as a base.  <b>webtrees</b> supports many languages, some with context dependent gender dependencies,.  So defining the text for the <b>ASSO</b>ciate tag <b>RELA</b>tionships is a little more complicated than likely first imagined. Hence you will see some of the gender switch/case controls in the code base with some Relationship names.
+</p><p>The <b>getValue()</b> function is simply one large switch/case statement. Think of it as "pick one of".  Given an array entry or code value it will generate a call to a text translation function for that value.  So if you add an entry to the array above, you need to add a <b>case</b> entry point in the <b>switch</b> here.
+</p><p>There are two main types of entries here.  Possible gender dependent names and unisex or fixed-gender names.  Although not common in English, gender-dependent names are common in many other languages.  But they are even in English.  A parent is unisex whereas a father or mother is traditionally a fixed-gender variant.  Similarly, a Godchild is unisex whereas a Goddaughter or Godson is fixed-gender.  What is important here is not what is tradition or a possible exception you want to support, but what is the customary construct to use in other languages.  If a language traditionally uses variants based on gender, support it in the code here.
+</p><p>So carrying on with our example above, the insertion for a <b>sponsor</b> in the <b>getValue()</b> switch would look like:
+</p>
+<pre>case 'slave':
+  switch ($sex) {
+    case 'M': return I18N::translate_c('MALE',   'Slave');
+    case 'F': return I18N::translate_c('FEMALE', 'Slave');
+    default:  return I18N::translate  (          'Slave');
+  }
+<b>case 'sponsor':  // Added REH 10/30/2011</b>
+  <b>// no sex implied</b>
+  <b>return I18N::translate('Sponsor');</b>
+case 'ward':
+  switch ($sex) {
+</pre>
+<p>The call to function <b>I18N::translate()</b> is what performs the language translation and looks up the appropriate word in the language file.  A variant of the call takes the gender as the first parameter.  
+</p><p>Note that the parameter inside the parenthesis is the default, English language form of the Relationship intended and not the code value used in the case statement preceeding it.  So while still enclosed in single quotes, spaces and alphabetic case are expected.  So the code names in the array are used purely inside the PHP code switch statement to index the array.  The name passed to the <b>I18N::translate()</b> function is the base English form that will be used to index the language files and find the translated version of.  It is only this latter form that you will ever see in the user interface of the <b>webtrees</b> tool or in the GEDCOM file output from the tool.
+</p>
+<h2><span class="mw-headline" id="Customizing_the_local_language_files">Customizing the local language files</span></h2>
+<p>See the page <a href="../Custom_Translation.html" title="Custom Translation">Custom Translation</a> about how to customize the local language files.  Key is you should also add the new <b>Relationship</b>s to the translation files as well as the source code.  Beside the base language file, you can also add them to other languages as well.  The default, if no language files are modified, is to simply use the English hard-coded in the source code for all output and display.  So modifying the language file is not a requirement to get your change working but a necessary step if wanting to support other languages in your user interface.  
+</p>
+<h2><span class="mw-headline" id="Checking_your_changes">Checking your changes</span></h2>
+<p>To see if you changes were successful, both in terms of adding the new Relationship as well as not breaking the tool and code base, you should always check the functionality changed.
+</p><p>Simply go to any Individual and add an <b>ASSO</b>ciate fact or edit any <b>EVEN</b>t such as a birth, death or similar and click to add an <b>ASSO</b>ciate fact there.  There are two parameters to enter, the actual ID of another Individual and the <b>Relationship</b>.  For each language you changed, click the drop down box of the <b>Relationship</b> field to see that your added relationships are there (and that all the previous ones are still there).  You may need to do this for different gender Individuals to fully check all versions.  What appears here in the content from a language file, or if not translated, the original English text entered into the PHP code call to the translate function.
+</p>
+<h2><span class="mw-headline" id="Use_of_the_ASSOciate_tag">Use of the ASSOciate tag</span></h2>
+<p>The GEDCOM 5.5.1 standard defines the <b>ASSO</b>ciate as a level 1 tag ONLY available in an INDIvidual record (top level).  It is meant to associate an individual to another individual directly.  In fact, the <b>ASSO</b>ciate tag takes an <b>INDI</b>viduals <b>xref_ID</b> as a parameter.  So this allows a processable way to link people other than through the <b>FAMI</b>ly record.
+</p><p>Many tools, <b>webtrees'<i> included, also allow the </i></b><i>ASSO</i>ciate tag inside <b>EVEN</b>t tags in <b>INDI</b>vidual and <b>FAMI</b>ly Records as well.  Some even inside <b>SOUR</b>ce and other top level Records.  Wherever allowed by the <b>webtrees</b> tool, the corresponding GEDCOM file output will show the <b>ASSO</b>ciate tag at that place.  So be aware that although associations are supported in these additional places in this tool, they may not be transportable to other tools except as a top-level tag in an Individual's record only.
+</p><p>The <b>RELA</b>tionship descriptor inside an <b>ASSO</b>ciate tag is defined as a free-form text field and not a machine-interpreted name.  So although hard-coded in <b>webtrees</b>, the pre-defined names used have no special meaning in the tool.  It is purely a descriptor to allow the link to another Individual to be described.  Because it is a descriptor, the list has been pre-defined so it can be properly translated into other languages in the interface.
+</p><p>The most common usage of the <b>ASSO</b>ciate tag is in traditional religious events such as Baptism/Christening, Confirmation/BarMitzvah/Najote, and Marriage.  The tag allows one to specify the godparents, sponsor and wedding party members.  Especially for marriage, the list as defined in the tool today, is not complete for most traditions in common religions.  Hence the need to modify what is allowed as a Relationship.
+</p><p>Note that <b>ASSO</b>ciates are one way links.  Meaning, if you specify a Godfather in a child (Individuals) Baptism record, there is no way to know this when looking at anything other than that child's record.  You have to add an <b>ASSO</b>ciate tag in the Godfather (Individuals) record to specify who the Godchild is to make the association bi-directional and visible from both Individuals.
+</p><p>Note also that although this is an alternative way to link Individuals outside of the Family link, most tools that process GEDCOM's do not recognize this link other than for display purposes.  So the Relationship Charting tool in <b>webtrees</b>, for example, will not track through these associations.  Nor will the <b>clippings</b> tool to extract a linked subset of your database.
+</p>
+<h2><span class="mw-headline" id="Existing_and_Suggested_Relationship_values">Existing and Suggested Relationship values</span></h2>
+<p><b>webtrees</b> has the following list of <b>RELA</b>tionships for the <b>ASSO</b>ciate tag:
+</p>
+<pre>'attendant', 'attending', 'best_man', 'bridesmaid', 'buyer',
+'circumciser', 'civil_registrar', 'employee', 'employer', 'foster_child',
+'foster_father', 'foster_mother', 'friend', 'godfather', 'godmother',
+'godparent', 'godson', 'goddaughter', 'godchild', 'guardian',
+'informant', 'lodger', 'nanny', 'nurse', 'owner',
+'priest', 'rabbi', 'registry_officer', 'seller', 'servant',
+'slave', 'ward', 'witness',
+</pre>
+<p>The <b>PHPGedView</b> code base, from which <b>webtrees</b> forked, also has defined:
+</p>
+<pre>'twin', 'twin_brother', and 'twin_sister'.  However <b>webtrees</b> identifies these automatically.
+</pre>
+<p>Useful relationships one might consider adding, for example, are:
+</p>
+<pre>'flower_girl', 'groomsman', 'maid_of_honor', 'matron_of_honor', 'officiant', 'ring_bearer', 'sponsor', and 'usher'
+</pre>
+<p>Sometimes the relationship is not really associated with an Event but should be top-level in an Individual or Family record.  This is especially true with close friends that may have been more important than blood relatives.  In this case, one can consider adding Relationships such as:
+</p>
+<pre>'friend', 'close_friend', 'best_friend', 'family_friend', 'fiance', and the like.
+</pre>
+<p>It does not have to end there; just as with modern Social Network sites.  You can allow all sorts of classifications or circles of people.  So maybe you need:
+</p>
+<pre>'colleague', 'classmate', 'war_buddy' and so on.
+</pre>
+<p>Key is this list is pre-defined and so you want to support the flexibility for researchers to capture information they collect about people with this more processable form.  The <b>ASSO</b>ciate relationship allows just that by letting a user navigate from Individual to Individual via the Relationship links defined.
+</p><p>Biggest downside to adding more Relationships is the list is presented as a drop-down menu.  So the longer the list, the more trouble a user may have finding the relationship they are looking for.  The list is not subset-ted based on the context of an event or record type you are adding the relationship too.  So a Christening event will have the full list presented including Lodger, Seller, and the like.
+</p>
+<div style="color:#f00;">This page has not been reviewed since webtrees 1.7.4.  It may be out of date.</div>
+
+<!-- 
+NewPP limit report
+Cached time: 20200521071240
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.026 seconds
+Real time usage: 0.034 seconds
+Preprocessor visited node count: 73/1000000
+Preprocessor generated node count: 210/1000000
+Post‐expand include size: 455/2097152 bytes
+Template argument size: 10/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    5.111      1 -total
+ 53.49%    2.734      1 Template:Review
+ 32.07%    1.639     13 Template:Wt
+ 23.56%    1.204      1 Template:Latest_Version
+-->
+</div>
+<!-- Saved in parser cache with key wiki-en_:pcache:idhash:401-0!canonical and timestamp 20200521071240 and revision id 4593
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="index.php%3Ftitle=Custom_Relationships&amp;oldid=4593.html">https://wiki.webtrees.net/en/w/index.php?title=Custom_Relationships&amp;oldid=4593</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="../Category:Customising_webtrees.html" title="Category:Customising webtrees">Customising webtrees</a></li><li><a href="../Category:Needs_Review.html" title="Category:Needs Review">Needs Review</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Special:UserLogin&amp;returnto=Custom+Relationships&amp;returntoquery=printable=yes.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="../Custom_Relationships.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.webtrees.net/en/w/index.php?title=Talk:Custom_Relationships&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="index.php%3Ftitle=Custom_Relationships&amp;printable=yes.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="../Custom_Relationships.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="index.php%3Ftitle=Custom_Relationships&amp;action=edit.html"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="index.php%3Ftitle=Custom_Relationships&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="index.php%3Ftitle=Custom_Relationships&amp;printable=yes.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.webtrees.net/en/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search webtrees" title="Search webtrees [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="../../favicon.ico.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-webtrees.net"><a href="http://www.webtrees.net/" rel="nofollow">webtrees.net</a></li><li id="n-Main-Page-.28en.29"><a href="../../favicon.ico.html" rel="nofollow">Main Page (en)</a></li><li id="n-Hauptseite-.28de.29"><a href="../../de/Hauptseite.html" rel="nofollow">Hauptseite (de)</a></li><li id="n-Accueil-.28fr.29"><a href="../../fr:Accueil.html" rel="nofollow">Accueil (fr)</a></li><li id="n-Hoofdpagina-.28nl.29"><a href="../../nl/Hoofdpagina.html" rel="nofollow">Hoofdpagina (nl)</a></li><li id="n-recentchanges"><a href="https://wiki.webtrees.net/en/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="../Special:Random.html" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.webtrees.net/en/Special:WhatLinksHere/Custom_Relationships" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.webtrees.net/en/Special:RecentChangesLinked/Custom_Relationships" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="index.php%3Ftitle=Custom_Relationships&amp;oldid=4593.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="index.php%3Ftitle=Custom_Relationships&amp;action=info.html" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>In other languages</h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-de"><a href="../../de/Benutzerdefinierte_Beziehungen.html" title="Benutzerdefinierte Beziehungen – Deutsch" lang="de" hreflang="de" class="interlanguage-link-target">Deutsch</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last edited on 2 March 2016, at 22:07.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.webtrees.net/en/Webtrees:Privacy_policy" title="Webtrees:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.webtrees.net/en/Webtrees:About" title="Webtrees:About">About webtrees</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.webtrees.net/en/Webtrees:General_disclaimer" title="Webtrees:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="https://wiki.webtrees.net/en/w/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="https://wiki.webtrees.net/en/w/resources/assets/poweredby_mediawiki_132x47.png 1.5x, https://wiki.webtrees.net/en/w/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.026","walltime":"0.034","ppvisitednodes":{"value":73,"limit":1000000},"ppgeneratednodes":{"value":210,"limit":1000000},"postexpandincludesize":{"value":455,"limit":2097152},"templateargumentsize":{"value":10,"limit":2097152},"expansiondepth":{"value":3,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    5.111      1 -total"," 53.49%    2.734      1 Template:Review"," 32.07%    1.639     13 Template:Wt"," 23.56%    1.204      1 Template:Latest_Version"]},"cachereport":{"timestamp":"20200521071240","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":77});});</script>
+	</body>
+</html>

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Module Google Maps — webtrees</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Module_Google_Maps","wgTitle":"Module Google Maps","wgCurRevisionId":3931,"wgRevisionId":3931,"wgArticleId":171,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Utiliser webtrees"],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","janv.","fév.","mars","avr.","mai","juin","juill.","août","sept.","oct.","nov.","déc."],"wgRelevantPageName":"Module_Google_Maps","wgRelevantArticleId":171,"wgRequestId":"de5f0809dd4bb41dd4e61070","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","site":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1dpodri",function($,jQuery,require,module){/*@nomin*/mw.user.options.set({"variant":"fr"});
+});mw.loader.implement("user.tokens@1bv63xk",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});mw.loader.load(["mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="w/load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="w/load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.31.3"/>
+<link rel="shortcut icon" href="../favicon.ico.html"/>
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="webtrees (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="w/api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de webtrees" href="w/index.php%3Ftitle=Spécial:Modifications_récentes&amp;feed=atom"/>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/fr/w/skins/Vector/csshover.min.htc")}</style><![endif]-->
+<!--[if lt IE 9]><script src="/fr/w/load.php?debug=false&amp;lang=fr&amp;modules=html5shiv&amp;only=scripts&amp;skin=vector&amp;sync=1"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Module_Google_Maps rootpage-Module_Google_Maps skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Module Google Maps</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De webtrees</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="Module_Google_Maps.html#mw-head">navigation</a>, 					<a href="Module_Google_Maps.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><p><br />
+</p>
+<div id="toc" class="toc"><div class="toctitle" lang="fr" dir="ltr"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Module_Google_Maps.html#Module_Google_Maps"><span class="tocnumber">1</span> <span class="toctext">Module Google Maps</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Module_Google_Maps.html#D.C3.A9buter_le_processus"><span class="tocnumber">2</span> <span class="toctext"><b>Débuter le processus</b></span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Module_Google_Maps.html#Faire_fonctionner_Google_Maps_.E2.80.A6"><span class="tocnumber">3</span> <span class="toctext"><b>Faire fonctionner Google Maps …</b></span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="Module_Google_Maps.html#Obtenir_les_coordonn.C3.A9es_des_lieux"><span class="tocnumber">3.1</span> <span class="toctext">Obtenir les coordonnées des lieux</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Module_Google_Maps.html#Coordonn.C3.A9es"><span class="tocnumber">3.2</span> <span class="toctext">Coordonnées</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Module_Google_Maps.html#Les_lieux"><span class="tocnumber">3.3</span> <span class="toctext">Les lieux</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="Module_Google_Maps.html#Donn.C3.A9es_en_provenance_de_d.27autres_applications_.28The_Master_Genealogist_.28TMG.29.2C_Legacy.2C_etc.29"><span class="tocnumber">3.4</span> <span class="toctext">Données en provenance de d'autres applications (The Master Genealogist (TMG), Legacy, etc)</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="Module_Google_Maps.html#Saisie_de_donn.C3.A9es_externes"><span class="tocnumber">3.5</span> <span class="toctext">Saisie de données externes</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="Module_Google_Maps.html#Ajouter_des_lieux_en_utilisant_le_module_Google_Maps_de_webtrees_.28m.C3.A9thode_recommand.C3.A9e.29"><span class="tocnumber">3.6</span> <span class="toctext">Ajouter des lieux en utilisant le module Google Maps de <b>webtrees</b> (méthode recommandée)</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="Module_Google_Maps.html#Importer_depuis_l.27.28ou_les.29_arbre.28s.29_g.C3.A9n.C3.A9alogique.28s.29_actuel.28s.29"><span class="tocnumber">3.7</span> <span class="toctext">Importer depuis l'(ou les) arbre(s) généalogique(s) actuel(s)</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="Module_Google_Maps.html#Importer_depuis_un_fichier"><span class="tocnumber">3.8</span> <span class="toctext">Importer depuis un fichier</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="Module_Google_Maps.html#Modifier_et_supprimer_des_lieux"><span class="tocnumber">3.9</span> <span class="toctext">Modifier et supprimer des lieux</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="Module_Google_Maps.html#Faire_fonctionner_l.27exploration_des_rues_de_Google_.28Google_Street_View.29"><span class="tocnumber">4</span> <span class="toctext"><b>Faire fonctionner l'exploration des rues de Google (Google Street View)</b></span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="Module_Google_Maps.html#Activer_Google_Street_View"><span class="tocnumber">4.1</span> <span class="toctext">Activer Google Street View</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="Module_Google_Maps.html#R.C3.A9glages_des_coordonn.C3.A9es_de_Google_Street_View"><span class="tocnumber">4.2</span> <span class="toctext">Réglages des coordonnées de Google Street View</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="Module_Google_Maps.html#Section_Technique_de_Google_Maps"><span class="tocnumber">5</span> <span class="toctext"><b>Section Technique de Google Maps</b></span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="Module_Google_Maps.html#Donn.C3.A9es_des_Lieux"><span class="tocnumber">5.1</span> <span class="toctext">Données des Lieux</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="Module_Google_Maps.html#Lieux"><span class="tocnumber">5.2</span> <span class="toctext">Lieux</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Module_Google_Maps">Module Google Maps</span></h2>
+<p>Le module <b>Google Maps</b> affiche une carte géographique des évènements concernant une personne.<br />
+</p>
+<center><b>Page fiche individuelle - Onglet Google Maps</b></center>
+<div class="center"><div class="floatnone"><a href="./Fichier:Wt_gm_01.png.html" class="image"><img alt="Wt gm 01.png" src="../w/images-fr/thumb/Wt_gm_01.png/800px-Wt_gm_01.png" width="800" height="628" srcset="../w/images-fr/thumb/Wt_gm_01.png/1200px-Wt_gm_01.png 1.5x, ../w/images-fr/Wt_gm_01.png 2x" /></a></div></div>
+<p><i><b>Note:</b> Ce module est tout à fait distinct des petites cartes qui peuvent être affichées sur certaines pages individuelles. Ces imagettes sont créées à partir de la latitude et de la longitude ajoutées aux lieux de l'arbre généalogique.</i>
+</p><p>Le module affiche des informations supplémentaires pour certaines personnes. Un onglet supplémentaire est ajouté sur la page de chaque personne, onglet affichant une carte issue de Google Maps ainsi qu'un tableau des événements liés à cette page.
+</p><p>Chaque marqueur sur la carte peut être cliqué pour afficher les données liées à ce lieu particulier. Si plusieurs événements  sont liés à l'emplacement du marqueur, les événements supplémentaires sont accessibles sous l'onglet "Évènements" de la bulle d'informations.
+</p><p><br />
+Si <b>Google Street View</b> (exploration des rues de Google) a été activé lors de la configuration de Google Maps, alors un onglet additionnel s'affichera dans la bulle d'informations.<br />
+(1)
+Si l'administrateur a réglé les coordonnées de l'exploration de la rue d'un endroit, alors une vue Google de la rue de cet endroit sera affichée.<br />
+(2) 
+Si l'administrateur n'a pas réglé les coordonnées de l'exploration de la rue, alors la vue de la rue sera en blanc.
+</p><p><br />
+</p>
+<center><b>Page fiche individuelle - Onglet Google Maps - (Exploration des rues de Google activée)</b></center>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:802px;"><a href="./Fichier:Screen_shot_2011-02-19_at_21.25.21.png.html" class="image"><img alt="Screen shot 2011-02-19 at 21.25.21.png" src="../w/images-fr/thumb/Screen_shot_2011-02-19_at_21.25.21.png/800px-Screen_shot_2011-02-19_at_21.25.21.png" width="800" height="615" class="thumbimage" srcset="../w/images-fr/thumb/Screen_shot_2011-02-19_at_21.25.21.png/1200px-Screen_shot_2011-02-19_at_21.25.21.png 1.5x, ../w/images-fr/Screen_shot_2011-02-19_at_21.25.21.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:Screen_shot_2011-02-19_at_21.25.21.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+<p><b>En plus:</b><br />
+Si l'administrateur a activé les coordonnées de l'exploration des rues, alors la "Liste des lieux" sera affichée comme ci-dessous<br />
+(Plus de détails sur la configuration <a rel="nofollow" class="external text" href="../fr:Google_Street_View|.html">Google Street View</a>.)<br />
+</p>
+<center><b>Page Liste des lieux - (Google Exploration des rues activée)</b></center>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:602px;"><a href="./Fichier:GoogleMapsFigure3FR.png.html" class="image"><img alt="GoogleMapsFigure3FR.png" src="../w/images-fr/GoogleMapsFigure3FR.png" width="600" height="418" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:GoogleMapsFigure3FR.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+<h2><span id="Débuter_le_processus"></span><span class="mw-headline" id="D.C3.A9buter_le_processus"><hr /><font color="blue"><b>Débuter le processus</b></font></span></h2>
+<blockquote>
+<p>Accéder à votre site <b>webtrees</b>. Se connecter en tant qu'administrateur.<br />
+En configurant le module Google Maps, le logiciel créera une nouvelle table (‘placelocation’) dans la base de données de votre serveur.<br />
+Voir la <a rel="nofollow" class="external text" href="../fr:Section_technique.html">Section Technique</a>  pour les détails de sa structure et de son contenu.
+</p><p>Aller à l'interface d'administration --&gt; cliquer Google Maps (1) puis cliquer sur Configuration Google Maps (2). 
+<br /><br />
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:802px;"><a href="./Fichier:Wt_gm_03.png.html" class="image"><img alt="Wt gm 03.png" src="../w/images-fr/thumb/Wt_gm_03.png/800px-Wt_gm_03.png" width="800" height="429" class="thumbimage" srcset="../w/images-fr/thumb/Wt_gm_03.png/1200px-Wt_gm_03.png 1.5x, ../w/images-fr/Wt_gm_03.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:Wt_gm_03.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+<p><br />
+</p><p>La page de configuration de Google Maps s'affichera&#160;:
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:802px;"><a href="./Fichier:Wt_gm_04.png.html" class="image"><img alt="Wt gm 04.png" src="../w/images-fr/thumb/Wt_gm_04.png/800px-Wt_gm_04.png" width="800" height="363" class="thumbimage" srcset="../w/images-fr/thumb/Wt_gm_04.png/1200px-Wt_gm_04.png 1.5x, ../w/images-fr/Wt_gm_04.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:Wt_gm_04.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+<p>(3) Régler la carte par défaut que vous désirez voir affichée dans la fenêtre Google Maps.<br />
+(4) Choisir d'activer ou pas la vue de l'Exploration des rues de Google (PAR DÉFAULT à NON).<br />
+(5) Choisir une hauteur de 500 (recommandé) en attendant que la fonctionnalité "d'auto-ajustement" soit exécutable pour ajuster la hauteur de la bulle d'informations.<br />
+(6) Choisir si vous désirez utiliser Google Maps pour la hiérarchie des lieux. Si vous avez activé la vue de l'Exploration des rues de Google, alors la vue des rues sera aussi activée pour la hiérarchie des lieux.<br />
+(7) Choisir la largeur de 500 et la hauteur de 350 (recommandées).<br />
+</p><p>Enregistrer la configuration. Vous pourrez visiter cette page à nouveau et améliorer les réglages lorsque vous aurez acquis plus d'expérience.
+</p><p>Pour de plus amples explications sur la signification de tous les éléments, voir la <a rel="nofollow" class="external text" href="../fr:Configuration_googlemaps.html">Configuration Google Maps - Signification des éléments</a>.
+</p>
+</blockquote>
+<h2><span id="Faire_fonctionner_Google_Maps_…"></span><span class="mw-headline" id="Faire_fonctionner_Google_Maps_.E2.80.A6"><hr /><font color="blue"><b>Faire fonctionner Google Maps …</b></font></span></h2>
+<p>La prochaine étape nécessite des explications car elle implique des sources diverses.
+</p><p><br />
+</p>
+<h3><span id="Obtenir_les_coordonnées_des_lieux"></span><span class="mw-headline" id="Obtenir_les_coordonn.C3.A9es_des_lieux">Obtenir les coordonnées des lieux</span></h3>
+<blockquote>
+<p>Les coordonnées des lieux peuvent être obtenues de diverses sources.
+</p><p>Quelques-unes des plus connues sont&#160;:
+</p>
+<ul><li>rechercher sur Google et enregistrer manuellement les coordonnées</li>
+<li><a rel="nofollow" class="external free" href="http://www.itouchmap.com/?r=v&amp;st=l2">http://www.itouchmap.com/?r=v&amp;st=l2</a>, méthode pour obtenir les coordonnées sur le site standard de Google Maps</li>
+<li><a rel="nofollow" class="external free" href="http://www.beeloop.com/maps/flickr_geotagr.php?language=english">http://www.beeloop.com/maps/flickr_geotagr.php?language=english</a>, un autre site utile</li>
+<li>Pour l'Angleterre, <a rel="nofollow" class="external free" href="http://www.streetmap.co.uk/">http://www.streetmap.co.uk/</a></li>
+<li><a rel="nofollow" class="external free" href="https://www.maxmind.com/app/country_latlon">http://www.maxmind.com/app/country_latlon</a>, les pays</li>
+<li>Le U.S. Board on Geographic Names à <a rel="nofollow" class="external free" href="http://geonames.usgs.gov/domestic/index.html">http://geonames.usgs.gov/domestic/index.html</a></li>
+<li><a rel="nofollow" class="external free" href="https://sourceforge.net/project/showfiles.php?group_id=55456&amp;package_id=61563&amp;release_id=435146">https://sourceforge.net/project/showfiles.php?group_id=55456&amp;package_id=61563&amp;release_id=435146</a></li>
+<li>Ressource Open Source - HISTOPOLIS.COM à <a rel="nofollow" class="external free" href="http://www.histopolis.com/">http://www.histopolis.com/</a> offrant d'excellentes informations et la recherche sur plusieurs niveaux</li>
+<li>Pour les lieux aux États-Unis d'Amérique - <a rel="nofollow" class="external free" href="http://www.epodunk.com">http://www.epodunk.com</a> incluant les informations sur les cimetières(comme Histopolis, ci-dessus)</li>
+<li>Pour les lieux aux États-Unis d'Amérique - <a rel="nofollow" class="external free" href="http://www.placenames.com">http://www.placenames.com</a></li>
+<li>Global Gazetteer Version 2.2 à <a rel="nofollow" class="external free" href="http://www.fallingrain.com/world/index.html">http://www.fallingrain.com/world/index.html</a> fournit une liste déroulante de recherche par nom de lieu.</li></ul>
+<p><br />
+Vous devez vérifier les données recueillies afin de vous assurer qu'elles sont conformes aux conventions ci-dessous&#160;:
+</p>
+</blockquote>
+<h3><span id="Coordonnées"></span><span class="mw-headline" id="Coordonn.C3.A9es">Coordonnées</span></h3>
+<blockquote>
+<p>Traditionnellement, les coordonnées sont exprimées en degrés, minutes (60 dans un degré) et secondes (60 dans une minute), et écrites ainsi 33° 44’ 55”.  Vous pouvez les entrer de cette façon mais sans les symboles - 33 44 55 dans la plupart des logiciels; ou vous pouvez utiliser les décimales 33.7486 (pour calculer les décimales, multiplier les minutes par 60, additionner les secondes, puis diviser la somme par 3600. Ajouter les degrés au résultat).
+</p><p>Plus et moins&#160;: Nord et Est sont des signes positifs, Sud et Ouest sont des signes négatifs – par exemple -23.456  144.666 sont les équivalents de 23.456S  144.666E
+</p><p>Alpha: inclusion de N, S, E ou O exemple&#160;: 23.456S 144.666E. Les points cardinaux peuvent donner la direction ou la piste à suivre.
+</p><p>Garder à l'esprit que les latitudes ne peuvent pas être plus élevées que plus ou moins 90 degrés, et les longitudes, pas plus que plus ou moins 180 degrés.
+</p><p>Il existe des façons variées de définir un endroit sur terre. Les informations décrites ici sont suffisantes pour être capable de localiser un lieu avec Google Maps.
+</p>
+</blockquote>
+<h3><span class="mw-headline" id="Les_lieux">Les lieux</span></h3>
+<blockquote>
+<p>Dans le cas actuel, les noms de lieux sont exprimés dans un ordre descendant, i.e. du plus général au plus spécifique (dans le sens géographique; i.e. pays, région, département, ville, etc.) et séparés par des virgules.  Il suffit d'entrer une seule fois un lieu spécifique dans la page Éditer les coordonnées du lieu et le logiciel l'utilisera autant de fois que nécessaire. Voir la <a href="Module_Google_Maps.html#Technical_Section" title="Module Google Maps">Section technique</a> pour comprendre comment le module Google Maps traite les données des lieux.
+</p>
+</blockquote>
+<h3><span id="Données_en_provenance_de_d'autres_applications_(The_Master_Genealogist_(TMG),_Legacy,_etc)"></span><span class="mw-headline" id="Donn.C3.A9es_en_provenance_de_d.27autres_applications_.28The_Master_Genealogist_.28TMG.29.2C_Legacy.2C_etc.29">Données en provenance de d'autres applications (<a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/The_Master_Genealogist">The Master Genealogist (TMG)</a>, <a rel="nofollow" class="external text" href="http://www.legacyfamilytreestore.com/?Click=2387">Legacy</a>, etc)</span></h3>
+<blockquote>
+<p>Les plus récentes versions des logiciels commerciaux de généalogie tentent d'inclure la localisation des lieux, même si la norme standard GEDCOM ne spécifie pas comment cela doit être fait. Comme résultat (et vous devriez vérifier peu importe l'application que vous utilisez), vous pouvez ne pas être capable d'utiliser directement les coordonnées générées-GEDCOM dans vos applications.
+</p><p><b>webtrees</b> convertira automatiquement vos données TMG pendant le processus d'importation.
+</p>
+</blockquote>
+<h3><span id="Saisie_de_données_externes"></span><span class="mw-headline" id="Saisie_de_donn.C3.A9es_externes">Saisie de données externes</span></h3>
+<blockquote>
+<ul><li>Modifier manuellement la table ‘placelocation’&#160;: seulement pour les plus utilisateurs expérimentés. Une image de la table est affichée dans la <a href="Module_Google_Maps.html#Technical_Section" title="Module Google Maps">Section Technique</a> ci-dessous</li>
+<li>Utiliser le logiciel <b>webtrees</b> pour ajouter un lieu – voir ci-dessous</li>
+<li>Créer manuellement une table séparée par des point-virgules, soit en utilisant une application comme Excel, et l'importer (voir la Section Technique pour les détails)</li>
+<li>Si votre application locale stocke les données des coordonnées des lieux, assurez-vous qu'il respecte les formes appropriées expliquées ci-dessus</li></ul>
+</blockquote>
+<blockquote>
+<p>Une application locale signifie un autre logiciel (sur un ordinateur personnel) qui traite les données sous les formats décrits ci-dessous.<br />
+<b>À noter:  Ceci est habituellement fait seulement lors de la création de la table de la base de données wt_placelocation.</b><br /><br />
+</p><p><b>1) Format GEDCOM&#160;:</b><br /> 
+<b>Ces fichiers textes sont importés sous webtrees comme un fichier GEDCOM dans la base de données.</b><br />
+</p>
+<dl><dd>a) Family Tree maker</dd>
+<dd>b) The Master Genealogist</dd>
+<dd>c) Legacy etc.</dd>
+<dd>d) Un fichier GEDCOM de PHPGedView</dd></dl>
+<p>Si la latitude et la longitude sont incluses pour chaque lieu (PLAC) dans ce GEDCOM alors une importation GEDCOM dans webtrees les retiendra et les ajoutera à la table de la base de données wt_placelocation et créera les champs appropriés.<br />
+Ce sont à la base seulement Le lieu, La latitude et La longitude.<br />
+<b>Note:</b>  Si le logiciel ne contient pas la latitude et la longitude comme partie du GEDCOM, alors la latitude et la longitude de chaque lieu devront être réglées manuellement.<br /><br />
+</p><p><b>2) Format de fichier CSV&#160;:</b><br /> 
+<b>Ils sont importés via le "Administration/Google Maps/Edit Geographic Place locations/import from file interface" directement dans la table wt_placelocation.</b><br />
+</p>
+<dl><dd>a) Utilisation des fichiers CSV situés sur le site de <b>webtrees</b> sous l'onglet Extensions/Google Maps Files   <a rel="nofollow" class="external free" href="http://webtrees.net/en/add-ons/gmfiles">http://webtrees.net/en/add-ons/gmfiles</a>.   <font color="green"><b>(preferred method)</b></font>
+<dl><dd>Ils contiennent le Lieu, la Latitude, la Longitude (et parfois les spécifications des icônes des drapeaux)</dd></dl></dd>
+<dd>b) Des fichiers CSV Place/latitude/longitude sont aussi disponibles en téléchargement sur le web.</dd>
+<dd>c) Excel produira aussi un fichier CSV, if les données d'Excel ont le lieu, la latitude et la longitude.<br /></dd></dl>
+<p>Essentiellement, vous devriez uniquement utiliser les fichiers csv dont vous avez besoin. Les choisir tous peut avoir des effets sur la performance.<br /> 
+<b>Notez aussi:</b> Si le fichier csv n'inclut pas la Latitude et la Longitude, alors chaque Latitude et Longitude d'un lieu devront être ajoutées manuellement.<br /><br />
+</p><p><b>3) Une fois la base de données publiée, un copie de sauvegarde devrait être faite régulièrement soit&#160;:</b><br />
+</p>
+<dl><dd>a) En utilisant phpMyAdmin pour exporter la table wt_placelocation. <font color="green"><b>(méthode préférée car elle inclut aussi toutes les coordonnées définies de Street View.)</b></font></dd>
+<dd>b) En utilisant Administration/Google Maps/Editer les lieux de Google Maps/Exporter tous les lieux dans un fichier.
+<dl><dd>Ce fichier sera un (fichier CSV) avec le format suivant comme exemple</dd>
+<dd>(Votre propre fichier peut être différent, selon le réglage du nombre de niveaux de lieux.)</dd></dl></dd></dl>
+<dl><dd><dl><dd><table border="1" cellpadding="10" cellspacing="0" style="color:black; background-color:#e0efff;">
+<tbody><tr>
+<td>
+<p>"Level";"Country";"State";"County";"City";"Place";"Place";"Longitude";"Latitude";"Zoom factor";"Icon" <br />
+0;England;;;;;;W1;N52;5;places/flags/ENG.png <br />
+1;England;Berkshire;;;;;W1;N51.5;10;places/ENG/flags/BER.png <br />
+2;England;Berkshire;Reading;;;;W0.97;N51.46;11; <br />
+1;England;Cambridgeshire;;;;;E0.1;N52.2;9;places/ENG/flags/CAM.png <br />
+2;England;Cambridgeshire;Peterborough;;;;W0.26;N52.61;9; <br />
+1;England;Cornwall;;;;;W4.9;N50.4;7;places/ENG/flags/COR.png <br />
+2;England;Cornwall;St. Mabyn;;;;W4.764;N50.526;13; <br />
+2;England;Cornwall;Truro;;;;W5.05;N50.26;12; <br />
+3;England;Cornwall;Truro;St Kea Church;;;W5.0727;N50.2434;14; <br />
+4;England;Cornwall;Truro;St Kea Church;Graveyard;;W5.072712;N50.243445;14; <br />
+5;England;Cornwall;Truro;St Kea Church;Graveyard;Tombstone;W5.07271234;N50.24344545;18;
+</p>
+</td></tr></tbody></table></dd></dl></dd></dl>
+<p><br />
+</p>
+</blockquote>
+<h3><span id="Ajouter_des_lieux_en_utilisant_le_module_Google_Maps_de_webtrees_(méthode_recommandée)"></span><span class="mw-headline" id="Ajouter_des_lieux_en_utilisant_le_module_Google_Maps_de_webtrees_.28m.C3.A9thode_recommand.C3.A9e.29">Ajouter des lieux en utilisant le module Google Maps de <b>webtrees</b><font color="green"> (méthode recommandée)</font></span></h3>
+<blockquote>
+<p><i>Note préliminaire&#160;: le module Google Map est conçu pour gérer les lieux sous forme de chaîne dans un ordre décroissant; i.e. du plus général au plus spécifique.  Prenons par exemple un arrondissement de Paris, l'ordre Google Maps sera 'France, Île-de-France, Paris, Paris 75116, Paris 16e'. Ce n'est pas l'ordre dans lequel nous entrons les noms de lieux dans notre arbre généalogique mais c'est l'ordre dans lequel nous devons travailler dans le module Google Maps. Cela nous donne accès à des fonctionnalités de recherche de lieux lorsque nous ajoutons les informations des cartes.  Cela aide à trouver des groupes de personnes d'un même lieu, et c'est conforme à la norme GEDCOM, format de fichier compatible avec  <b>webtrees</b>.</i>
+</p><p><i>Alors, AVANT de commencer à  ajouter des lieux au module Google Maps, il vous faut réviser les données de lieux de votre (vos) arbre (s) généalogique (s). Assurez-vous de l'uniformité de l'orthographe afin d'éviter les duplications d'un même lieu, du bon nom de pays de ce lieu, du bon niveau de ce lieu dans la chaîne, etc. Ainsi, il vous sera plus facile de relier les données de lieux de votre (vos) arbre (s) généalogique (s) avec le module Google Maps.</i>
+<br />
+</p><p><br />
+Cette fonctionnalité utilise une nouvelle table de la base de données pour stocker les informations des lieux. Les lieux existants peuvent être importés et les informations de localisation peuvent être ajoutées en utilisant les outils graphiques (zoom/clic sur la carte) ou des données de localisation spécifique.
+</p><p>Les informations de localisation sont conservées en-dehors de l'arbre généalogique (et peuvent être partagées entre tous les arbres généalogiques de votre <b>webtrees</b>) et les données de localisation sont entrées une seule fois pour chaque lieu. Une sauvegarde des données de localisation est disponible en exportant la table de chaque nouveau lieu vers un fichier texte (séparé par un ";"). Des ajouts par lot peuvent être faits en important un fichier texte (sous toutes réserves de la structure et de l'épellation spécifiques des lieux). 
+</p><p>En utilisant la structure mentionnée ci-dessus, nous débutons la construction du fichier par le haut en descendant - ce qui veut dire dans 99% des cas en entrant un pays. Lorsque c'est fait, nous ajoutons le niveau suivant (région, état ou province, département, comté ou district, selon ce qui est approprié à votre cas.)
+</p><p>Connecté en tant qu'administrateur, aller dans le menu de l'interface d'Administration, Google Maps, et cliquer sur "Editer les lieux Google Maps".  La page affichée sera comme suit&#160;:
+</p><p><br /><br />
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:802px;"><a href="./Fichier:Wt_gm_07.png.html" class="image"><img alt="Wt gm 07.png" src="../w/images-fr/thumb/Wt_gm_07.png/800px-Wt_gm_07.png" width="800" height="515" class="thumbimage" srcset="../w/images-fr/Wt_gm_07.png 1.5x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:Wt_gm_07.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+<p><br />
+</p><p>Le mot "Sommaire" signifie le plus haut niveau de lieux (niveau le plus général) dans votre arbre.  Au fur et à mesure que vous ajouterez des niveaux, cette ligne se développera et servira de fil d'Ariane.
+</p><p>Cliquer sur 'Ajouter un lieu', vous ajouterez ainsi un lieu au niveau le plus élevé, utiliser Brazil comme pays.
+</p><p><br />
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><a href="./Fichier:Wt_gm_08.png.html" class="image"><img alt="Wt gm 08.png" src="../w/images-fr/thumb/Wt_gm_08.png/500px-Wt_gm_08.png" width="500" height="424" class="thumbimage" srcset="../w/images-fr/Wt_gm_08.png 1.5x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:Wt_gm_08.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+<p>La fenêtre de saisie s'affiche, et vous pouvez taper 'Brazil' dans le champ, cliquer 'Pays' pour lui attribuer un niveau, puis cliquer sur le lien Rechercher à ce niveau.
+<br />
+Si vous êtes connectés à Internet, le script mapping va rechercher un site nommé Geonames, qui contient 2,2 million de lieux. Si le lieu tapé est trouvé, les détails seront ajouté au formulaire pour vous. Vous pouvez toujours visiter le site vous-mêmes si désiré (<a rel="nofollow" class="external free" href="http://www.geonames.org/">http://www.geonames.org/</a>)  Dans le doute sur l'endroit que vous voulez réellement, des options seront affichées.
+Généralement, un ou plusieurs marqueurs jaunes s'afficheront. <br /> 
+<b>Note:</b> Plutôt que d'utiliser le lien Rechercher à ce niveau, vous pouvez aussi "pointer et cliquer", ou "glisser-déposer" le marqueur rouge.
+</p><p><br />
+</p><p>Soit: <br />  
+a) Cliquer le marqueur jaune approprié, et cliquer sur le lien 'Utiliser ces coordonnées', <br /> 
+b) "Pointer et cliquer" pour déplacer le marqueur rouge (combiné ou pas avec le lien Rechercher à ce niveau), <br /> 
+c) "Glisser-Déposer" le marqueur rouge (combiné ou pas avec le lien Rechercher à ce niveau). <br />
+La boîte de dialogue affiche maintenant
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><a href="./Fichier:Wt_gm_09.png.html" class="image"><img alt="Wt gm 09.png" src="../w/images-fr/thumb/Wt_gm_09.png/500px-Wt_gm_09.png" width="500" height="424" class="thumbimage" srcset="../w/images-fr/Wt_gm_09.png 1.5x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:Wt_gm_09.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+<p><br />
+</p><p>Enregistrer vos modifications.
+Alors vous aurez une nouvelle entrée. (Il est possible que vous ayez à cocher la case "Afficher les lieux inutilisés" afin de voir la nouvelle entrée)
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:802px;"><a href="./Fichier:Wt_gm_09a.png.html" class="image"><img alt="Wt gm 09a.png" src="../w/images-fr/thumb/Wt_gm_09a.png/800px-Wt_gm_09a.png" width="800" height="164" class="thumbimage" srcset="../w/images-fr/Wt_gm_09a.png 1.5x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:Wt_gm_09a.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+<p>Noter que le lieu Brazil, est un lien "cliquable".  Noter aussi le X rouge, il indique que ce lieu peut être supprimé sans problèmes.
+<br /><br />
+</p><p>Cliquer sur le lien Brazil vous amènera au niveau des lieux inclus dans le pays Brazil.
+<br />
+Remarquer la ligne du "fil d'Ariane" indiquant sur quel niveau vous vous trouvez. ("Brazil - Sommaire"), et affiché "No places found".
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:802px;"><a href="./Fichier:Wt_gm_09b.png.html" class="image"><img alt="Wt gm 09b.png" src="../w/images-fr/thumb/Wt_gm_09b.png/800px-Wt_gm_09b.png" width="800" height="178" class="thumbimage" srcset="../w/images-fr/Wt_gm_09b.png 1.5x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:Wt_gm_09b.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+<p>Maintenant vous désirez ajouter Brazilia … cliquer sur le lien 'Ajouter un lieu' et répéter les étapes ci-dessus mais cette fois-ci sélectionner le niveau Ville (Ou États, ou le type de niveau de l'endroit que vous désirez ajouter).
+</p><p><br /> 
+Le X rouge a déjà été mentionné. Au fur et à mesure que vous ajoutez des niveaux à la hiérarchie, seulement les niveaux les plus bas afficheront le X rouge.  Les lieux de niveaux plus élevés n'afficheront plus le X rouge car il existe des lieux de niveaux plus bas qui dépendent de lui. Si vous voulez supprimer un lieu en utilisant le X, vous devez d'abord supprimer les lieux les plus bas dans la hiérarchie et travailler en remontant – supprimer en premier le quartier, puis la ville, puis l'état, puis le pays, c'est l'ordre dans lequel il faut travailler.
+</p><p><b>Confus par l'ordre de la chaîne et sur comment afficher les items de vos données de lieux&#160;?</b>
+</p><p>La structure 'descendante' de la chaîne utilisée par Google Maps ne correspond pas à celle utilisée habituellement lorsque nous entrons des données de lieux. Nous travaillons du plus spécifique au plus général - adresse civique, commune, département, pays; ou si vous préférez, du plus petit au plus grand.  Alors, il peut prendre un peu de temps avant de se familiariser avec le concept. Ne modifier pas la manière dont vous entrez les données des lieux dans votre arbre généalogique, mais la structure de la chaîne de lieux de Google Maps fonctionne dans le sens contraire.
+</p><p>N'omettez pas des niveaux. Les termes et les structures employés par différents pays peuvent varier; et ils peuvent être en désaccord avec les termes utilisés par le module Google Maps.  Alors, ignorez-les s'ils ne rencontrent pas vos besoins - débutez au niveau du pays (aucun problème là) et travaillez en descendant un niveau à la fois. Cela s'applique également si vous construisez un fichier avec un autre logiciel que  <b>webtrees</b>  pour une importation éventuelle. 
+</p><p><b>Ignorer la structure de la chaîne</b>
+</p><p>Cela peut paraître contradictoire, mais vous pouvez ignorer la structure de la chaîne si vous le désirez.
+</p><p>Vous pouvez entrer le nom d'un lieu comme suit&#160;: Hackney London England – que votre application locale et <b>webtrees</b> liront comme un nom unique de lieu, composé de trois mots.  Ce n'est pas un problème dans le module Google Maps, simplement utiliser un nom identique et l'un trouvera l'autre. Mais vous devrez trouver les coordonnées de ce lieu par vous-même. Aucune donnée ne sera intégrée. 
+</p><p>Et vous n'aurez pas accès aux données géographiques pour vous aider à travailler avec votre arbre généalogique. Par exemple, vous ne pourrez savoir qui habitait un quartier de Londres et qui vivait en Angleterre. Et bien sûr, cela peut créer de la confusion. Est-ce que tous comprendront ce que veut dire ce "nom de lieu", i.e. 66 St Martins St St Martins QuelqueLieu QuelquePart, n'est pas très lisible.
+</p><p>Si tous vivent/ont vécu dans un seul pays, pourquoi entrer le nom du pays&#160;? Si vous ignorez la structure de la chaîne, cela peut être plus facile pour vous&#160;? C'est une décision individuelle. 
+</p>
+</blockquote>
+<h3><span id="Importer_depuis_l'(ou_les)_arbre(s)_généalogique(s)_actuel(s)"></span><span class="mw-headline" id="Importer_depuis_l.27.28ou_les.29_arbre.28s.29_g.C3.A9n.C3.A9alogique.28s.29_actuel.28s.29">Importer depuis l'(ou les) arbre(s) généalogique(s) actuel(s)</span></h3>
+<blockquote>
+<p>Ces deux options génèreront la table ‘placelocation’ en utilisant la liste des lieux de votre arbre généalogique. MAIS – les coordonnées LAT / LONG de vos lieux seront absentes. Vous devrez modifier manuellement chaque lieu afin d'ajouter ces coordonnées.  Voir 'Modifier et supprimer des lieux' ci-dessous.
+</p>
+</blockquote>
+<h3><span class="mw-headline" id="Importer_depuis_un_fichier">Importer depuis un fichier</span></h3>
+<blockquote>
+<p><b><font color="green">
+C'est probablement la méthode la plus populaire pour informer rapidement les champs de la table wt_placelocation.
+</font></b> <br /> 
+Cette option vous permet d'importer des données de lieux, incluant tous les champs nécessaires de la table ‘placelocation’, depuis des fichiers textes pré-existants. Vous pouvez soit créer les vôtres ou utiliser ceux offerts dans la section "Extensions" à l'adresse <a rel="nofollow" class="external free" href="http://webtrees.net/en/add-ons/gmfiles">http://webtrees.net/en/add-ons/gmfiles</a>.  Si vous avez plusieurs lieux d'un même pays dans les fichiers textes disponibles, c'est la manière la plus facile et rapide pour afficher les cartes.
+</p><p>Cependant – vous devez vérifier vos lieux enregistrés dans les balises PLAC de votre arbre généalogique; ils doivent être EXACTEMENT les mêmes que les lieux listés dans les fichiers textes; tant au niveau de l'orthographe qu'au niveau de la hiérarchie du lieu – i.e. avez-vous chaque nom de ville avec la même orthographe, et au même niveau, et dans le bon comté et / ou département&#160;?
+</p>
+</blockquote>
+<h3><span class="mw-headline" id="Modifier_et_supprimer_des_lieux">Modifier et supprimer des lieux</span></h3>
+<blockquote>
+<p>Le X rouge sert à supprimer.  Si le X est gris (ou s'il est absent), cela signifie que des lieux de niveau inférieur lui sont rattachés. Si vous désirez supprimer un lieu de niveau supérieur, vous devez auparavant supprimer tous les lieux de niveau inférieur rattachés à ce lieu.
+<br />
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:802px;"><a href="./Fichier:Wt_gm_09c.png.html" class="image"><img alt="Wt gm 09c.png" src="../w/images-fr/thumb/Wt_gm_09c.png/800px-Wt_gm_09c.png" width="800" height="168" class="thumbimage" srcset="../w/images-fr/Wt_gm_09c.png 1.5x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:Wt_gm_09c.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+<p>La modification est une question d'interprétation personnelle.  Cliquer sur "Editer un lieu géographique" et vous verrez la fenêtre de saisie Figure 9d.  Corriger ce qui doit l'être, puis enregistrer.
+</p><p><br />
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:602px;"><a href="./Fichier:Wt_gm_09d.png.html" class="image"><img alt="Wt gm 09d.png" src="../w/images-fr/thumb/Wt_gm_09d.png/600px-Wt_gm_09d.png" width="600" height="522" class="thumbimage" srcset="../w/images-fr/Wt_gm_09d.png 1.5x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:Wt_gm_09d.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+</blockquote>
+<h2><span id="Faire_fonctionner_l'exploration_des_rues_de_Google_(Google_Street_View)"></span><span class="mw-headline" id="Faire_fonctionner_l.27exploration_des_rues_de_Google_.28Google_Street_View.29"><hr /><font color="blue"><b>Faire fonctionner l'exploration des rues de Google (Google Street View)</b></font></span></h2>
+<h3><span class="mw-headline" id="Activer_Google_Street_View">Activer Google Street View</span></h3>
+<blockquote>
+<p>Premièrement régler l'option "Activer Google Street View" à "OUI". 
+</p><p><br /><br />
+</p><p><br />
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:802px;"><a href="./Fichier:Wt_gm_12.png.html" class="image"><img alt="Wt gm 12.png" src="../w/images-fr/thumb/Wt_gm_12.png/800px-Wt_gm_12.png" width="800" height="216" class="thumbimage" srcset="../w/images-fr/thumb/Wt_gm_12.png/1200px-Wt_gm_12.png 1.5x, ../w/images-fr/Wt_gm_12.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:Wt_gm_12.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+</blockquote>
+<h3><span id="Réglages_des_coordonnées_de_Google_Street_View"></span><span class="mw-headline" id="R.C3.A9glages_des_coordonn.C3.A9es_de_Google_Street_View">Réglages des coordonnées de Google Street View</span></h3>
+<blockquote>
+<p><b><font color="red">IMPORTANT</font></b><br />
+Les points de vue (pov) de Google Street View sont très subjectifs et dépendent de ce que vous désirez voir. <br />
+Ils ne peuvent être saisis comme les coordonnées des lieux dans des fichiers csv pour fins d'importation, car ils requièrent la direction (boussole), l'élévation, et le facteur de zoom du point de vue (pov); et ceux-ci sont personnels à l'utilisateur ou à l'administrateur. <br />
+Par conséquent, ils demandent un travail intensif de réglage à l'unité (un par un). <br />
+Cependant, webtrees a fait le maximum afin d'accélérer le processus de manière logique. <br />
+Les résultats sont plutôt stupéfiants afin d'offrir à vos utilisateurs un point de vue Google Street View de l'endroit sélectionné. <br />
+</p><p><br />
+</p><p><b>Comment procéder&#160;?</b><br />
+Premièrement, aller à la fiche d'un individu et cliquer sur l'onglet Google Maps. <br />
+Cliquer un événement de la liste ou un marqueur rouge sur la carte. <br />
+Noter l'onglet additionnel de la fenêtre bulle d'informations nommé Google Street View. <br />
+Cliquer sur l'onglet et noter qu'il est possible que la vue Google Street View soit incorrecte, ou même en blanc. <br />
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:802px;"><a href="./Fichier:Wt_gm_12b.png.html" class="image"><img alt="Wt gm 12b.png" src="../w/images-fr/thumb/Wt_gm_12b.png/800px-Wt_gm_12b.png" width="800" height="393" class="thumbimage" srcset="../w/images-fr/Wt_gm_12b.png 1.5x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:Wt_gm_12b.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+<p>Pour régler la vue de la rue dans les deux cas (en blanc ou incorrecte), cliquer sur l'adresse de l'endroit "en bleu". (indiquée avec la flèche rouge dans l'image ci-dessus). <br />
+<br />
+Cette action vous amènera à la page de la liste des Lieux de cet endroit. <br />
+Noter également que la fenêtre de Google Street View peut être en blanc, ou peut afficher une vue que vous désirez modifier. 
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:802px;"><a href="./Fichier:Wt_gm_12c.png.html" class="image"><img alt="Wt gm 12c.png" src="../w/images-fr/thumb/Wt_gm_12c.png/800px-Wt_gm_12c.png" width="800" height="423" class="thumbimage" srcset="../w/images-fr/thumb/Wt_gm_12c.png/1200px-Wt_gm_12c.png 1.5x, ../w/images-fr/Wt_gm_12c.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:Wt_gm_12c.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+<p>Dans les deux cas, cliquer le bouton interrupteur "Google Maps" (indiqué par la flèche rouge dans l'image ci-dessus), pour afficher la carte avec les rues surlignées en bleu et l'icône du "Panda" . 
+</p><p><br />
+</p><p>Ceci affichera une vue de la carte de la fenêtre Google Street View. Notez que le bouton interrupteur "Google Maps" est maintenant nommé "Google Street View".
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:802px;"><a href="./Fichier:Wt_gm_12d.png.html" class="image"><img alt="Wt gm 12d.png" src="../w/images-fr/thumb/Wt_gm_12d.png/800px-Wt_gm_12d.png" width="800" height="426" class="thumbimage" srcset="../w/images-fr/thumb/Wt_gm_12d.png/1200px-Wt_gm_12d.png 1.5x, ../w/images-fr/Wt_gm_12d.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:Wt_gm_12d.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+<p>Maintenant, il suffit de glisser-déposer l'icône du "Panda" (montrée ci-dessus) jusqu'à la rue "surlignée en bleu" que vous désirez. 
+</p><p><br />
+</p><p><b>Noter</b> le "x" noir sous le "Panda pendant que vous faites glisser l'icône. C'est le point de réglage. Assurez-vous de le régler sur une rue "surlignée en bleu".
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:802px;"><a href="./Fichier:Wt_gm_12e.png.html" class="image"><img alt="Wt gm 12e.png" src="../w/images-fr/thumb/Wt_gm_12e.png/800px-Wt_gm_12e.png" width="800" height="423" class="thumbimage" srcset="../w/images-fr/thumb/Wt_gm_12e.png/1200px-Wt_gm_12e.png 1.5x, ../w/images-fr/Wt_gm_12e.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:Wt_gm_12e.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+<p>Lorsque vous avez terminé, cliquer encore le bouton interrupteur Google Street View pour interrompre l'action et fixer le réglage, afin de voir le Point de vue - Google Street View.
+</p><p><br />
+</p><p>Maintenant, cliquer sur le bouton interrupteur "SV Controls ON/OFF" afin d'afficher les contrôles de Street View qui vous aideront à vous déplacer sur la rue. Vous pouvez également déplacer l'image vers la gauche ou la droite pour atteindre la "direction" (bearing) voulue. (note&#160;: bearing signifie en fait "directions de la boussole" autrement dit le nord, le sud, l'est et l'ouest) <br />
+Noter que les coordonnées changeront dynamiquement au bas de la fenêtre Google Street View au fur et à mesure de vos déplacements. <br />
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:802px;"><a href="./Fichier:Wt_gm_12f.png.html" class="image"><img alt="Wt gm 12f.png" src="../w/images-fr/thumb/Wt_gm_12f.png/800px-Wt_gm_12f.png" width="800" height="430" class="thumbimage" srcset="../w/images-fr/thumb/Wt_gm_12f.png/1200px-Wt_gm_12f.png 1.5x, ../w/images-fr/Wt_gm_12f.png 2x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:Wt_gm_12f.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+<p>Lorsque vous êtes satisfaits de l'image affichée, cliquer sur "ENREGISTRER", les coordonnées seront stockées dans la base de données, et la vue sera actualisée. <br />
+</p><p><b>Voilà&#160;! </b>
+</p><p>Lorsque vous avez terminé, retourner sur la page individuelle où vous étiez précédemment, cliquer sur l'onglet Google Maps, sélectionner l'événement que vous venez de modifier et voyez les résultats.
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:802px;"><a href="./Fichier:Wt_gm_12g.png.html" class="image"><img alt="Wt gm 12g.png" src="../w/images-fr/thumb/Wt_gm_12g.png/800px-Wt_gm_12g.png" width="800" height="451" class="thumbimage" srcset="../w/images-fr/Wt_gm_12g.png 1.5x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:Wt_gm_12g.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+<p><b>NOTE:</b> Rappelez-vous que ceci est un réglage de localisation d'un endroit Street View, alors aucun autre événement relié à ce même endroit n'affichera automatiquement cette vue Google Street View. Les réglages sont uniques et se font un à la fois.
+</p><p><br />
+</p>
+</blockquote>
+<h2><span class="mw-headline" id="Section_Technique_de_Google_Maps"><hr /><font color="blue"><b>Section Technique de Google Maps</b></font></span></h2>
+<h3><span id="Données_des_Lieux"></span><span class="mw-headline" id="Donn.C3.A9es_des_Lieux">Données des Lieux</span></h3>
+<blockquote>
+<p>Les données des lieux du module Google Maps sont stockées dans leur propre table, séparément de la table "places" de <b>webtrees</b>. Elle a cette structure:
+</p>
+<center><b>Table 1: placelocation</b></center>
+<table class="wikitable" style="margin: 1em auto 1em auto" border="1">
+
+<tbody><tr>
+<th>Field</th>
+<th>Def</th>
+<th>Desc
+</th></tr>
+<tr>
+<td>pl_id</td>
+<td>int(11)</td>
+<td>Incremented index
+</td></tr>
+<tr>
+<td>pl_parent_id</td>
+<td>int(11)</td>
+<td>Ref to higher level ‘parent’
+</td></tr>
+<tr>
+<td>pl_level</td>
+<td>int(11)</td>
+<td>Place in descriptor ‘tree’
+</td></tr>
+<tr>
+<td>pl_place</td>
+<td>varchar(255)</td>
+<td>The place
+</td></tr>
+<tr>
+<td>pl_long</td>
+<td>varchar(30)</td>
+<td>Longitude
+</td></tr>
+<tr>
+<td>pl_lati</td>
+<td>varchar(30)</td>
+<td>Latitude
+</td></tr>
+<tr>
+<td>pl_zoom</td>
+<td>int(4)</td>
+<td>Googlemap zoom
+</td></tr>
+<tr>
+<td>pl_icon</td>
+<td>varchar(255)</td>
+<td>Omit for standard icon
+</td></tr>
+<tr>
+<td>pl_media</td>
+<td>varchar(60)</td>
+<td>Place image location (feature to be implemented later)
+</td></tr>
+<tr>
+<td>sv_long</td>
+<td>float</td>
+<td>Google Street View Longitude
+</td></tr>
+<tr>
+<td>sv_lati</td>
+<td>float</td>
+<td>Google Street View Latitude
+</td></tr>
+<tr>
+<td>sv_bearing</td>
+<td>float</td>
+<td>Google Street View Bearing or direction
+</td></tr>
+<tr>
+<td>sv_elevation</td>
+<td>float</td>
+<td>Google Street View Elevation
+</td></tr>
+<tr>
+<td>sv_zoom</td>
+<td>float</td>
+<td>Google Street View Zoom
+</td></tr>
+</tbody></table>
+<p>Les données étant stockées dans une table indépendante, elles peuvent donc être utilisées pour plusieurs arbres généalogiques. Aussi lorsque vous supprimez un arbre généalogique, les données de la table "placelocation" sont conservées et seront utilisées si vous ré-importez votre arbre généalogique.
+</p>
+</blockquote>
+<h3><span class="mw-headline" id="Lieux">Lieux</span></h3>
+<blockquote>
+<p>En pratique, tous les ‘lieux’ sont définis comme des descripteurs, une manière ordonnée de dire comment trouver un endroit nommé. Un descripteur prend la forme ‘MonPays; MonÉtat; MonComté; MaVille; MaMaison’.  Ils sont identifiés par leur ‘niveau’ équivalent&#160;:
+</p>
+<dl><dd><dl><dd>Pays = niveau 0<br /></dd>
+<dd>État = niveau 1<br /></dd>
+<dd>Comté = niveau 2<br /></dd>
+<dd>Ville = niveau 3<br /></dd>
+<dd>Maison = niveau 4<br /></dd></dl></dd></dl>
+<p><b>NOTE:</b> Un endroit spécifique peut être développé à plus de 5 niveaux mais il requiert tous les autres (incluant la ligne du 'modèle' au début du fichier) afin d'avoir le même nombre de descripteurs i.e. ";MaPlace2; MaPlace3; etc.<br /><br />
+</p><p><br />
+Lorsqu'il cherche un nom de lieu dans la table, le système lit la table en descendant tel que détaillé dans le descripteur, relevant les items dans la séquence jusqu'à ce qu'il atteigne le niveau désiré pour l'utilisation. Notez que les items sont séparés par des "<b>;</b>"<br /><br />
+</p><p><br />
+Lorsque vous réglez la définition d'un lieu, vous procédez de la même façon. Pour indiquer le lieu que vous voulez référencer, vous ajoutez le niveau à la chaîne. Alors votre descripteur ressemble à&#160;: ‘Niveau; MonPays; MonÉtat; MonComté; MaVille; MaMaison’.<br /><br />
+</p><p><br />
+Le niveau indique l'item du descripteur que vous voulez utiliser. Dans cet exemple, MonPays serait le niveau 0, MaMaison serait le niveau 4.<br /><br />
+</p><p><br />
+Les variables de la longitude, de la latitude, du zoom et de l'icône sont simplement ajoutées à la fin.<br /><br />
+</p><p><br />
+Le descripteur complet de la localisation du lieu sera comme suit&#160;:
+‘Niveau; MonPays; MonÉtat; MonComté; MaVille; MaMaison; MaLongitude; MaLatitude; MonZoom; MonIcône’<br />
+<br />
+</p><p><br />
+Vous pouvez omettre n'importe quelle partie du descripteur mais vous ne pouvez pas omettre le ‘;’ qui sépare les items. Vous devez travailler à rebours à partir de la fin de la chaîne. Par exemple, si vous ne voulez pas utiliser MaMaison&#160;:
+‘Niveau; MonPays; MonÉtat; MonComté; MaVille;; MaLongitude; MaLatitude; MonZoom; MonIcône’<br /><br />
+</p><p><br />
+Le corollaire de ceci implique que vous devez vérifier la chaîne des lieux lorsque vous importez des fichiers de données de n'importe quelle source.  Vous devez construire à partir du début de la chaîne, vous aurez alors dans l'ordre&#160;:<br />
+‘Niveau; MonPays<b>;;;;</b> MaLongitude; MaLatitude; MonZoom; MonIcône’<br />
+‘Niveau; MonPays; MonÉtat<b>;;;</b> MaLongitude; MaLatitude; MonZoom; MonIcône’<br />
+‘Niveau; MonPays; MonÉtat; MonComté<b>;;</b> MaLongitude; MaLatitude; MonZoom; MonIcône’<br />
+…et ainsi de suite.
+</p><p><br /><br />
+</p><p>La table ‘placelocation’ stocke les enregistrements de lieux dans 14 champs, conçus pour stocker chaque nom de lieu seulement une fois, avec une référence croisée à son parent (niveau supérieur immédiat) stocké dans le champ pl_parent_id. Le pl_id auquel est attachée cette référence croisée est un numéro d'index séquentiel généré automatiquement.
+</p><p>Une structure typique, stockée dans cette table, peut alors être&#160;:
+</p><p><br /><br />
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:802px;"><a href="./Fichier:Wt_gm_11.png.html" class="image"><img alt="Wt gm 11.png" src="../w/images-fr/thumb/Wt_gm_11.png/800px-Wt_gm_11.png" width="800" height="120" class="thumbimage" srcset="../w/images-fr/Wt_gm_11.png 1.5x" /></a>  <div class="thumbcaption"><div class="magnify"><a href="./Fichier:Wt_gm_11.png.html" class="internal" title="Agrandir"></a></div></div></div></div></div>
+<p><br />
+<b>Note:</b> Il y a 10 champs dans le descripteur de base.  Cependant, si vous planifiez construire un fichier à importer qui dépasse 5 niveaux (niveaux 0-4), assurez-vous d'avoir le même nombre de champs sur chaque ligne du fichier, et que vous avez utilisé le ";" pour séparer les items.
+</p>
+</blockquote>
+
+<!-- 
+NewPP limit report
+Cached time: 20200520103456
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.089 seconds
+Real time usage: 0.144 seconds
+Preprocessor visited node count: 171/1000000
+Preprocessor generated node count: 276/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>
+<!-- Saved in parser cache with key wiki-fr_:pcache:idhash:171-0!canonical and timestamp 20200520103456 and revision id 3931
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="w/index.php%3Ftitle=Module_Google_Maps&amp;oldid=3931.html">https://wiki.webtrees.net/fr/w/index.php?title=Module_Google_Maps&amp;oldid=3931</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.webtrees.net/fr/Sp%C3%A9cial:Cat%C3%A9gories" title="Spécial:Catégories">Catégorie</a> : <ul><li><a href="./Catégorie:Utiliser_webtrees.html" title="Catégorie:Utiliser webtrees">Utiliser webtrees</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="w/index.php%3Ftitle=Spécial:Connexion&amp;returnto=Module+Google+Maps.html" title="Nous vous encourageons à vous connecter ; ce n’est cependant pas obligatoire [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Module_Google_Maps.html"  title="Voir le contenu de la page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.webtrees.net/fr/w/index.php?title=Discussion:Module_Google_Maps&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="Module_Google_Maps.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Module_Google_Maps.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="w/index.php%3Ftitle=Module_Google_Maps&amp;action=edit.html"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="w/index.php%3Ftitle=Module_Google_Maps&amp;action=history.html"  title="Historique des versions de cette page [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="Module_Google_Maps.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="https://wiki.webtrees.net/fr/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher dans webtrees" title="Rechercher dans webtrees [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Continuer" title="Accédez à une page du même nom si elle existe" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="../fr:Accueil.html"  title="Visiter la page d’accueil"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-webtrees.net"><a href="http://www.webtrees.net/" rel="nofollow">webtrees.net</a></li><li id="n-Accueil-.28fr.29"><a href="../fr:Accueil.html" rel="nofollow">Accueil (fr)</a></li><li id="n-Hauptseite-.28de.29"><a href="../de/Hauptseite.html" rel="nofollow">Hauptseite (de)</a></li><li id="n-Main-Page-.28en.29"><a href="../favicon.ico.html" rel="nofollow">Main Page (en)</a></li><li id="n-Hoofdpagina-.28nl.29"><a href="../nl/Hoofdpagina.html" rel="nofollow">Hoofdpagina (nl)</a></li><li id="n-recentchanges"><a href="https://wiki.webtrees.net/fr/Sp%C3%A9cial:Modifications_r%C3%A9centes" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./Spécial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Accès à l’aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./Spécial:Pages_liées/Module_Google_Maps.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="https://wiki.webtrees.net/fr/Sp%C3%A9cial:Suivi_des_liens/Module_Google_Maps" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./Spécial:Pages_spéciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="w/index.php%3Ftitle=Module_Google_Maps&amp;printable=yes.html" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="w/index.php%3Ftitle=Module_Google_Maps&amp;oldid=3931.html" title="Adresse permanente de cette version de la page">Lien permanent</a></li><li id="t-info"><a href="w/index.php%3Ftitle=Module_Google_Maps&amp;action=info.html" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Dans d’autres langues</h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-de"><a href="../de/Google_Maps_Modul.html" title="Google Maps Modul — Deutsch" lang="de" hreflang="de" class="interlanguage-link-target">Deutsch</a></li><li class="interlanguage-link interwiki-en"><a href="../en/Google_Map_module.html" title="Google Map module — English" lang="en" hreflang="en" class="interlanguage-link-target">English</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> La dernière modification de cette page a été faite le 15 février 2014 à 20:00.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.webtrees.net/fr/Webtrees:Politique_de_confidentialit%C3%A9" title="Webtrees:Politique de confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="https://wiki.webtrees.net/fr/Webtrees:%C3%80_propos_de" title="Webtrees:À propos de">À propos de webtrees</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.webtrees.net/fr/Webtrees:Avertissements_g%C3%A9n%C3%A9raux" title="Webtrees:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="https://wiki.webtrees.net/fr/w/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="https://wiki.webtrees.net/fr/w/resources/assets/poweredby_mediawiki_132x47.png 1.5x, https://wiki.webtrees.net/fr/w/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.089","walltime":"0.144","ppvisitednodes":{"value":171,"limit":1000000},"ppgeneratednodes":{"value":276,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20200520103456","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":86});});</script>
+	</body>
+</html>

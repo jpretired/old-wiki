@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Custom Translation - webtrees</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Custom_Translation","wgTitle":"Custom Translation","wgCurRevisionId":4595,"wgRevisionId":4595,"wgArticleId":336,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Customising webtrees","Needs Review"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Custom_Translation","wgRelevantArticleId":336,"wgRequestId":"6e6874ecf1ef32a812228b53","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","site":"ready","user.options":"ready","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.tokens@1bv63xk",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});mw.loader.load(["mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="w/load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="w/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.31.3"/>
+<link rel="shortcut icon" href="../favicon.ico.html"/>
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="webtrees (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="w/api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="webtrees Atom feed" href="w/index.php%3Ftitle=Special:RecentChanges&amp;feed=atom"/>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/en/w/skins/Vector/csshover.min.htc")}</style><![endif]-->
+<!--[if lt IE 9]><script src="/en/w/load.php?debug=false&amp;lang=en&amp;modules=html5shiv&amp;only=scripts&amp;skin=vector&amp;sync=1"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Custom_Translation rootpage-Custom_Translation skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Custom Translation</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From webtrees</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Custom_Translation.html#mw-head">navigation</a>, 					<a href="Custom_Translation.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><p><b>webtrees</b> is written in English, and uses English internally.  The GEDCOM file format also uses English keywords and identifiers.  But since human beings speak a variety of languages, we use translation files to convert text into each language.  The translation files are stored in the <b>language/</b> directory.
+</p><p>Note that we also have translations into the regional varients of English.  Hence we have separate translations for "British English" and "American English".
+</p><p>You can customise these translations by adding a local translation file, and this page explains how to do this.  But before starting, you should consider why you are making the change.  If it is to improve or correct a translation, then it is better to suggest it for inclusion in the official translation file, so that everyone can benefit.  Translations are currently stored at <a rel="nofollow" class="external text" href="https://github.com/fisharebest/webtrees">github.com</a>, although a web-interface is planned.
+</p>
+<div id="toc" class="toc"><div class="toctitle" lang="en" dir="ltr"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Custom_Translation.html#Where_to_store_the_local_language_files"><span class="tocnumber">1</span> <span class="toctext">Where to store the local language files</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Custom_Translation.html#File_names_and_formats"><span class="tocnumber">2</span> <span class="toctext">File names and formats</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="Custom_Translation.html#CSV_format"><span class="tocnumber">2.1</span> <span class="toctext">CSV format</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="Custom_Translation.html#PHP_format"><span class="tocnumber">2.2</span> <span class="toctext">PHP format</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Custom_Translation.html#Gettext_format"><span class="tocnumber">2.3</span> <span class="toctext">Gettext format</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="Custom_Translation.html#Character_encoding"><span class="tocnumber">3</span> <span class="toctext">Character encoding</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="Custom_Translation.html#General_notes"><span class="tocnumber">4</span> <span class="toctext">General notes</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Where_to_store_the_local_language_files">Where to store the local language files</span></h2>
+<p>You should create a subdirectory "language" in the webtrees data directory.  i.e. <b>data/language/</b>.  If you have moved the data directory outside the webserver's document root, then it should be placed in your new, private data directory.
+</p>
+<h2><span class="mw-headline" id="File_names_and_formats">File names and formats</span></h2>
+<p>The filenames consist of the language code, plus an extension to indicate the format.  Examples of language codes are:
+</p>
+<ul><li>it (Italian)</li>
+<li>fr (French)</li>
+<li>de (German)</li>
+<li>sr-Latn (Serbian in latin script)</li>
+<li>en-AU (Australian English)</li></ul>
+<p>Three formats can be used, and these are described below.  The translations are always <b>from</b> US English <b>to</b> the target language.
+</p><p>Note that translations are always case-sensitive, so that "Hello" is translated differently to "hello".
+</p>
+<h3><span class="mw-headline" id="CSV_format">CSV format</span></h3>
+<p>The simplest format is <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a>.  Although CSV stands for "comma separated values", we actually use semicolons instead of commas, and all text must be surrounded by double quotes.  Here is an example of a CSV file for British English, which would be called <b>data/language/en-GB.csv</b>.
+</p>
+<pre>"yes";"certainly"
+"no";"perhaps not"
+</pre>
+<p>This would cause the word "yes" to be replaced with "certainly", throughout the program.  To include a double quote in the text, precede it with a backslash "\".
+</p><p>The advantages of this format are:
+</p>
+<ul><li>Simplicity.  You can create the files using a simple text editor or a spreadsheet.</li></ul>
+<p>The disadvantages of this format are:
+</p>
+<ul><li>They cannot be used for complex translations, such as plurals (different languages have different ways of expressing plurals, depending on the number of objects), or multiple contexts (where the same word has many translations, depending on the context).</li>
+<li>Depending on your server configuration, it may be possible for a visitor to your site to view the contents of the file, and you may have included sensitive information in it.</li></ul>
+<h3><span class="mw-headline" id="PHP_format">PHP format</span></h3>
+<p>The second format uses a simple <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/PHP">PHP</a> script to create an array of translations.  As well as the translations, the file contains a simple check, to prevent visitors to your site from accessing the data.  Here is an example of a PHP file for American English, which would be called <b>data/language/en-US.php</b>.  To include a single quote in the text, precede it with a backslash "\".
+</p>
+<pre>&lt;?php
+return array(
+  'yes'=&gt;'for sure!',
+  'no'=&gt;'no way!'
+);
+</pre>
+<p>It is important that there are no blank lines or spaces before the initial <b>&lt;?php</b>.  Also, the final <b>?&gt;</b> is optional - so we don't include it.
+</p><p>The advantages of this format are:
+</p>
+<ul><li>Relatively simple.  You can create the files using a simple text editor.</li></ul>
+<p>The disadvantages of this format are:
+</p>
+<ul><li>They cannot be used for complex translations, such as plurals (different languages have different ways of expressing plurals, depending on the number of objects), or multiple contexts (where the same word has many translations, depending on the context).</li></ul>
+<h3><span class="mw-headline" id="Gettext_format">Gettext format</span></h3>
+<p>The third format is called <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/GNU_gettext">gettext</a>.  Gettext is an open-source, industry-standard, library for translations.  Each language requires two files.  There is a <b>PO</b> file, which contains human-readable text.  Although you *can* edit these with text editors, it is common to use a dedicated "PO editor".  <a rel="nofollow" class="external text" href="http://www.poedit.net">POEdit</a> is a common tool for this, although it has a number of limitations, and we recommend <a rel="nofollow" class="external text" href="https://sourceforge.net/projects/betterpoeditor">Better PO Editor</a>, which was written by one of the webtrees developers, <a rel="nofollow" class="external text" href="https://launchpad.net/~mlocati">Michele Locati</a>.  The <b>PO</b> file needs to be converted into a <b>MO</b> file, which is a machine-readable, compressed version of the same file.  But you may need to take the binary <b>MO</b> file in the release and convert it back to a <b>PO</b> file in order to edit it with the <a rel="nofollow" class="external text" href="https://sourceforge.net/projects/betterpoeditor">Better PO Editor</a>.  Only <a rel="nofollow" class="external text" href="http://www.poedit.net">POEdit</a> has the <b>msgunfmt</b> executable to do this reverse conversion. So you may need both tools.
+</p><p>Here is an example of a PO file for American English, which converts certain Jewish terms to Ashkenazi spellings.  The file would be called en-US.po and you would need to convert it to a .mo file, which would be called <b>data/language/en-US.mo</b>.  Note that it includes several context-sensitive translations, where we can have different translations for the same English text.
+</p>
+<pre>msgid ""
+msgstr ""
+"Project-Id-Version: webtrees\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n&#160;!= 1;\n"
+"X-Poedit-Language: en\n"
+"X-Poedit-Country: US\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgctxt "NOMINATIVE"
+msgid "Heshvan"
+msgstr "Cheshvan"
+
+msgctxt "NOMINATIVE"
+msgid "Tevet"
+msgstr "Teves"
+
+msgctxt "GENITIVE"
+msgid "Heshvan"
+msgstr "Cheshvan"
+
+msgctxt "GENITIVE"
+msgid "Tevet"
+msgstr "Teves"
+
+msgctxt "LOCATIVE"
+msgid "Heshvan"
+msgstr "Cheshvan"
+
+msgctxt "LOCATIVE"
+msgid "Tevet"
+msgstr "Teves"
+
+msgctxt "INSTRUMENTAL"
+msgid "Heshvan"
+msgstr "Cheshvan"
+
+msgctxt "INSTRUMENTAL"
+msgid "Tevet"
+msgstr "Teves"
+
+msgid "Heshvan"
+msgstr "Cheshvan"
+
+msgid "Tevet"
+msgstr "Teves"
+
+msgid "Bat mitzvah"
+msgstr "Bas mitzvah"
+
+msgid "Date of bat mitzvah"
+msgstr "Date of bas mitzva"
+
+msgid "Place of bat mitzvah"
+msgstr "Place of bas mitzvah"
+
+msgid "Source for bat mitzvah"
+msgstr "Source for bas mitzvah"
+</pre>
+<p><br />
+The advantages of this format are:
+</p>
+<ul><li>It can be used for all translations, including the complex plurals and contexts.  It is the format used by <b>webtrees</b> for its own translation files.</li>
+<li>For files containing a large number of translations, it is faster and uses less memory than the other options, as it does not need to load all translations into memory.</li></ul>
+<p>The disadvantages of this format are:
+</p>
+<ul><li>It requires additional software to create the files.</li></ul>
+<h2><span class="mw-headline" id="Character_encoding">Character encoding</span></h2>
+<p>Files should be saved in <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/UTF-8">UTF8</a> encoding, rather than <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/ISO/IEC_8859">ISO-8859</a>, <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Windows-1252">latin</a> etc.  You should be especially careful with some text editors, as they often start the file with an invisible character (called a <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Byte_order_mark">Byte-Order-Mark</a>).  If, after installing your file, you get an error of the form "Headers already sent", you have most likely included a BOM character.
+</p>
+<h2><span class="mw-headline" id="General_notes">General notes</span></h2>
+<ul><li>Whatever language you are translating into, your custom language file must always translate <u>from the text in the core code</u> (I18N::translate('xxxxx'), not from any of the standard language files. If you want to see what these texts are on-screen, ensure you are viewing in en-US, rather than any other language.</li></ul>
+<ul><li>The translations are cached for performance.  After adding your custom file either clear the cache files (Control panel -&gt; Website -&gt; Clean-up data folder), or wait at least one hour.</li></ul>
+<div style="color:#f00;">This page has not been reviewed since webtrees 1.7.4.  It may be out of date.</div>
+
+<!-- 
+NewPP limit report
+Cached time: 20200521074600
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.021 seconds
+Real time usage: 0.024 seconds
+Preprocessor visited node count: 46/1000000
+Preprocessor generated node count: 122/1000000
+Post‐expand include size: 301/2097152 bytes
+Template argument size: 10/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.674      1 -total
+ 61.37%    1.641      1 Template:Review
+ 30.40%    0.813      2 Template:Wt
+ 23.93%    0.640      1 Template:Latest_Version
+-->
+</div>
+<!-- Saved in parser cache with key wiki-en_:pcache:idhash:336-0!canonical and timestamp 20200521074600 and revision id 4595
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="w/index.php%3Ftitle=Custom_Translation&amp;oldid=4595.html">https://wiki.webtrees.net/en/w/index.php?title=Custom_Translation&amp;oldid=4595</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="./Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="./Category:Customising_webtrees.html" title="Category:Customising webtrees">Customising webtrees</a></li><li><a href="./Category:Needs_Review.html" title="Category:Needs Review">Needs Review</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="w/index.php%3Ftitle=Special:UserLogin&amp;returnto=Custom+Translation.html" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Custom_Translation.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.webtrees.net/en/w/index.php?title=Talk:Custom_Translation&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Custom_Translation.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Custom_Translation.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="w/index.php%3Ftitle=Custom_Translation&amp;action=edit.html"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="w/index.php%3Ftitle=Custom_Translation&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Custom_Translation.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.webtrees.net/en/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search webtrees" title="Search webtrees [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="../favicon.ico.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-webtrees.net"><a href="http://www.webtrees.net/" rel="nofollow">webtrees.net</a></li><li id="n-Main-Page-.28en.29"><a href="../favicon.ico.html" rel="nofollow">Main Page (en)</a></li><li id="n-Hauptseite-.28de.29"><a href="../de/Hauptseite.html" rel="nofollow">Hauptseite (de)</a></li><li id="n-Accueil-.28fr.29"><a href="../fr:Accueil.html" rel="nofollow">Accueil (fr)</a></li><li id="n-Hoofdpagina-.28nl.29"><a href="../nl/Hoofdpagina.html" rel="nofollow">Hoofdpagina (nl)</a></li><li id="n-recentchanges"><a href="https://wiki.webtrees.net/en/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="./Special:Random.html" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./Special:WhatLinksHere/Custom_Translation.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.webtrees.net/en/Special:RecentChangesLinked/Custom_Translation" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="./Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="w/index.php%3Ftitle=Custom_Translation&amp;printable=yes.html" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="w/index.php%3Ftitle=Custom_Translation&amp;oldid=4595.html" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="w/index.php%3Ftitle=Custom_Translation&amp;action=info.html" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>In other languages</h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-de"><a href="https://wiki.webtrees.net/de/Benutzerdefinierte_%C3%9Cbersetzungen" title="Benutzerdefinierte Übersetzungen – Deutsch" lang="de" hreflang="de" class="interlanguage-link-target">Deutsch</a></li><li class="interlanguage-link interwiki-fr"><a href="https://wiki.webtrees.net/fr/Traductions_personnalis%C3%A9es" title="Traductions personnalisées – français" lang="fr" hreflang="fr" class="interlanguage-link-target">Français</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last edited on 2 March 2016, at 22:08.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.webtrees.net/en/Webtrees:Privacy_policy" title="Webtrees:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.webtrees.net/en/Webtrees:About" title="Webtrees:About">About webtrees</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.webtrees.net/en/Webtrees:General_disclaimer" title="Webtrees:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="https://wiki.webtrees.net/en/w/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="https://wiki.webtrees.net/en/w/resources/assets/poweredby_mediawiki_132x47.png 1.5x, https://wiki.webtrees.net/en/w/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.021","walltime":"0.024","ppvisitednodes":{"value":46,"limit":1000000},"ppgeneratednodes":{"value":122,"limit":1000000},"postexpandincludesize":{"value":301,"limit":2097152},"templateargumentsize":{"value":10,"limit":2097152},"expansiondepth":{"value":3,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    2.674      1 -total"," 61.37%    1.641      1 Template:Review"," 30.40%    0.813      2 Template:Wt"," 23.93%    0.640      1 Template:Latest_Version"]},"cachereport":{"timestamp":"20200521074600","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":119});});</script>
+	</body>
+</html>

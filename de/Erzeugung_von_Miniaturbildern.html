@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Erzeugung von Miniaturbildern – webtrees</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Erzeugung_von_Miniaturbildern","wgTitle":"Erzeugung von Miniaturbildern","wgCurRevisionId":668,"wgRevisionId":668,"wgArticleId":103,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Benutzung von webtrees"],"wgBreakFrames":false,"wgPageContentLanguage":"de","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t.",".\t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],"wgMonthNamesShort":["","Jan.","Feb.","Mär.","Apr.","Mai","Jun.","Jul.","Aug.","Sep.","Okt.","Nov.","Dez."],"wgRelevantPageName":"Erzeugung_von_Miniaturbildern","wgRelevantArticleId":103,"wgRequestId":"310a5a13c9cda28d1534fecb","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","site":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1wzrrbt",function($,jQuery,require,module){/*@nomin*/mw.user.options.set({"variant":"de"});
+});mw.loader.implement("user.tokens@1bv63xk",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});mw.loader.load(["mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="w/load.php%3Fdebug=false&amp;lang=de&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="w/load.php%3Fdebug=false&amp;lang=de&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.31.3"/>
+<link rel="shortcut icon" href="../favicon.ico.html"/>
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="webtrees (de)"/>
+<link rel="EditURI" type="application/rsd+xml" href="w/api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="Atom-Feed für „webtrees“" href="w/index.php%3Ftitle=Spezial:Letzte_Änderungen&amp;feed=atom"/>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/de/w/skins/Vector/csshover.min.htc")}</style><![endif]-->
+<!--[if lt IE 9]><script src="/de/w/load.php?debug=false&amp;lang=de&amp;modules=html5shiv&amp;only=scripts&amp;skin=vector&amp;sync=1"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr capitalize-all-nouns mw-hide-empty-elt ns-0 ns-subject page-Erzeugung_von_Miniaturbildern rootpage-Erzeugung_von_Miniaturbildern skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="de">Erzeugung von Miniaturbildern</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">Aus webtrees</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Wechseln zu:					<a href="Erzeugung_von_Miniaturbildern.html#mw-head">Navigation</a>, 					<a href="Erzeugung_von_Miniaturbildern.html#p-search">Suche</a>
+				</div>
+				<div id="mw-content-text" lang="de" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><p><br />
+Viele Leute haben Probleme beim Hochladen von Medien-Objekten, weil es zu Fehlermeldungen kommt, wie:
+</p><p><i>Miniaturbild 'media/thumbs/wont_upload.jpg' konnte nicht automatisch erzeugt werden.</i>
+</p><p>Wie unter <a href="https://wiki.webtrees.net/de/w/index.php?title=H%C3%A4ufig_gestellte_Fragen&amp;action=edit&amp;redlink=1" class="new" title="Häufig gestellte Fragen (Seite nicht vorhanden)">Häufig_gestellte_Fragen</a> erklärt, gilt das fast immer bei zu großen Bildern oder zu wenig PHP Speicher. Benutzer haben berichtet, dass manchmal eine Datei (sagen wir 850 kB groß) hochgeladen wird, aber eine andere, etwas kleinere (etwa 700 kB) nicht. Hier möchte ich erklären, wie es dazu kommt.
+</p><p><b>Der Grund für die Verwirrung ist, dass die Größe der betreffenden Datei VOR der Komprimierung entscheidend ist (in der Regel ein als jpeg formatiertes Bild) und NICHT die Größe danach.</b> Erläuterung: Um eine angemessene Qualität für Miniaturbild-Kopien zu erhalten, muss PHP zunächst das hochgeladene Bild in seiner unkomprimierten Größe komplett in den internen Server-Speicher laden, bevor es dann auf die viel kleinere Vorschau-Größe reduziert werden kann.
+</p><p>Da sich Bilder je nach Inhalt sehr unterschiedlich komprimieren lassen, kann ein mit 700 KB gespeichertes Bild ohne weiteres <b>größer</b> sein als ein mit 850KB gespeichertes. Die meisten Scanner und Digitalkameras komprimieren Dateien automatisch beim Erstellen, deshalb bedeutet "Komprimieren" nicht, dass Sie oder Ihre Verwandten etwas Ungewöhnliches getan haben müssen.
+</p><p>Falls Sie Probleme haben, dann können Sie die ECHTE Größe Ihrer Bilder in etwa wie folgt berechnen:
+</p><p>Stellen Sie zunächst die Pixelgröße des Bildes fest. Das kann in vielfältiger Weise geschehen und wird (oder kann) oft vom Dateisystem auf Ihrem PC angezeigt werden, wie hier von einem System mit Windows 7:
+</p><p><br />
+<a href="./Datei:ThumbFileDim.jpg.html" class="image"><img alt="ThumbFileDim.jpg" src="../w/images-de/ThumbFileDim.jpg" width="755" height="124" class="thumbborder" /></a>
+</p><p>Beachten Sie, dass die Abmessungen der größeren (875 kB) Datei tatsächlich weit kleiner sind als die der kleineren (718 kB) Datei, was auf sehr unterschiedliche Komprimierung schließen läßt.
+</p><p><br />
+Als nächstes berechnen Sie die Anzahl Pixel (px) pro Datei:
+</p><p><i>will_upload.jpg = 863 x 1176 = 1.014.888 px</i>
+</p><p><i>wont_upload.jpg = 3436 x 2410 = 8.280.760 px</i>
+</p><p><br />
+Um sie in Datei-Größen zu konvertieren, müssen Sie die "Farbtiefe" oder Anzahl Farben kennen, mit der dieses Bild erstellt wurde. Dies ist in der Regel in der Bildinformation gespeichert und kann mit einer Bildbearbeitungs-Software angezeigt werden. In diesen Beispielen sind beide als "RGB" (256 Farben) oder mit 8 Bit pro Kanal angelegt. Die Tabelle unten zeigt einige gängige Alternativen. Die Tiefe (8 in diesem Fall) geteilt durch 8 ergibt die Anzahl "Bytes" pro Pixel:
+</p><p>8 / 8 = 1 Bytes pro Pixel
+</p><p>(24 / 8 = 3 Bytes pro Pixel, etc.)
+</p><p><br />
+Und daher für diese Bilder:
+</p><p><i>will_upload.jpg = 1.014.888 x 1 = 1.014.888 Bytes</i>
+</p><p><i>wont_upload.jpg = 8.280.760 x 1 = 8.280.760 Bytes</i>
+</p><p><br />
+In einem kB sind 1,024 Bytes, also war die echte ORIGINAL-Größe von jedem Bild:
+</p><p><i>will_upload.jpg = 1.014.888 / 1.024 = <b>991 kB</b> (gerade unter 1 MB)</i>
+</p><p><i>wont_upload.jpg = 8.280.760 / 1.024 = <b>8.087 kB</b> (gerade über 8 MB)</i>
+</p><p><br />
+Hoffentlich wird damit klar, warum das "größere" Bild erfolgreich hochgeladen werden konnte und das "kleinere" nicht. Die kleinere Datei war eigentlich 8 mal größer!
+</p><p><br />
+Hier ist eine Tabelle einiger gängiger Bildgrößen und deren Äquivalent unkomprimierter Dateigrößen für verschiedene Arten von Farbtiefe:
+</p>
+<table border="2" cellpadding="5">
+<tbody><tr align="center"><td>Bildeinstellung</td><td>schwarz/weiß<br />(1 Bit)</td><td>256 Farben<br />(8 Bits)</td><td>65.000 Farben<br />(16 Bits)</td><td>True color<br />(24 Bits)</td></tr>
+<tr align="center"><td>320x200</td><td>7,8 kB</td><td>62,5 kB</td><td>125 kB</td><td>187,5 kB</td></tr>
+<tr align="center"><td>640x480</td><td>37,5 kB</td><td>300 kB</td><td>600 kB</td><td>900 kB</td></tr>
+<tr align="center"><td>800x600</td><td>58,6 kB</td><td>468,7 kB</td><td>937,5 kB</td><td>1,4 MB</td></tr>
+<tr align="center"><td>1024x768</td><td>96 kB</td><td>768 kB</td><td>1,5 MB</td><td>2,3 MB</td></tr>
+<tr align="center"><td>3072x2304</td><td>864 kB</td><td>6,9 MB</td><td>13,8 MB</td><td>20,7 MB</td></tr>
+</tbody></table>
+<p><br />
+Wenn Sie erwägen, Dateien in <b>webtrees</b> zu laden, ist es sinnvoll, über alle folgenden Punkte nachzudenken:
+</p>
+<ul><li><b>webtrees</b> ein Programm für Familiengeschichte und KEINE Foto-Galerie. Bilder in archivarischer Qualität werden weder benötigt, noch gut funktionieren, falls sie benutzt werden.</li>
+<li>Nicht alle Benutzer werden Ultra-High-Speed-Internet-Verbindungen haben. Die Anzeige eines großen Bildes in Archiv-Qualität könnte das Laden einer Seite im Extremfall für einige Minuten verzögern.</li>
+<li>Verringern Sie die Auflösung der Bilder auf rund 72 Pixel/Inch. Dies ist in der Regel ausreichend für Webseiten-Darstellung.</li>
+<li>Die Bildmaße sollten für die meisten Computer-Bildschirme angemessen sein. Etwa nicht breiter als 1200 Pixel ist wahrscheinlich mehr als ausreichend.</li>
+<li>Wandeln Sie Bilder in schwarz/weiß (1 Bit) um, wo das möglich ist. Viele alte Dokumente wurden nur in schwarz/weiß produziert, also ist hohe Farbtiefe sinnlos.</li>
+<li>Verwenden Sie Bildbearbeitungs-Software, um Bilder auf benötige Teile zu beschneiden. Das Bild sieht besser aus und verringert die Speicher-Anforderungen.</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20200521053345
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.053 seconds
+Real time usage: 0.062 seconds
+Preprocessor visited node count: 11/1000000
+Preprocessor generated node count: 38/1000000
+Post‐expand include size: 28/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.030      1 -total
+ 92.66%    1.881      2 Vorlage:Wt
+-->
+</div>
+<!-- Saved in parser cache with key wiki-de_:pcache:idhash:103-0!canonical and timestamp 20200521053345 and revision id 668
+ -->
+</div>					<div class="printfooter">
+						Abgerufen von „<a dir="ltr" href="w/index.php%3Ftitle=Erzeugung_von_Miniaturbildern&amp;oldid=668.html">https://wiki.webtrees.net/de/w/index.php?title=Erzeugung_von_Miniaturbildern&amp;oldid=668</a>“					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="./Spezial:Kategorien.html" title="Spezial:Kategorien">Kategorie</a>: <ul><li><a href="./Kategorie:Benutzung_von_webtrees.html" title="Kategorie:Benutzung von webtrees">Benutzung von webtrees</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigationsmenü</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Meine Werkzeuge</h3>
+						<ul>
+							<li id="pt-login"><a href="w/index.php%3Ftitle=Spezial:Anmelden&amp;returnto=Erzeugung+von+Miniaturbildern.html" title="Sich anzumelden wird gerne gesehen, ist jedoch nicht zwingend erforderlich. [o]" accesskey="o">Anmelden</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namensräume</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Erzeugung_von_Miniaturbildern.html"  title="Seiteninhalt anzeigen [c]" accesskey="c">Seite</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.webtrees.net/de/w/index.php?title=Diskussion:Erzeugung_von_Miniaturbildern&amp;action=edit&amp;redlink=1"  title="Diskussion zum Seiteninhalt [t]" accesskey="t" rel="discussion">Diskussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Varianten</span><a href="Erzeugung_von_Miniaturbildern.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Ansichten</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Erzeugung_von_Miniaturbildern.html" >Lesen</a></span></li>
+															<li id="ca-viewsource"><span><a href="w/index.php%3Ftitle=Erzeugung_von_Miniaturbildern&amp;action=edit.html"  title="Diese Seite ist geschützt. Ihr Quelltext kann dennoch angesehen und kopiert werden. [e]" accesskey="e">Quelltext anzeigen</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="w/index.php%3Ftitle=Erzeugung_von_Miniaturbildern&amp;action=history.html"  title="Frühere Versionen dieser Seite [h]" accesskey="h">Versionsgeschichte</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Mehr</span><a href="Erzeugung_von_Miniaturbildern.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Suche</label>
+						</h3>
+
+						<form action="https://wiki.webtrees.net/de/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="webtrees durchsuchen" title="webtrees durchsuchen [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spezial:Suche" name="title"/><input type="submit" name="fulltext" value="Suchen" title="Suche nach Seiten, die diesen Text enthalten" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Seite" title="Gehe direkt zu der Seite mit genau diesem Namen, falls sie vorhanden ist." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Hauptseite.html"  title="Hauptseite"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-webtrees.net"><a href="http://www.webtrees.net/" rel="nofollow">webtrees.net</a></li><li id="n-Hauptseite-.28de.29"><a href="Hauptseite.html" rel="nofollow">Hauptseite (de)</a></li><li id="n-Main-Page-.28en.29"><a href="../favicon.ico.html" rel="nofollow">Main Page (en)</a></li><li id="n-Accueil-.28fr.29"><a href="../fr:Accueil.html" rel="nofollow">Accueil (fr)</a></li><li id="n-Hoofdpagina-.28nl.29"><a href="../nl/Hoofdpagina.html" rel="nofollow">Hoofdpagina (nl)</a></li><li id="n-recentchanges"><a href="./Spezial:Letzte_Änderungen.html" title="Liste der letzten Änderungen in diesem Wiki [r]" accesskey="r">Letzte Änderungen</a></li><li id="n-randompage"><a href="./Spezial:Zufällige_Seite.html" title="Zufällige Seite aufrufen [x]" accesskey="x">Zufällige Seite</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Hilfeseite anzeigen">Hilfe</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Werkzeuge</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.webtrees.net/de/Spezial:Linkliste/Erzeugung_von_Miniaturbildern" title="Liste aller Seiten, die hierher verlinken [j]" accesskey="j">Links auf diese Seite</a></li><li id="t-recentchangeslinked"><a href="https://wiki.webtrees.net/de/Spezial:%C3%84nderungen_an_verlinkten_Seiten/Erzeugung_von_Miniaturbildern" rel="nofollow" title="Letzte Änderungen an Seiten, die von hier verlinkt sind [k]" accesskey="k">Änderungen an verlinkten Seiten</a></li><li id="t-specialpages"><a href="./Spezial:Spezialseiten.html" title="Liste aller Spezialseiten [q]" accesskey="q">Spezialseiten</a></li><li id="t-print"><a href="w/index.php%3Ftitle=Erzeugung_von_Miniaturbildern&amp;printable=yes.html" rel="alternate" title="Druckansicht dieser Seite [p]" accesskey="p">Druckversion</a></li><li id="t-permalink"><a href="w/index.php%3Ftitle=Erzeugung_von_Miniaturbildern&amp;oldid=668.html" title="Dauerhafter Link zu dieser Seitenversion">Permanenter Link</a></li><li id="t-info"><a href="w/index.php%3Ftitle=Erzeugung_von_Miniaturbildern&amp;action=info.html" title="Weitere Informationen über diese Seite">Seiten­informationen</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>In anderen Sprachen</h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-en"><a href="../en/Automatic_thumbnail_generation.html" title="Automatic thumbnail generation – English" lang="en" hreflang="en" class="interlanguage-link-target">English</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Diese Seite wurde zuletzt am 15. Februar 2014 um 20:01 Uhr bearbeitet.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.webtrees.net/de/Webtrees:Datenschutz" title="Webtrees:Datenschutz">Datenschutz</a></li>
+											<li id="footer-places-about"><a href="https://wiki.webtrees.net/de/Webtrees:%C3%9Cber_webtrees" title="Webtrees:Über webtrees">Über webtrees</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.webtrees.net/de/Webtrees:Impressum" title="Webtrees:Impressum">Haftungsausschluss</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="https://wiki.webtrees.net/de/w/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="https://wiki.webtrees.net/de/w/resources/assets/poweredby_mediawiki_132x47.png 1.5x, https://wiki.webtrees.net/de/w/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.053","walltime":"0.062","ppvisitednodes":{"value":11,"limit":1000000},"ppgeneratednodes":{"value":38,"limit":1000000},"postexpandincludesize":{"value":28,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    2.030      1 -total"," 92.66%    1.881      2 Vorlage:Wt"]},"cachereport":{"timestamp":"20200521053345","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":110});});</script>
+	</body>
+</html>

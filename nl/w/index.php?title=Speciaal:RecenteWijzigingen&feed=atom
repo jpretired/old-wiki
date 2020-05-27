@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="nl">
+	<id>https://wiki.webtrees.net/nl/w/api.php?hidebots=1&amp;urlversion=1&amp;days=7&amp;limit=50&amp;action=feedrecentchanges&amp;feedformat=atom</id>
+	<title>webtrees  - Recente wijzigingen [nl]</title>
+	<link rel="self" type="application/atom+xml" href="https://wiki.webtrees.net/nl/w/api.php?hidebots=1&amp;urlversion=1&amp;days=7&amp;limit=50&amp;action=feedrecentchanges&amp;feedformat=atom"/>
+	<link rel="alternate" type="text/html" href="https://wiki.webtrees.net/nl/Speciaal:RecenteWijzigingen"/>
+	<updated>2020-05-21T07:46:55Z</updated>
+	<subtitle>Met deze feed kunt u de recentste wijzigingen in deze wiki bekijken.</subtitle>
+	<generator>MediaWiki 1.31.3</generator>
+</feed>

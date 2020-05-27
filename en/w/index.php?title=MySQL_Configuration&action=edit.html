@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>View source for MySQL Configuration - webtrees</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"MySQL_Configuration","wgTitle":"MySQL Configuration","wgCurRevisionId":4599,"wgRevisionId":0,"wgArticleId":21,"wgIsArticle":false,"wgIsRedirect":false,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"MySQL_Configuration","wgRelevantArticleId":21,"wgRequestId":"5d83d0ca2ba44acdd44b8362","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","site":"ready","user.options":"ready","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.tokens@1bv63xk",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});mw.loader.load(["mediawiki.action.edit.collapsibleFooter","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.31.3"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="shortcut icon" href="../../favicon.ico.html"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="webtrees (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="webtrees Atom feed" href="./index.php%3Ftitle=Special:RecentChanges&amp;feed=atom"/>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/en/w/skins/Vector/csshover.min.htc")}</style><![endif]-->
+<!--[if lt IE 9]><script src="/en/w/load.php?debug=false&amp;lang=en&amp;modules=html5shiv&amp;only=scripts&amp;skin=vector&amp;sync=1"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-MySQL_Configuration rootpage-MySQL_Configuration skin-vector action-edit">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">View source for MySQL Configuration</h1>
+									<div id="bodyContent" class="mw-body-content">
+								<div id="contentSub">← <a href="../MySQL_Configuration.html" title="MySQL Configuration">MySQL Configuration</a></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="index.php%3Ftitle=MySQL_Configuration&amp;action=edit.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=MySQL_Configuration&amp;action=edit.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text"><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in the group: <a href="https://wiki.webtrees.net/en/w/index.php?title=Webtrees:Users&amp;action=edit&amp;redlink=1" class="new" title="Webtrees:Users (page does not exist)">Users</a>.
+</p>
+</div>
+<hr />
+<p>You can view and copy the source of this page.
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" class="mw-editfont-monospace" lang="en" dir="ltr" name="wpTextbox1">[[Category:Administration_Guide|32.12]]
+MySQL has a large number of configuration options.  Adjusting these can make an enormous difference to the performance of your database.  Unfortunately, there is no single "best" set of settings.  The optimal configuration depends on the version of MySQL, the server resources, other server processes, etc.  It is also dependent on the server role; development, testing or live operation.
+
+The default configuration supplied on many installations is very poor.  In particular, the default configuration with XAMPP is based on a server with 64MB of RAM and a very old version of MySQL.
+
+The settings suggested here are a compromise between performance, features, data-integrity and logging.
+
+== Configuration File ==
+
+The configuration settings are stored in a plain text file.  This file is typically called '''my.ini''' on Windows and '''my.cnf''' on Linux and MacOS-X.  MySQL reads this file when it is started.  If you change your settings, you must restart MySQL for any changes to take effect. Make a backup copy of the original file '''before''' you start.
+
+If there are any errors in '''my.ini''', MySQL will refuse to start, and write a message explaining why to the error file, which is typically called '''mysql.err'''.
+
+== my.ini Structure ==
+
+my.ini files are divided into a number of sections.  We are only concerned with the section relating to the MySQL daemon process, '''mysqld'''.  This may be the only section.  Lines beginning with '''#''' are comments, empty lines are ignored and configuration lines take the format '''setting-name=value'''.  This example shows each type of line.
+
+ # Configuration settings for the MySQL daemon process
+ 
+ [mysqld]
+ port=3306
+
+== Before You Start ==
+
+You should make a copy of you existing '''my.ini''' file before changing any settings.  It is probably a good idea to back up your entire MySQL data folder.
+
+You should find out the version of your MySQL ''server'' (which can be different to the version of your MySQL ''client'').  Some of the configuration settings depend on your MySQL version.  This is displayed on the home page of phpMyAdmin.
+
+NOTE: While most configuration options can be changed by simply editing '''my.ini''', there is one (innodb-log-file-size) that requires some corresponding file-system changes.  Do not change this setting without reading and following the associated comments.
+
+== Suggested Settings ==
+
+All these settings belong in the [mysqld] section of the '''my.ini''' configuration file.
+
+=== Connection and Configuration ===
+
+MySQL needs the current time, to generate timestamps, etc.  SYSTEM means take the value from the operating system.
+
+ default-time-zone=SYSTEM
+
+Files and directories can be specified with absolute or relative paths.  If you have more than one disk, set tmpdir to a location on a different disk to datadir.  These values show a typical XAMPP installation.
+
+ basedir=c:/xampp/mysql/
+ datadir=data/
+ tmpdir=c:/windows/temp/
+ 
+ # Windows
+ pid-file=mysql.pid
+ 
+ # Linux
+ #pid-file=/var/run/mysqld/mysqld.pid
+
+This is the size of the largest query that the server will accept.  Due to a bug in some versions of MySQL, it also restricts the size of BLOB columns that can be processed.  '''webtrees''' has code to workaround these restrictions, but it has not been tested on every version of MySQL.  Setting this to a value larger than your largest GEDCOM file should prevent any problems.
+
+ max-allowed-packet=32M
+
+On a webserver, 60 seconds is a reasonable time to wait for another process to release a lock.  If you run other database applications, you may want higher/lower values.
+
+ wait-timeout=60
+
+Although MySQL is primarily a network based server, you can communicate with it directly, using a socket (linux) or pipe (windows).  To use this, set the servername to "." instead of "localhost" or "127.0.0.1".  It bypasses the network protocol, giving slightly better performance.
+
+ # For Windows
+ socket=MySQL
+ enable-named-pipe=1
+ 
+ # For Linux
+ #socket=/var/run/mysqld/mysql.sock
+ #bind-address=127.0.0.1
+
+=== Logging ===
+
+ log-error=mysql.err
+
+The general log includes every query that MySQL runs.  Developers may enable it to investigate specific problems.
+
+ general-log=0
+
+The slow query log (as the name suggests) is a log of all queries that take longer than a certain number of seconds to run.  Developers may enable this while investigating performance issues.  The option to log queries not using indexes may be useful, but remember that for small tables, full-table-scans can be quicker than index access.
+
+ # MySQL 5.1.29 and later
+ slow-query-log=0
+ 
+ # MySQL 5.1.28 and earlier
+ #log-slow-queries=1
+ 
+ log-queries-not-using-indexes=0
+ long-query-time=1
+
+=== Performance and Caching ===
+
+These settings provide a reasonable amount of memory to MySQL for query processing.
+
+ # MySQL 5.1.3 and later
+ table-open-cache=1024
+ 
+ # MySQL 5.1.2 and earlier
+ table-cache=1024
+ 
+ key-buffer-size=64M
+ sort-buffer-size=16M
+
+This option saves the result of each query you run, so that if you run it again, the cached values are used.  Setting this too high can be counter-productive.
+
+ query-cache-size=64M
+
+=== InnoDB Settings ===
+
+InnoDB is a database storage engine that offers many benefits over the default MyISAM engine.  '''webtrees''' will use it if it is available, and will fall back to MyISAM if it is unavailable.
+
+The innodb-log-file-size setting should correspond to sizes of the files ib_logfile0 and ib_logfile1 which live in the folder specified by the '''datadir''' setting.  If you want to change this setting and these files exist (they will if you have used InnoDB tables), then you must take the following steps;
+
+# Shutdown, Restart, Shutdown MySQL.  This will ensure all data is flushed to disk
+# Delete (move to a temporary folder!) these two files
+# Start MySQL.  This will recreate the files
+# If MySQL starts, and you can access your MySQL tables, then delete the old files from step 2.
+# If MySQL fails to start, restore both your original my.ini file and these two files.  MySQL should now start, and you can review the mysql.err file to find out what problems were found.
+
+ innodb=1
+ innodb-data-file-path=ibdata1:32M:autoextend
+ innodb-buffer-pool-size=256M
+ innodb-log-file-size=64M
+ innodb-log-buffer-size=8M
+ innodb-fast-shutdown=0
+ innodb-rollback-on-timeout=1
+
+By default, MySQL flushes every InnoDB transaction to disk.  For some operations (e.g. importing a GEDCOM file), this is a major bottleneck.  By setting the value to 0, MySQL only flushes to disk every second.  This makes importing much faster, but the downside is that a server failure can result in the last one second of updates being lost.  If you are hosting other (perhaps more critical) database applications, then leave this at the default value of 1.
+
+ innodb-flush-log-at-trx-commit=0
+
+[[de:MySQL_Konfiguration]]
+[[fr:Configuration_de_MySQL]]
+{{Review|Version=1.7.4}}
+</textarea><div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p>Templates used on this page:
+</p></div><ul>
+<li><a href="../Template:Latest_Version.html" title="Template:Latest Version">Template:Latest Version</a> (<a href="./index.php%3Ftitle=Template:Latest_Version&amp;action=edit.html" title="Template:Latest Version">view source</a>) </li><li><a href="../Template:Review.html" title="Template:Review">Template:Review</a> (<a href="./index.php%3Ftitle=Template:Review&amp;action=edit.html" title="Template:Review">view source</a>) </li></ul></div><p id="mw-returnto">Return to <a href="../MySQL_Configuration.html" title="MySQL Configuration">MySQL Configuration</a>.</p>
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="../MySQL_Configuration.html">https://wiki.webtrees.net/en/MySQL_Configuration</a>"					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.webtrees.net/en/w/index.php?title=Special:UserLogin&amp;returnto=MySQL+Configuration&amp;returntoquery=action%3Dedit" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="../MySQL_Configuration.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.webtrees.net/en/w/index.php?title=Talk:MySQL_Configuration&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="index.php%3Ftitle=MySQL_Configuration&amp;action=edit.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view"><span><a href="../MySQL_Configuration.html" >Read</a></span></li>
+															<li id="ca-viewsource" class="selected"><span><a href="index.php%3Ftitle=MySQL_Configuration&amp;action=edit.html"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="index.php%3Ftitle=MySQL_Configuration&amp;action=history.html"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="index.php%3Ftitle=MySQL_Configuration&amp;action=edit.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.webtrees.net/en/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search webtrees" title="Search webtrees [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="../../favicon.ico.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-webtrees.net"><a href="http://www.webtrees.net/" rel="nofollow">webtrees.net</a></li><li id="n-Main-Page-.28en.29"><a href="../../favicon.ico.html" rel="nofollow">Main Page (en)</a></li><li id="n-Hauptseite-.28de.29"><a href="../../de/Hauptseite.html" rel="nofollow">Hauptseite (de)</a></li><li id="n-Accueil-.28fr.29"><a href="../../fr:Accueil.html" rel="nofollow">Accueil (fr)</a></li><li id="n-Hoofdpagina-.28nl.29"><a href="../../nl/Hoofdpagina.html" rel="nofollow">Hoofdpagina (nl)</a></li><li id="n-recentchanges"><a href="https://wiki.webtrees.net/en/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="../Special:Random.html" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.webtrees.net/en/Special:WhatLinksHere/MySQL_Configuration" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.webtrees.net/en/Special:RecentChangesLinked/MySQL_Configuration" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="../Special:SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-info"><a href="index.php%3Ftitle=MySQL_Configuration&amp;action=info.html" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.webtrees.net/en/Webtrees:Privacy_policy" title="Webtrees:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.webtrees.net/en/Webtrees:About" title="Webtrees:About">About webtrees</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.webtrees.net/en/Webtrees:General_disclaimer" title="Webtrees:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="https://wiki.webtrees.net/en/w/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="https://wiki.webtrees.net/en/w/resources/assets/poweredby_mediawiki_132x47.png 1.5x, https://wiki.webtrees.net/en/w/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":80});});</script>
+	</body>
+</html>

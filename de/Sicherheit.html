@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Sicherheit – webtrees</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Sicherheit","wgTitle":"Sicherheit","wgCurRevisionId":620,"wgRevisionId":620,"wgArticleId":51,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Lies mich"],"wgBreakFrames":false,"wgPageContentLanguage":"de","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t.",".\t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],"wgMonthNamesShort":["","Jan.","Feb.","Mär.","Apr.","Mai","Jun.","Jul.","Aug.","Sep.","Okt.","Nov.","Dez."],"wgRelevantPageName":"Sicherheit","wgRelevantArticleId":51,"wgRequestId":"59a14d45d8cc7a73f0a95860","wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","site":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1wzrrbt",function($,jQuery,require,module){/*@nomin*/mw.user.options.set({"variant":"de"});
+});mw.loader.implement("user.tokens@1bv63xk",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});mw.loader.load(["mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="w/load.php%3Fdebug=false&amp;lang=de&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="w/load.php%3Fdebug=false&amp;lang=de&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.31.3"/>
+<link rel="shortcut icon" href="../favicon.ico.html"/>
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="webtrees (de)"/>
+<link rel="EditURI" type="application/rsd+xml" href="w/api.php%3Faction=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="Atom-Feed für „webtrees“" href="w/index.php%3Ftitle=Spezial:Letzte_Änderungen&amp;feed=atom"/>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/de/w/skins/Vector/csshover.min.htc")}</style><![endif]-->
+<!--[if lt IE 9]><script src="/de/w/load.php?debug=false&amp;lang=de&amp;modules=html5shiv&amp;only=scripts&amp;skin=vector&amp;sync=1"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr capitalize-all-nouns mw-hide-empty-elt ns-0 ns-subject page-Sicherheit rootpage-Sicherheit skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="de">Sicherheit</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">Aus webtrees</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Wechseln zu:					<a href="Sicherheit.html#mw-head">Navigation</a>, 					<a href="Sicherheit.html#p-search">Suche</a>
+				</div>
+				<div id="mw-content-text" lang="de" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><p><font size="3"><b>Sicherheit in <i>webtrees</i> bedeutet, zu gewährleisten, dass Ihre Website vor unerwünschtem Eindringen, Hacking oder Zugriff auf Daten- und Konfigurations-Dateien sicher ist. Die Entwickler von <i>webtrees</i> betrachten Sicherheit als äußerst wichtigen Teil ihrer Entwicklung und haben jede Anstrengung unternommen, sicherzustellen, dass Ihre Daten geschützt sind.</b></font>
+</p><p>Der am stärksten von Eindringen gefährdete Bereich ist sicher der /data Ordner, der Ihre config.ini.php Datei und verschiedene temporäre Dateien enthält. Falls Sie besorgt sind, dass es ein Risiko geben könnte, gibt es einen sehr einfachen Test für Sie: Versuchen Sie durch Eingabe von <b>http://</b><i>adresse_ihrer_website</i><b>/data/config.ini.php</b> in Ihrem Web-Browser auf die <b>config.ini.php</b> zuzugreifen. 
+</p><p>Das wahrscheinlichste Ergebnis ist eine Meldung "Zugriff verweigert" wie diese:
+</p>
+<table cellpadding="10" cellspacing="0" border="1">
+<tbody><tr>
+<td><font size="4"><b>Forbidden</b></font>
+<p>You don't have permission to access /<i>adresse_ihrer_website</i>/data/config.ini.php on this server.
+</p>
+</td></tr></tbody></table>
+<p>Dies deutet darauf hin, dass der in <b>webtrees</b> eingebaute Schutz funktioniert und keine weitere Maßnahme erforderlich ist.
+</p><p><br />
+In dem unwahrscheinlichen Fall, dass Sie auf die Datei zugreifen können (Sie sehen nur ein Semikolon), funktioniert der Schutz auf Ihrer Website nicht und Sie sollten weitere Maßnahmen ergreifen.
+</p><p>Wenn Ihr Server PHP im CGI-Modus betreibt, dann ändern Sie die Verzeichnisrechte für den /data Ordner auf 700 anstelle 777. Dies wird den Zugang zum httpd-Prozess unterbinden, während auf PHP-Skripte immer noch zugegriffen werden kann.
+</p><p>Dies wird vielleicht für 99% aller Benutzer funktionieren. Nur die restlichen 1% sollten die komplexeste Lösung in Erwägung ziehen und den /data / Ordner aus dem zugänglichen Webspace entfernen. (<i><b>Hinweis:</b></i> In vielen geteilten Hosting-Umgebungen ist dies jedenfalls keine Option.)
+</p><p><br />
+Wenn Sie es für erforderlich halten, finden sie nachfolgend ein Beispiel für die Vorgehensweise:
+</p><p>Wenn Ihr Home-Ordner so etwas ist wie <b>/home/username</b> und der Root-Ordner für Ihre Website <b>/home/username/public_html</b> und Sie haben <b>webtrees</b> im <b>public_html/webtrees</b> Ordner installiert, dann würden Sie einen neuen <b>data</b>-Ordner in Ihrem Home-Ordner auf gleichem Niveau wie Ihr public_html Verzeichnis erzeugen, so wie <b>/home/username/private/data</b> und Ihre GEDCOM-Datei (Stammbaum) dort platzieren.
+</p><p>Dann ändern Sie den <b>Data folder</b> auf der Seite Verwaltung – Site-Einstellungen von der Standard-Einstellung <b>data/</b> auf den neuen Ort <b>/home/username/private/data</b>.
+</p><p>Sie haben dann <b>zwei</b> Daten-Verzeichnisse:
+</p>
+<ul><li>[Pfad zu webtrees]/data - muss nur config.ini.php enthalten</li>
+<li>/home/username/private/data - enthält alles andere</li></ul>
+<p><br />
+</p>
+<h2><span id="Hypertext_Transfer_Protocol_Secure_(HTTPS)"></span><span class="mw-headline" id="Hypertext_Transfer_Protocol_Secure_.28HTTPS.29">Hypertext Transfer Protocol Secure (HTTPS)</span></h2>
+<p><b>webtrees</b> unterstützt <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/HTTP_Secure">https</a>-Zugriff. Wenn Ihre Website verbindlich oder optional mit https Unterstützung konfiguriert ist, wird <b>webtrees</b> in beiden Modi korrekt funktionieren.
+</p><p>Wenn Ihre Website optional mit https-Unterstützung konfiguriert ist, kann <b>webtrees</b> so eingestellt werden, dass es bei der Anmeldung auf https umschaltet. Um https bei der Anmeldung zu aktivieren, setzen Sie die Einstellung für <b>Login-URL</b> auf der Seite Verwaltung – Site-Einstellungen auf Ihre https Anmelde-Adresse, die oft die Form https://example.com/admin.php hat (setzen Sie Ihre Domain für example.com ein).
+</p><p>Wenn Sie die <b>Adresse der Webseite</b> auf der Verwaltungsseite <b>Site-Einstellungen</b> auf eine http-Adresse gesetzt haben, hat das Vorrang und Ihre Anmeldeseite wird auf http geleitet. Die <b>Adresse der Webseite</b> muss wahrscheinlich leer sein, um die <b>Anmelde-Adresse</b> zu verwenden.
+</p><p><b>Achtung:</b> Eine Fehlkonfiguration kann Ihre Anmelde-Verbindung deaktivieren. Falls das passiert, können Sie auf die Anmeldung durch Eingabe der korrekten Adresse direkt in die Adresszeile Ihres Browsers zugreifen.
+</p><p><br />
+</p>
+<table style="border:1px solid gray;background:LightCyan;padding:5px;margin:10px;">
+<tbody><tr>
+<th style="font-size:95%;">Lies mich Seiten
+</th></tr>
+<tr style="font-size:90%; font-weight:normal;">
+<td align="left"><a href="Lizenz.html" title="Lizenz">Lizenz</a>
+</td></tr>
+<tr style="font-size:90%; font-weight:normal;">
+<td align="left"><a href="https://wiki.webtrees.net/de/w/index.php?title=Einf%C3%BChrung&amp;action=edit&amp;redlink=1" class="new" title="Einführung (Seite nicht vorhanden)">Einführung</a>
+</td></tr>
+<tr style="font-size:90%; font-weight:normal;">
+<td align="left"><a href="System-Anforderungen.html" title="System-Anforderungen">System-Anforderungen</a>
+</td></tr>
+<tr style="font-size:90%; font-weight:normal;">
+<td align="left"><a href="Installation.html" title="Installation">Installation</a>
+</td></tr>
+<tr style="font-size:90%; font-weight:normal;">
+<td align="left"><a href="Updates.html" title="Updates">Updates</a>
+</td></tr>
+<tr style="font-size:90%; font-weight:normal;">
+<td align="left"><a href="GEDCOM-Dateien.html" title="GEDCOM-Dateien">GEDCOM-Dateien</a>
+</td></tr>
+<tr style="font-size:90%; font-weight:normal;">
+<td align="left"><a class="mw-selflink selflink">Sicherheit</a>
+</td></tr>
+<tr style="font-size:90%; font-weight:normal;">
+<td align="left"><a href="Datensicherung.html" title="Datensicherung">Datensicherung</a>
+</td></tr>
+<tr style="font-size:90%; font-weight:normal;">
+<td align="left"><a href="Konvertierung_von_PhpGedView.html" title="Konvertierung von PhpGedView">Konvertierung von PhpGedView</a>
+</td></tr></tbody></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20200520215825
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.022 seconds
+Real time usage: 0.033 seconds
+Preprocessor visited node count: 18/1000000
+Preprocessor generated node count: 76/1000000
+Post‐expand include size: 70/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 29/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.264      1 -total
+ 90.28%    2.947      5 Vorlage:Wt
+-->
+</div>
+<!-- Saved in parser cache with key wiki-de_:pcache:idhash:51-0!canonical and timestamp 20200520215824 and revision id 620
+ -->
+</div>					<div class="printfooter">
+						Abgerufen von „<a dir="ltr" href="w/index.php%3Ftitle=Sicherheit&amp;oldid=620.html">https://wiki.webtrees.net/de/w/index.php?title=Sicherheit&amp;oldid=620</a>“					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="./Spezial:Kategorien.html" title="Spezial:Kategorien">Kategorie</a>: <ul><li><a href="./Kategorie:Lies_mich.html" title="Kategorie:Lies mich">Lies mich</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigationsmenü</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Meine Werkzeuge</h3>
+						<ul>
+							<li id="pt-login"><a href="w/index.php%3Ftitle=Spezial:Anmelden&amp;returnto=Sicherheit.html" title="Sich anzumelden wird gerne gesehen, ist jedoch nicht zwingend erforderlich. [o]" accesskey="o">Anmelden</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namensräume</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Sicherheit.html"  title="Seiteninhalt anzeigen [c]" accesskey="c">Seite</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.webtrees.net/de/w/index.php?title=Diskussion:Sicherheit&amp;action=edit&amp;redlink=1"  title="Diskussion zum Seiteninhalt [t]" accesskey="t" rel="discussion">Diskussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Varianten</span><a href="Sicherheit.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Ansichten</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Sicherheit.html" >Lesen</a></span></li>
+															<li id="ca-viewsource"><span><a href="w/index.php%3Ftitle=Sicherheit&amp;action=edit.html"  title="Diese Seite ist geschützt. Ihr Quelltext kann dennoch angesehen und kopiert werden. [e]" accesskey="e">Quelltext anzeigen</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="w/index.php%3Ftitle=Sicherheit&amp;action=history.html"  title="Frühere Versionen dieser Seite [h]" accesskey="h">Versionsgeschichte</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Mehr</span><a href="Sicherheit.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Suche</label>
+						</h3>
+
+						<form action="https://wiki.webtrees.net/de/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="webtrees durchsuchen" title="webtrees durchsuchen [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spezial:Suche" name="title"/><input type="submit" name="fulltext" value="Suchen" title="Suche nach Seiten, die diesen Text enthalten" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Seite" title="Gehe direkt zu der Seite mit genau diesem Namen, falls sie vorhanden ist." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Hauptseite.html"  title="Hauptseite"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-webtrees.net"><a href="http://www.webtrees.net/" rel="nofollow">webtrees.net</a></li><li id="n-Hauptseite-.28de.29"><a href="Hauptseite.html" rel="nofollow">Hauptseite (de)</a></li><li id="n-Main-Page-.28en.29"><a href="../favicon.ico.html" rel="nofollow">Main Page (en)</a></li><li id="n-Accueil-.28fr.29"><a href="../fr:Accueil.html" rel="nofollow">Accueil (fr)</a></li><li id="n-Hoofdpagina-.28nl.29"><a href="../nl/Hoofdpagina.html" rel="nofollow">Hoofdpagina (nl)</a></li><li id="n-recentchanges"><a href="./Spezial:Letzte_Änderungen.html" title="Liste der letzten Änderungen in diesem Wiki [r]" accesskey="r">Letzte Änderungen</a></li><li id="n-randompage"><a href="./Spezial:Zufällige_Seite.html" title="Zufällige Seite aufrufen [x]" accesskey="x">Zufällige Seite</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Hilfeseite anzeigen">Hilfe</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Werkzeuge</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./Spezial:Linkliste/Sicherheit.html" title="Liste aller Seiten, die hierher verlinken [j]" accesskey="j">Links auf diese Seite</a></li><li id="t-recentchangeslinked"><a href="https://wiki.webtrees.net/de/Spezial:%C3%84nderungen_an_verlinkten_Seiten/Sicherheit" rel="nofollow" title="Letzte Änderungen an Seiten, die von hier verlinkt sind [k]" accesskey="k">Änderungen an verlinkten Seiten</a></li><li id="t-specialpages"><a href="./Spezial:Spezialseiten.html" title="Liste aller Spezialseiten [q]" accesskey="q">Spezialseiten</a></li><li id="t-print"><a href="w/index.php%3Ftitle=Sicherheit&amp;printable=yes.html" rel="alternate" title="Druckansicht dieser Seite [p]" accesskey="p">Druckversion</a></li><li id="t-permalink"><a href="w/index.php%3Ftitle=Sicherheit&amp;oldid=620.html" title="Dauerhafter Link zu dieser Seitenversion">Permanenter Link</a></li><li id="t-info"><a href="w/index.php%3Ftitle=Sicherheit&amp;action=info.html" title="Weitere Informationen über diese Seite">Seiten­informationen</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>In anderen Sprachen</h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-en"><a href="../en/Security.html" title="Security – English" lang="en" hreflang="en" class="interlanguage-link-target">English</a></li><li class="interlanguage-link interwiki-fr"><a href="../fr/Sécurité.html" title="Sécurité – français" lang="fr" hreflang="fr" class="interlanguage-link-target">Français</a></li><li class="interlanguage-link interwiki-nl"><a href="../nl/Veiligheid.html" title="Veiligheid – Nederlands" lang="nl" hreflang="nl" class="interlanguage-link-target">Nederlands</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Diese Seite wurde zuletzt am 15. Februar 2014 um 17:11 Uhr bearbeitet.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.webtrees.net/de/Webtrees:Datenschutz" title="Webtrees:Datenschutz">Datenschutz</a></li>
+											<li id="footer-places-about"><a href="https://wiki.webtrees.net/de/Webtrees:%C3%9Cber_webtrees" title="Webtrees:Über webtrees">Über webtrees</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.webtrees.net/de/Webtrees:Impressum" title="Webtrees:Impressum">Haftungsausschluss</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="https://wiki.webtrees.net/de/w/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="https://wiki.webtrees.net/de/w/resources/assets/poweredby_mediawiki_132x47.png 1.5x, https://wiki.webtrees.net/de/w/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.022","walltime":"0.033","ppvisitednodes":{"value":18,"limit":1000000},"ppgeneratednodes":{"value":76,"limit":1000000},"postexpandincludesize":{"value":70,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":29,"limit":5000000},"timingprofile":["100.00%    3.264      1 -total"," 90.28%    2.947      5 Vorlage:Wt"]},"cachereport":{"timestamp":"20200520215825","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":111});});</script>
+	</body>
+</html>
